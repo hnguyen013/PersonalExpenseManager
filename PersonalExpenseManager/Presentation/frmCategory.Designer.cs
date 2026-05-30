@@ -1,6 +1,6 @@
-﻿namespace PersonalExpenseManager.Presentation
+﻿namespace PersonalExpenseManager
 {
-    partial class frmRegister
+    partial class frmCategory
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmRegister
+            // frmCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 503);
-            this.Name = "frmRegister";
+            this.Name = "frmCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRegister";
+            this.Text = "frmCategory";
             this.ResumeLayout(false);
 
         }

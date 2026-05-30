@@ -35,8 +35,8 @@ namespace PersonalExpenseManager.Presentation
             {
                 MessageBox.Show("Đăng nhập thành công!");
 
-                frmDashboard frm = new frmDashboard();
-                frm.Show();
+                frmDashboard dashboard = new frmDashboard();
+                dashboard.Show();
                 this.Hide();
             }
             else

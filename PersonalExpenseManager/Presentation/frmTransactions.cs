@@ -12,13 +12,15 @@ using PersonalExpenseManager.DAL;
 
 namespace PersonalExpenseManager.Presentation
 {
-    public partial class frmDashboard : frmMainLayout
+    public partial class frmTransactions : frmMainLayout
     {
-        public frmDashboard()
+        public frmTransactions()
         {
             InitializeComponent();
-            btnDashboard.FillColor = Color.FromArgb(239, 196, 85);
-            btnDashboard.ForeColor = Color.FromArgb(47, 93, 80);
+
+            btnTransactions.FillColor = Color.FromArgb(239, 196, 85);
+            btnTransactions.ForeColor = Color.FromArgb(47, 93, 80);
         }
+
     }
 }
