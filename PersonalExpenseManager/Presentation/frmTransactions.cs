@@ -12,9 +12,9 @@ using PersonalExpenseManager.DAL;
 
 namespace PersonalExpenseManager.Presentation
 {
-    public partial class frmTransactions : frmMainLayout
+    public partial class pnlContent : frmMainLayout
     {
-        public frmTransactions()
+        public pnlContent()
         {
             InitializeComponent();
 
@@ -22,5 +22,24 @@ namespace PersonalExpenseManager.Presentation
             btnTransactions.ForeColor = Color.FromArgb(47, 93, 80);
         }
 
+        private void frmTransactions_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
