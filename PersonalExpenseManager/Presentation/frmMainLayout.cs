@@ -33,7 +33,7 @@ namespace PersonalExpenseManager.Presentation
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-            pnlContent f = new pnlContent();
+            frmTransactions f = new frmTransactions();
             f.Show();
             this.Hide();
         }
