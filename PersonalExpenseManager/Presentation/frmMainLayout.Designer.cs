@@ -39,15 +39,15 @@
             this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.lblAppName = new System.Windows.Forms.Label();
-            this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlTopbar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMonth = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lblHello = new System.Windows.Forms.Label();
+            this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlMain.SuspendLayout();
             this.pnlTopbar.SuspendLayout();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -67,8 +67,7 @@
             this.pnlSidebar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.ShadowDecoration.Parent = this.pnlSidebar;
-            this.pnlSidebar.Size = new System.Drawing.Size(193, 503);
+            this.pnlSidebar.Size = new System.Drawing.Size(193, 714);
             this.pnlSidebar.TabIndex = 0;
             // 
             // btnTransactions
@@ -77,16 +76,12 @@
             this.btnTransactions.BorderRadius = 10;
             this.btnTransactions.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnTransactions.Checked = true;
-            this.btnTransactions.CheckedState.Parent = this.btnTransactions;
-            this.btnTransactions.CustomImages.Parent = this.btnTransactions;
             this.btnTransactions.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(78)))), ((int)(((byte)(65)))));
             this.btnTransactions.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactions.ForeColor = System.Drawing.Color.White;
-            this.btnTransactions.HoverState.Parent = this.btnTransactions;
             this.btnTransactions.ImageSize = new System.Drawing.Size(200, 45);
             this.btnTransactions.Location = new System.Drawing.Point(12, 152);
             this.btnTransactions.Name = "btnTransactions";
-            this.btnTransactions.ShadowDecoration.Parent = this.btnTransactions;
             this.btnTransactions.Size = new System.Drawing.Size(167, 45);
             this.btnTransactions.TabIndex = 8;
             this.btnTransactions.Text = "Transactions";
@@ -98,16 +93,12 @@
             this.btnSavings.BorderRadius = 10;
             this.btnSavings.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSavings.Checked = true;
-            this.btnSavings.CheckedState.Parent = this.btnSavings;
-            this.btnSavings.CustomImages.Parent = this.btnSavings;
             this.btnSavings.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(78)))), ((int)(((byte)(65)))));
             this.btnSavings.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSavings.ForeColor = System.Drawing.Color.White;
-            this.btnSavings.HoverState.Parent = this.btnSavings;
             this.btnSavings.ImageSize = new System.Drawing.Size(200, 45);
             this.btnSavings.Location = new System.Drawing.Point(12, 320);
             this.btnSavings.Name = "btnSavings";
-            this.btnSavings.ShadowDecoration.Parent = this.btnSavings;
             this.btnSavings.Size = new System.Drawing.Size(167, 45);
             this.btnSavings.TabIndex = 7;
             this.btnSavings.Text = "Savings ";
@@ -119,16 +110,12 @@
             this.btnReport.BorderRadius = 10;
             this.btnReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnReport.Checked = true;
-            this.btnReport.CheckedState.Parent = this.btnReport;
-            this.btnReport.CustomImages.Parent = this.btnReport;
             this.btnReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(78)))), ((int)(((byte)(65)))));
             this.btnReport.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
-            this.btnReport.HoverState.Parent = this.btnReport;
             this.btnReport.ImageSize = new System.Drawing.Size(200, 45);
             this.btnReport.Location = new System.Drawing.Point(12, 376);
             this.btnReport.Name = "btnReport";
-            this.btnReport.ShadowDecoration.Parent = this.btnReport;
             this.btnReport.Size = new System.Drawing.Size(167, 45);
             this.btnReport.TabIndex = 6;
             this.btnReport.Text = "Report";
@@ -140,16 +127,12 @@
             this.btnBudget.BorderRadius = 10;
             this.btnBudget.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnBudget.Checked = true;
-            this.btnBudget.CheckedState.Parent = this.btnBudget;
-            this.btnBudget.CustomImages.Parent = this.btnBudget;
             this.btnBudget.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(78)))), ((int)(((byte)(65)))));
             this.btnBudget.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBudget.ForeColor = System.Drawing.Color.White;
-            this.btnBudget.HoverState.Parent = this.btnBudget;
             this.btnBudget.ImageSize = new System.Drawing.Size(200, 45);
             this.btnBudget.Location = new System.Drawing.Point(12, 265);
             this.btnBudget.Name = "btnBudget";
-            this.btnBudget.ShadowDecoration.Parent = this.btnBudget;
             this.btnBudget.Size = new System.Drawing.Size(167, 45);
             this.btnBudget.TabIndex = 5;
             this.btnBudget.Text = "Budget";
@@ -161,16 +144,12 @@
             this.btnCategory.BorderRadius = 10;
             this.btnCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCategory.Checked = true;
-            this.btnCategory.CheckedState.Parent = this.btnCategory;
-            this.btnCategory.CustomImages.Parent = this.btnCategory;
             this.btnCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(78)))), ((int)(((byte)(65)))));
             this.btnCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategory.ForeColor = System.Drawing.Color.White;
-            this.btnCategory.HoverState.Parent = this.btnCategory;
             this.btnCategory.ImageSize = new System.Drawing.Size(200, 45);
             this.btnCategory.Location = new System.Drawing.Point(12, 208);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.ShadowDecoration.Parent = this.btnCategory;
             this.btnCategory.Size = new System.Drawing.Size(167, 45);
             this.btnCategory.TabIndex = 4;
             this.btnCategory.Text = "Category";
@@ -192,9 +171,9 @@
             // 
             this.picLogo.BackColor = System.Drawing.Color.Transparent;
             this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.ImageRotate = 0F;
             this.picLogo.Location = new System.Drawing.Point(33, 28);
             this.picLogo.Name = "picLogo";
-            this.picLogo.ShadowDecoration.Parent = this.picLogo;
             this.picLogo.Size = new System.Drawing.Size(45, 45);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 2;
@@ -206,16 +185,12 @@
             this.btnDashboard.BorderRadius = 10;
             this.btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDashboard.Checked = true;
-            this.btnDashboard.CheckedState.Parent = this.btnDashboard;
-            this.btnDashboard.CustomImages.Parent = this.btnDashboard;
             this.btnDashboard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(78)))), ((int)(((byte)(65)))));
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
-            this.btnDashboard.HoverState.Parent = this.btnDashboard;
             this.btnDashboard.ImageSize = new System.Drawing.Size(200, 45);
             this.btnDashboard.Location = new System.Drawing.Point(12, 96);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.ShadowDecoration.Parent = this.btnDashboard;
             this.btnDashboard.Size = new System.Drawing.Size(167, 45);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
@@ -233,16 +208,6 @@
             this.lblAppName.TabIndex = 0;
             this.lblAppName.Text = "Expense";
             // 
-            // pnlMain
-            // 
-            this.pnlMain.Controls.Add(this.pnlTopbar);
-            this.pnlMain.FillColor = System.Drawing.Color.White;
-            this.pnlMain.Location = new System.Drawing.Point(193, 0);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.ShadowDecoration.Parent = this.pnlMain;
-            this.pnlMain.Size = new System.Drawing.Size(691, 503);
-            this.pnlMain.TabIndex = 1;
-            // 
             // pnlTopbar
             // 
             this.pnlTopbar.Controls.Add(this.btnMonth);
@@ -251,8 +216,7 @@
             this.pnlTopbar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.pnlTopbar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopbar.Name = "pnlTopbar";
-            this.pnlTopbar.ShadowDecoration.Parent = this.pnlTopbar;
-            this.pnlTopbar.Size = new System.Drawing.Size(691, 71);
+            this.pnlTopbar.Size = new System.Drawing.Size(1002, 71);
             this.pnlTopbar.TabIndex = 0;
             // 
             // btnMonth
@@ -260,17 +224,13 @@
             this.btnMonth.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(118)))), ((int)(((byte)(98)))));
             this.btnMonth.BorderRadius = 10;
             this.btnMonth.BorderThickness = 2;
-            this.btnMonth.CheckedState.Parent = this.btnMonth;
-            this.btnMonth.CustomImages.Parent = this.btnMonth;
             this.btnMonth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.btnMonth.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(118)))), ((int)(((byte)(98)))));
-            this.btnMonth.HoverState.Parent = this.btnMonth;
-            this.btnMonth.Location = new System.Drawing.Point(446, 23);
+            this.btnMonth.Location = new System.Drawing.Point(740, 20);
             this.btnMonth.Name = "btnMonth";
             this.btnMonth.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMonth.ShadowDecoration.Parent = this.btnMonth;
-            this.btnMonth.Size = new System.Drawing.Size(160, 40);
+            this.btnMonth.Size = new System.Drawing.Size(200, 40);
             this.btnMonth.TabIndex = 1;
             this.btnMonth.Text = "Tháng ";
             this.btnMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -279,13 +239,12 @@
             // guna2ImageButton1
             // 
             this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(625, 28);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(961, 23);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(30, 30);
             this.guna2ImageButton1.TabIndex = 1;
             // 
@@ -300,13 +259,22 @@
             this.lblHello.TabIndex = 0;
             this.lblHello.Text = "Xin chào, Nguyễn Văn A";
             // 
+            // pnlMain
+            // 
+            this.pnlMain.Controls.Add(this.pnlTopbar);
+            this.pnlMain.FillColor = System.Drawing.Color.White;
+            this.pnlMain.Location = new System.Drawing.Point(193, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1002, 73);
+            this.pnlMain.TabIndex = 1;
+            // 
             // frmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 503);
-            this.Controls.Add(this.pnlMain);
+            this.ClientSize = new System.Drawing.Size(1196, 714);
             this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainLayout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -314,9 +282,9 @@
             this.pnlSidebar.ResumeLayout(false);
             this.pnlSidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlMain.ResumeLayout(false);
             this.pnlTopbar.ResumeLayout(false);
             this.pnlTopbar.PerformLayout();
+            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -332,11 +300,11 @@
         protected Guna.UI2.WinForms.Guna2Button btnSavings;
         protected Guna.UI2.WinForms.Guna2Button btnReport;
         protected Guna.UI2.WinForms.Guna2Button btnBudget;
-        protected Guna.UI2.WinForms.Guna2Panel pnlMain;
-        private Guna.UI2.WinForms.Guna2Panel pnlTopbar;
-        private System.Windows.Forms.Label lblHello;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
-        protected Guna.UI2.WinForms.Guna2Button btnMonth;
         protected Guna.UI2.WinForms.Guna2Button btnTransactions;
+        private Guna.UI2.WinForms.Guna2Panel pnlTopbar;
+        protected Guna.UI2.WinForms.Guna2Button btnMonth;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private System.Windows.Forms.Label lblHello;
+        protected Guna.UI2.WinForms.Guna2Panel pnlMain;
     }
 }
