@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PersonalExpenseManager.DAL;
-
 
 namespace PersonalExpenseManager.Presentation
 {
     public partial class frmLogin : Form
     {
         IUserDAL userDAL = new UserDAL();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -47,7 +40,9 @@ namespace PersonalExpenseManager.Presentation
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chức năng đăng ký sẽ làm sau!");
+            frmRegister register = new frmRegister();
+            register.Show();
+            this.Hide();
         }
     }
 }
