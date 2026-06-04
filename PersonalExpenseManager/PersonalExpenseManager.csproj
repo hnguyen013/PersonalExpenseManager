@@ -50,6 +50,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -203,6 +204,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon lockkk1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\in2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\in21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\de9088b2-eaa8-4842-9b79-9e4b7e101e94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6085552d-cdbd-475a-8d56-647ad5bedcd1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
