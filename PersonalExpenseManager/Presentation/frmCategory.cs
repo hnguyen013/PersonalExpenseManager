@@ -19,5 +19,30 @@ namespace PersonalExpenseManager
             btnCategory.FillColor = Color.FromArgb(239, 196, 85);
             btnCategory.ForeColor = Color.FromArgb(47, 93, 80);
         }
+
+        private void frmCategory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
