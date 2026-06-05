@@ -61,12 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\BudgetDAL.cs" />
     <Compile Include="DAL\CategoryDAL.cs" />
+    <Compile Include="DAL\IBudgetDAL.cs" />
     <Compile Include="DAL\ICategoryDAL.cs" />
     <Compile Include="DAL\ITransactionDAL.cs" />
     <Compile Include="DAL\IUserDAL.cs" />
     <Compile Include="DAL\TransactionDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Entity\Budget.cs" />
     <Compile Include="Entity\Category.cs" />
     <Compile Include="Entity\Transaction.cs" />
     <Compile Include="Entity\User.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Presentation\frmBudget.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -207,7 +207,6 @@
             this.txtConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmPassword.DefaultText = "";
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtConfirmPassword.IconLeft = global::PersonalExpenseManager.Properties.Resources.icon_lockkk1;
             this.txtConfirmPassword.Location = new System.Drawing.Point(333, 190);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
@@ -225,7 +224,6 @@
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPassword.IconLeft = global::PersonalExpenseManager.Properties.Resources.icon_lockkk;
             this.txtPassword.Location = new System.Drawing.Point(39, 190);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
@@ -259,7 +257,6 @@
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtUsername.IconLeft = global::PersonalExpenseManager.Properties.Resources.icon_user2;
             this.txtUsername.Location = new System.Drawing.Point(333, 116);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.Name = "txtUsername";
@@ -275,7 +272,6 @@
             this.txtFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFullName.DefaultText = "";
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFullName.IconLeft = global::PersonalExpenseManager.Properties.Resources.icon_user1;
             this.txtFullName.Location = new System.Drawing.Point(39, 116);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFullName.Name = "txtFullName";

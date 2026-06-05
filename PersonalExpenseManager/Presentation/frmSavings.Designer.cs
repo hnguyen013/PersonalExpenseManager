@@ -28,20 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblMainTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblMainTitle
+            // 
+            this.lblMainTitle.AutoSize = true;
+            this.lblMainTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblMainTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.lblMainTitle.Location = new System.Drawing.Point(194, 78);
+            this.lblMainTitle.Name = "lblMainTitle";
+            this.lblMainTitle.Size = new System.Drawing.Size(197, 38);
+            this.lblMainTitle.TabIndex = 3;
+            this.lblMainTitle.Text = "Savings Goals";
             // 
             // frmSavings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 503);
+            this.ClientSize = new System.Drawing.Size(1199, 629);
+            this.Controls.Add(this.lblMainTitle);
             this.Name = "frmSavings";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSavings";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblMainTitle;
     }
 }
