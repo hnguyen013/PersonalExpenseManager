@@ -61,12 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\BudgetDAL.cs" />
     <Compile Include="DAL\CategoryDAL.cs" />
+    <Compile Include="DAL\IBudgetDAL.cs" />
     <Compile Include="DAL\ICategoryDAL.cs" />
     <Compile Include="DAL\ITransactionDAL.cs" />
     <Compile Include="DAL\IUserDAL.cs" />
     <Compile Include="DAL\TransactionDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Entity\Budget.cs" />
     <Compile Include="Entity\Category.cs" />
     <Compile Include="Entity\Transaction.cs" />
     <Compile Include="Entity\User.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Presentation\frmBudget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +173,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\data.db" />
+    <None Include="bin\Debug\data.sqlite" />
+    <None Include="bin\Debug\PersonalExpenseManager.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -203,6 +210,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon lockkk1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Guna.UI2.dll" />
+    <Content Include="bin\Debug\PersonalExpenseManager.exe" />
+    <Content Include="bin\Debug\PersonalExpenseManager.pdb" />
+    <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="bin\Debug\users.txt" />
+    <Content Include="bin\Debug\x64\SQLite.Interop.dll" />
+    <Content Include="bin\Debug\x64\sqlite3.dll" />
+    <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
+    <Content Include="bin\Debug\x86\sqlite3.dll" />
+    <Content Include="Resources\z7900345776987_8c59942843221df78d8778de8541e08f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
