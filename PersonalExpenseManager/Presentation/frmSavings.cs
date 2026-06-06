@@ -19,5 +19,50 @@ namespace PersonalExpenseManager
             btnSavings.FillColor = Color.FromArgb(239, 196, 85);
             btnSavings.ForeColor = Color.FromArgb(47, 93, 80);
         }
+
+        private void frmSavings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlNewGoalBox_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtGoalName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlChucNang_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNotes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTargetDate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
