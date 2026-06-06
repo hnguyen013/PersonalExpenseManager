@@ -18,6 +18,7 @@ namespace PersonalExpenseManager.Presentation
     public partial class frmTransactions : frmMainLayout
     {
         ITransactionDAL transactionDAL = new TransactionDAL();
+        ICategoryDAL categoryDAL = new CategoryDAL();
         public frmTransactions()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace PersonalExpenseManager.Presentation
             btnTransactions.FillColor = Color.FromArgb(239, 196, 85);
             btnTransactions.ForeColor = Color.FromArgb(47, 93, 80);
             LoadData();
+            LoadCategoryComboBox();
             dgvTransactions.CellClick += dgvTransactions_CellClick;
         }
         void LoadData()
@@ -198,6 +200,20 @@ namespace PersonalExpenseManager.Presentation
             row.Cells["Notes"].Value = txtNotes.Text;
 
             MessageBox.Show("Updated successfully!");
+        }
+        private void LoadCategoryComboBox()
+        {
+            cmbCategory.Items.Clear();
+
+            foreach (Category c in categoryDAL.ReadAll())
+            {
+                cmbCategory.Items.Add(c.Name);
+            }
+
+            if (cmbCategory.Items.Count > 0)
+            {
+                cmbCategory.SelectedIndex = 0;
+            }
         }
     }
 }
