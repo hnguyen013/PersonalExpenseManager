@@ -98,5 +98,10 @@ namespace PersonalExpenseManager.Presentation
             lblTotalExpense.Text = totalExpense.ToString("N0") + " đ";
             lblBalance.Text = balance.ToString("N0") + " đ";
         }
+
+        private void pnlIncome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

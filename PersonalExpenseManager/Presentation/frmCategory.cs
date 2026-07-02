@@ -162,5 +162,19 @@ namespace PersonalExpenseManager
         {
             ResetForm();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+                    }
+
+        private void pnlIncome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbIcon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategory));
             this.label1 = new System.Windows.Forms.Label();
             this.pnlAddCategory = new Guna.UI2.WinForms.Guna2Panel();
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
@@ -53,13 +54,23 @@
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Transactions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlIncome = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalIncome = new System.Windows.Forms.Label();
+            this.lblTotalIncomeTitle = new System.Windows.Forms.Label();
+            this.imgIncome = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pnlExpense = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalExpense = new System.Windows.Forms.Label();
+            this.lblExpenseTitle = new System.Windows.Forms.Label();
+            this.imgExpense = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pnlBalance = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.lblBalanceTitle = new System.Windows.Forms.Label();
+            this.imgBalance = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnlAddCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
+            this.pnlIncome.SuspendLayout();
+            this.pnlExpense.SuspendLayout();
+            this.pnlBalance.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,10 +101,10 @@
             this.pnlAddCategory.Controls.Add(this.lblCategoryName);
             this.pnlAddCategory.Controls.Add(this.lblAddCategoryHeader);
             this.pnlAddCategory.FillColor = System.Drawing.Color.White;
-            this.pnlAddCategory.Location = new System.Drawing.Point(225, 134);
+            this.pnlAddCategory.Location = new System.Drawing.Point(254, 292);
             this.pnlAddCategory.Name = "pnlAddCategory";
             this.pnlAddCategory.ShadowDecoration.Enabled = true;
-            this.pnlAddCategory.Size = new System.Drawing.Size(944, 207);
+            this.pnlAddCategory.Size = new System.Drawing.Size(1064, 207);
             this.pnlAddCategory.TabIndex = 3;
             // 
             // btnReset
@@ -109,9 +120,9 @@
             this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
             this.btnReset.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(705, 146);
+            this.btnReset.Location = new System.Drawing.Point(813, 146);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(168, 38);
+            this.btnReset.Size = new System.Drawing.Size(180, 38);
             this.btnReset.TabIndex = 13;
             this.btnReset.Text = "Reset";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -129,9 +140,9 @@
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(485, 146);
+            this.btnDelete.Location = new System.Drawing.Point(536, 146);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(168, 38);
+            this.btnDelete.Size = new System.Drawing.Size(180, 38);
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -149,9 +160,9 @@
             this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(168)))), ((int)(((byte)(38)))));
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(257, 146);
+            this.btnEdit.Location = new System.Drawing.Point(282, 146);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(168, 38);
+            this.btnEdit.Size = new System.Drawing.Size(180, 38);
             this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -169,9 +180,9 @@
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(55, 146);
+            this.btnAdd.Location = new System.Drawing.Point(32, 146);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(168, 38);
+            this.btnAdd.Size = new System.Drawing.Size(180, 38);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -198,16 +209,17 @@
             "👝 Salary",
             "🎁 Bonus",
             "📶 Investment"});
-            this.cmbIcon.Location = new System.Drawing.Point(660, 74);
+            this.cmbIcon.Location = new System.Drawing.Point(774, 74);
             this.cmbIcon.Name = "cmbIcon";
             this.cmbIcon.Size = new System.Drawing.Size(242, 36);
             this.cmbIcon.TabIndex = 9;
+            this.cmbIcon.SelectedIndexChanged += new System.EventHandler(this.cmbIcon_SelectedIndexChanged);
             // 
             // lblIcon
             // 
             this.lblIcon.AutoSize = true;
             this.lblIcon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblIcon.Location = new System.Drawing.Point(644, 51);
+            this.lblIcon.Location = new System.Drawing.Point(770, 51);
             this.lblIcon.Name = "lblIcon";
             this.lblIcon.Size = new System.Drawing.Size(39, 20);
             this.lblIcon.TabIndex = 8;
@@ -225,7 +237,7 @@
             this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Location = new System.Drawing.Point(408, 74);
+            this.txtDescription.Location = new System.Drawing.Point(496, 75);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PlaceholderText = "Enter description";
@@ -238,7 +250,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblDescription.Location = new System.Drawing.Point(391, 51);
+            this.lblDescription.Location = new System.Drawing.Point(492, 51);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(163, 20);
             this.lblDescription.TabIndex = 5;
@@ -259,7 +271,7 @@
             this.cmbType.Items.AddRange(new object[] {
             "Expense",
             "Income"});
-            this.cmbType.Location = new System.Drawing.Point(236, 74);
+            this.cmbType.Location = new System.Drawing.Point(282, 75);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(140, 36);
             this.cmbType.TabIndex = 4;
@@ -269,7 +281,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblType.Location = new System.Drawing.Point(223, 51);
+            this.lblType.Location = new System.Drawing.Point(282, 51);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(42, 20);
             this.lblType.TabIndex = 3;
@@ -301,7 +313,7 @@
             this.lblCategoryName.AutoSize = true;
             this.lblCategoryName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblCategoryName.ForeColor = System.Drawing.Color.Black;
-            this.lblCategoryName.Location = new System.Drawing.Point(19, 51);
+            this.lblCategoryName.Location = new System.Drawing.Point(28, 51);
             this.lblCategoryName.Name = "lblCategoryName";
             this.lblCategoryName.Size = new System.Drawing.Size(116, 20);
             this.lblCategoryName.TabIndex = 1;
@@ -323,7 +335,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(227, 355);
+            this.label2.Location = new System.Drawing.Point(227, 511);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 25);
             this.label2.TabIndex = 4;
@@ -359,12 +371,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCategories.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
-            this.dgvCategories.Location = new System.Drawing.Point(225, 383);
+            this.dgvCategories.Location = new System.Drawing.Point(244, 548);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.RowHeadersVisible = false;
             this.dgvCategories.RowHeadersWidth = 51;
             this.dgvCategories.RowTemplate.Height = 24;
-            this.dgvCategories.Size = new System.Drawing.Size(944, 276);
+            this.dgvCategories.Size = new System.Drawing.Size(1074, 249);
             this.dgvCategories.TabIndex = 5;
             this.dgvCategories.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
             this.dgvCategories.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
@@ -411,94 +423,164 @@
             this.Transactions.MinimumWidth = 6;
             this.Transactions.Name = "Transactions";
             // 
-            // label3
+            // pnlIncome
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label3.Location = new System.Drawing.Point(202, 680);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Showing 1 - 10 of 12 categories";
+            this.pnlIncome.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlIncome.BorderRadius = 10;
+            this.pnlIncome.BorderThickness = 1;
+            this.pnlIncome.Controls.Add(this.lblTotalIncome);
+            this.pnlIncome.Controls.Add(this.lblTotalIncomeTitle);
+            this.pnlIncome.Controls.Add(this.imgIncome);
+            this.pnlIncome.FillColor = System.Drawing.Color.White;
+            this.pnlIncome.Location = new System.Drawing.Point(254, 137);
+            this.pnlIncome.Name = "pnlIncome";
+            this.pnlIncome.Size = new System.Drawing.Size(324, 127);
+            this.pnlIncome.TabIndex = 6;
+            this.pnlIncome.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlIncome_Paint);
             // 
-            // guna2Button1
+            // lblTotalIncome
             // 
-            this.guna2Button1.BorderRadius = 4;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(1046, 672);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button1.TabIndex = 7;
-            this.guna2Button1.Text = "<";
+            this.lblTotalIncome.AutoSize = true;
+            this.lblTotalIncome.BackColor = System.Drawing.Color.White;
+            this.lblTotalIncome.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(140)))), ((int)(((byte)(60)))));
+            this.lblTotalIncome.Location = new System.Drawing.Point(102, 53);
+            this.lblTotalIncome.Name = "lblTotalIncome";
+            this.lblTotalIncome.Size = new System.Drawing.Size(187, 38);
+            this.lblTotalIncome.TabIndex = 1;
+            this.lblTotalIncome.Text = "25.750.000 đ";
             // 
-            // guna2Button2
+            // lblTotalIncomeTitle
             // 
-            this.guna2Button2.BorderRadius = 4;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Green;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(1082, 672);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button2.TabIndex = 8;
-            this.guna2Button2.Text = "1";
+            this.lblTotalIncomeTitle.AutoSize = true;
+            this.lblTotalIncomeTitle.BackColor = System.Drawing.Color.White;
+            this.lblTotalIncomeTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalIncomeTitle.Location = new System.Drawing.Point(105, 33);
+            this.lblTotalIncomeTitle.Name = "lblTotalIncomeTitle";
+            this.lblTotalIncomeTitle.Size = new System.Drawing.Size(100, 20);
+            this.lblTotalIncomeTitle.TabIndex = 0;
+            this.lblTotalIncomeTitle.Text = "Total Income";
             // 
-            // guna2Button3
+            // imgIncome
             // 
-            this.guna2Button3.BorderRadius = 1;
-            this.guna2Button3.BorderThickness = 1;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.White;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(1118, 672);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button3.TabIndex = 9;
-            this.guna2Button3.Text = "2";
+            this.imgIncome.BackColor = System.Drawing.Color.White;
+            this.imgIncome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgIncome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgIncome.Image = ((System.Drawing.Image)(resources.GetObject("imgIncome.Image")));
+            this.imgIncome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgIncome.ImageRotate = 0F;
+            this.imgIncome.Location = new System.Drawing.Point(3, 14);
+            this.imgIncome.Name = "imgIncome";
+            this.imgIncome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgIncome.Size = new System.Drawing.Size(106, 100);
+            this.imgIncome.TabIndex = 2;
             // 
-            // guna2Button4
+            // pnlExpense
             // 
-            this.guna2Button4.BorderRadius = 4;
-            this.guna2Button4.BorderThickness = 1;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.White;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button4.Location = new System.Drawing.Point(1154, 672);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button4.TabIndex = 10;
-            this.guna2Button4.Text = ">";
+            this.pnlExpense.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlExpense.BorderRadius = 10;
+            this.pnlExpense.BorderThickness = 1;
+            this.pnlExpense.Controls.Add(this.lblTotalExpense);
+            this.pnlExpense.Controls.Add(this.lblExpenseTitle);
+            this.pnlExpense.Controls.Add(this.imgExpense);
+            this.pnlExpense.FillColor = System.Drawing.Color.White;
+            this.pnlExpense.Location = new System.Drawing.Point(613, 137);
+            this.pnlExpense.Name = "pnlExpense";
+            this.pnlExpense.Size = new System.Drawing.Size(324, 127);
+            this.pnlExpense.TabIndex = 4;
+            // 
+            // lblTotalExpense
+            // 
+            this.lblTotalExpense.AutoSize = true;
+            this.lblTotalExpense.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.lblTotalExpense.Location = new System.Drawing.Point(102, 53);
+            this.lblTotalExpense.Name = "lblTotalExpense";
+            this.lblTotalExpense.Size = new System.Drawing.Size(187, 38);
+            this.lblTotalExpense.TabIndex = 1;
+            this.lblTotalExpense.Text = "16.500.000 đ";
+            // 
+            // lblExpenseTitle
+            // 
+            this.lblExpenseTitle.AutoSize = true;
+            this.lblExpenseTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpenseTitle.Location = new System.Drawing.Point(105, 33);
+            this.lblExpenseTitle.Name = "lblExpenseTitle";
+            this.lblExpenseTitle.Size = new System.Drawing.Size(105, 20);
+            this.lblExpenseTitle.TabIndex = 0;
+            this.lblExpenseTitle.Text = "Total Expense";
+            // 
+            // imgExpense
+            // 
+            this.imgExpense.BackColor = System.Drawing.Color.White;
+            this.imgExpense.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgExpense.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgExpense.Image = ((System.Drawing.Image)(resources.GetObject("imgExpense.Image")));
+            this.imgExpense.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgExpense.ImageRotate = 0F;
+            this.imgExpense.Location = new System.Drawing.Point(3, 14);
+            this.imgExpense.Name = "imgExpense";
+            this.imgExpense.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgExpense.Size = new System.Drawing.Size(106, 100);
+            this.imgExpense.TabIndex = 2;
+            // 
+            // pnlBalance
+            // 
+            this.pnlBalance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlBalance.BorderRadius = 10;
+            this.pnlBalance.BorderThickness = 1;
+            this.pnlBalance.Controls.Add(this.lblBalance);
+            this.pnlBalance.Controls.Add(this.lblBalanceTitle);
+            this.pnlBalance.Controls.Add(this.imgBalance);
+            this.pnlBalance.FillColor = System.Drawing.Color.White;
+            this.pnlBalance.Location = new System.Drawing.Point(969, 137);
+            this.pnlBalance.Name = "pnlBalance";
+            this.pnlBalance.Size = new System.Drawing.Size(324, 127);
+            this.pnlBalance.TabIndex = 5;
+            // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(98)))), ((int)(((byte)(253)))));
+            this.lblBalance.Location = new System.Drawing.Point(102, 53);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(187, 38);
+            this.lblBalance.TabIndex = 1;
+            this.lblBalance.Text = "12.450.000 đ";
+            // 
+            // lblBalanceTitle
+            // 
+            this.lblBalanceTitle.AutoSize = true;
+            this.lblBalanceTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalanceTitle.Location = new System.Drawing.Point(105, 33);
+            this.lblBalanceTitle.Name = "lblBalanceTitle";
+            this.lblBalanceTitle.Size = new System.Drawing.Size(63, 20);
+            this.lblBalanceTitle.TabIndex = 0;
+            this.lblBalanceTitle.Text = "Balance";
+            // 
+            // imgBalance
+            // 
+            this.imgBalance.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgBalance.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgBalance.Image = ((System.Drawing.Image)(resources.GetObject("imgBalance.Image")));
+            this.imgBalance.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgBalance.ImageRotate = 0F;
+            this.imgBalance.Location = new System.Drawing.Point(3, 14);
+            this.imgBalance.Name = "imgBalance";
+            this.imgBalance.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgBalance.Size = new System.Drawing.Size(106, 100);
+            this.imgBalance.TabIndex = 2;
             // 
             // frmCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1382, 903);
-            this.Controls.Add(this.guna2Button4);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pnlBalance);
+            this.Controls.Add(this.pnlExpense);
+            this.Controls.Add(this.pnlIncome);
             this.Controls.Add(this.dgvCategories);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnlAddCategory);
@@ -509,6 +591,12 @@
             this.pnlAddCategory.ResumeLayout(false);
             this.pnlAddCategory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
+            this.pnlIncome.ResumeLayout(false);
+            this.pnlIncome.PerformLayout();
+            this.pnlExpense.ResumeLayout(false);
+            this.pnlExpense.PerformLayout();
+            this.pnlBalance.ResumeLayout(false);
+            this.pnlBalance.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,11 +618,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbIcon;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCategories;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button btnReset;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
@@ -543,5 +626,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Transactions;
+        private Guna.UI2.WinForms.Guna2Panel pnlIncome;
+        private System.Windows.Forms.Label lblTotalIncome;
+        private System.Windows.Forms.Label lblTotalIncomeTitle;
+        private Guna.UI2.WinForms.Guna2ImageButton imgIncome;
+        private Guna.UI2.WinForms.Guna2Panel pnlExpense;
+        private System.Windows.Forms.Label lblTotalExpense;
+        private System.Windows.Forms.Label lblExpenseTitle;
+        private Guna.UI2.WinForms.Guna2ImageButton imgExpense;
+        private Guna.UI2.WinForms.Guna2Panel pnlBalance;
+        private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Label lblBalanceTitle;
+        private Guna.UI2.WinForms.Guna2ImageButton imgBalance;
     }
 }
