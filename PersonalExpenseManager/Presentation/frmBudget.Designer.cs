@@ -412,7 +412,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1196, 714);
+            this.ClientSize = new System.Drawing.Size(1382, 903);
             this.Controls.Add(this.dgvButdgets);
             this.Controls.Add(this.pnlChucNang);
             this.Controls.Add(this.pnlAddBudet);

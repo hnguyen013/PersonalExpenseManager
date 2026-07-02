@@ -21,7 +21,7 @@ namespace PersonalExpenseManager.Presentation
         }
     private void frmMainLayout_Load(object sender, EventArgs e)
         {
-            btnMonth.Text = "Tháng " + DateTime.Now.ToString("MM/yyyy") + "   ˅";
+            btnMonth.Text = DateTime.Now.ToString("MM/yyyy") + "   ˅";
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

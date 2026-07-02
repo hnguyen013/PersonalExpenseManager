@@ -34,8 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlIncome = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalIncomeTitle = new System.Windows.Forms.Label();
             this.lblTotalIncome = new System.Windows.Forms.Label();
+            this.lblTotalIncomeTitle = new System.Windows.Forms.Label();
             this.imgIncome = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnlExpense = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTotalExpense = new System.Windows.Forms.Label();
@@ -46,13 +46,13 @@
             this.lblBalanceTitle = new System.Windows.Forms.Label();
             this.imgBalance = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnlRecent = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvRecentTransactions = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlIncome.SuspendLayout();
             this.pnlExpense.SuspendLayout();
             this.pnlBalance.SuspendLayout();
@@ -78,20 +78,10 @@
             this.pnlIncome.Controls.Add(this.lblTotalIncomeTitle);
             this.pnlIncome.Controls.Add(this.imgIncome);
             this.pnlIncome.FillColor = System.Drawing.Color.White;
-            this.pnlIncome.Location = new System.Drawing.Point(217, 104);
+            this.pnlIncome.Location = new System.Drawing.Point(226, 104);
             this.pnlIncome.Name = "pnlIncome";
-            this.pnlIncome.Size = new System.Drawing.Size(302, 127);
+            this.pnlIncome.Size = new System.Drawing.Size(340, 127);
             this.pnlIncome.TabIndex = 2;
-            // 
-            // lblTotalIncomeTitle
-            // 
-            this.lblTotalIncomeTitle.AutoSize = true;
-            this.lblTotalIncomeTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIncomeTitle.Location = new System.Drawing.Point(105, 33);
-            this.lblTotalIncomeTitle.Name = "lblTotalIncomeTitle";
-            this.lblTotalIncomeTitle.Size = new System.Drawing.Size(100, 20);
-            this.lblTotalIncomeTitle.TabIndex = 0;
-            this.lblTotalIncomeTitle.Text = "Total Income";
             // 
             // lblTotalIncome
             // 
@@ -103,6 +93,16 @@
             this.lblTotalIncome.Size = new System.Drawing.Size(187, 38);
             this.lblTotalIncome.TabIndex = 1;
             this.lblTotalIncome.Text = "25.750.000 đ";
+            // 
+            // lblTotalIncomeTitle
+            // 
+            this.lblTotalIncomeTitle.AutoSize = true;
+            this.lblTotalIncomeTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalIncomeTitle.Location = new System.Drawing.Point(105, 33);
+            this.lblTotalIncomeTitle.Name = "lblTotalIncomeTitle";
+            this.lblTotalIncomeTitle.Size = new System.Drawing.Size(100, 20);
+            this.lblTotalIncomeTitle.TabIndex = 0;
+            this.lblTotalIncomeTitle.Text = "Total Income";
             // 
             // imgIncome
             // 
@@ -126,9 +126,9 @@
             this.pnlExpense.Controls.Add(this.lblExpenseTitle);
             this.pnlExpense.Controls.Add(this.imgExpense);
             this.pnlExpense.FillColor = System.Drawing.Color.White;
-            this.pnlExpense.Location = new System.Drawing.Point(541, 104);
+            this.pnlExpense.Location = new System.Drawing.Point(600, 104);
             this.pnlExpense.Name = "pnlExpense";
-            this.pnlExpense.Size = new System.Drawing.Size(302, 127);
+            this.pnlExpense.Size = new System.Drawing.Size(340, 127);
             this.pnlExpense.TabIndex = 3;
             // 
             // lblTotalExpense
@@ -174,9 +174,9 @@
             this.pnlBalance.Controls.Add(this.lblBalanceTitle);
             this.pnlBalance.Controls.Add(this.imgBalance);
             this.pnlBalance.FillColor = System.Drawing.Color.White;
-            this.pnlBalance.Location = new System.Drawing.Point(866, 104);
+            this.pnlBalance.Location = new System.Drawing.Point(974, 104);
             this.pnlBalance.Name = "pnlBalance";
-            this.pnlBalance.Size = new System.Drawing.Size(302, 127);
+            this.pnlBalance.Size = new System.Drawing.Size(340, 127);
             this.pnlBalance.TabIndex = 4;
             // 
             // lblBalance
@@ -220,20 +220,10 @@
             this.pnlRecent.BorderThickness = 1;
             this.pnlRecent.Controls.Add(this.dgvRecentTransactions);
             this.pnlRecent.Controls.Add(this.label1);
-            this.pnlRecent.Location = new System.Drawing.Point(217, 253);
+            this.pnlRecent.Location = new System.Drawing.Point(224, 253);
             this.pnlRecent.Name = "pnlRecent";
-            this.pnlRecent.Size = new System.Drawing.Size(951, 434);
+            this.pnlRecent.Size = new System.Drawing.Size(1090, 603);
             this.pnlRecent.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Recent Transactions";
             // 
             // dgvRecentTransactions
             // 
@@ -249,7 +239,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRecentTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvRecentTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecentTransactions.ColumnHeadersHeight = 18;
+            this.dgvRecentTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvRecentTransactions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Date,
             this.Description,
@@ -271,11 +262,10 @@
             this.dgvRecentTransactions.RowHeadersVisible = false;
             this.dgvRecentTransactions.RowHeadersWidth = 51;
             this.dgvRecentTransactions.RowTemplate.Height = 24;
-            this.dgvRecentTransactions.Size = new System.Drawing.Size(888, 353);
+            this.dgvRecentTransactions.Size = new System.Drawing.Size(1004, 510);
             this.dgvRecentTransactions.TabIndex = 1;
             this.dgvRecentTransactions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRecentTransactions.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvRecentTransactions.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecentTransactions.ThemeStyle.HeaderStyle.Height = 18;
             this.dgvRecentTransactions.ThemeStyle.ReadOnly = true;
             this.dgvRecentTransactions.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,12 +306,22 @@
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Recent Transactions";
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1196, 714);
+            this.ClientSize = new System.Drawing.Size(1382, 903);
             this.Controls.Add(this.pnlRecent);
             this.Controls.Add(this.pnlBalance);
             this.Controls.Add(this.pnlExpense);

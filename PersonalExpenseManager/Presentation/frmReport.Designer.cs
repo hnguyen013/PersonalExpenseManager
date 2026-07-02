@@ -35,6 +35,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlReportContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlExpenseChart = new Guna.UI2.WinForms.Guna2Panel();
+            this.chartExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblExpenseChartTitle = new System.Windows.Forms.Label();
+            this.pnlIncomeChart = new Guna.UI2.WinForms.Guna2Panel();
+            this.chartIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblIncomeChartTitle = new System.Windows.Forms.Label();
             this.pnlSavingsCard = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSavingsCompare = new System.Windows.Forms.Label();
             this.lblTotalSavings = new System.Windows.Forms.Label();
@@ -56,23 +62,17 @@
             this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lblDateTo = new System.Windows.Forms.Label();
-            this.pnlIncomeChart = new Guna.UI2.WinForms.Guna2Panel();
-            this.pnlExpenseChart = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblIncomeChartTitle = new System.Windows.Forms.Label();
-            this.lblExpenseChartTitle = new System.Windows.Forms.Label();
-            this.chartExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlReportContent.SuspendLayout();
+            this.pnlExpenseChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartExpense)).BeginInit();
+            this.pnlIncomeChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).BeginInit();
             this.pnlSavingsCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSavings)).BeginInit();
             this.pnlExpenseCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExpense)).BeginInit();
             this.pnlIncomeCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIncome)).BeginInit();
-            this.pnlIncomeChart.SuspendLayout();
-            this.pnlExpenseChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartExpense)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlReportContent
@@ -91,9 +91,98 @@
             this.pnlReportContent.Controls.Add(this.lblDateTo);
             this.pnlReportContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlReportContent.Location = new System.Drawing.Point(0, 0);
+            this.pnlReportContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlReportContent.Name = "pnlReportContent";
-            this.pnlReportContent.Size = new System.Drawing.Size(937, 580);
+            this.pnlReportContent.Size = new System.Drawing.Size(1382, 903);
             this.pnlReportContent.TabIndex = 2;
+            // 
+            // pnlExpenseChart
+            // 
+            this.pnlExpenseChart.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlExpenseChart.BorderRadius = 12;
+            this.pnlExpenseChart.BorderThickness = 1;
+            this.pnlExpenseChart.Controls.Add(this.chartExpense);
+            this.pnlExpenseChart.Controls.Add(this.lblExpenseChartTitle);
+            this.pnlExpenseChart.FillColor = System.Drawing.Color.White;
+            this.pnlExpenseChart.Location = new System.Drawing.Point(737, 400);
+            this.pnlExpenseChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlExpenseChart.Name = "pnlExpenseChart";
+            this.pnlExpenseChart.Size = new System.Drawing.Size(463, 299);
+            this.pnlExpenseChart.TabIndex = 12;
+            // 
+            // chartExpense
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartExpense.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartExpense.Legends.Add(legend1);
+            this.chartExpense.Location = new System.Drawing.Point(33, 44);
+            this.chartExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartExpense.Name = "chartExpense";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.chartExpense.Series.Add(series1);
+            this.chartExpense.Size = new System.Drawing.Size(413, 251);
+            this.chartExpense.TabIndex = 2;
+            this.chartExpense.Text = "chart2";
+            // 
+            // lblExpenseChartTitle
+            // 
+            this.lblExpenseChartTitle.AutoSize = true;
+            this.lblExpenseChartTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblExpenseChartTitle.Location = new System.Drawing.Point(29, 22);
+            this.lblExpenseChartTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExpenseChartTitle.Name = "lblExpenseChartTitle";
+            this.lblExpenseChartTitle.Size = new System.Drawing.Size(155, 20);
+            this.lblExpenseChartTitle.TabIndex = 0;
+            this.lblExpenseChartTitle.Text = "Expense by Category";
+            // 
+            // pnlIncomeChart
+            // 
+            this.pnlIncomeChart.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlIncomeChart.BorderRadius = 12;
+            this.pnlIncomeChart.BorderThickness = 1;
+            this.pnlIncomeChart.Controls.Add(this.chartIncome);
+            this.pnlIncomeChart.Controls.Add(this.lblIncomeChartTitle);
+            this.pnlIncomeChart.FillColor = System.Drawing.Color.White;
+            this.pnlIncomeChart.Location = new System.Drawing.Point(224, 400);
+            this.pnlIncomeChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlIncomeChart.Name = "pnlIncomeChart";
+            this.pnlIncomeChart.Size = new System.Drawing.Size(463, 299);
+            this.pnlIncomeChart.TabIndex = 11;
+            // 
+            // chartIncome
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartIncome.Legends.Add(legend2);
+            this.chartIncome.Location = new System.Drawing.Point(21, 44);
+            this.chartIncome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartIncome.Name = "chartIncome";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 2;
+            this.chartIncome.Series.Add(series2);
+            this.chartIncome.Size = new System.Drawing.Size(413, 251);
+            this.chartIncome.TabIndex = 3;
+            this.chartIncome.Text = "chart1";
+            // 
+            // lblIncomeChartTitle
+            // 
+            this.lblIncomeChartTitle.AutoSize = true;
+            this.lblIncomeChartTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblIncomeChartTitle.Location = new System.Drawing.Point(35, 22);
+            this.lblIncomeChartTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIncomeChartTitle.Name = "lblIncomeChartTitle";
+            this.lblIncomeChartTitle.Size = new System.Drawing.Size(150, 20);
+            this.lblIncomeChartTitle.TabIndex = 0;
+            this.lblIncomeChartTitle.Text = "Income by Category";
             // 
             // pnlSavingsCard
             // 
@@ -105,18 +194,20 @@
             this.pnlSavingsCard.Controls.Add(this.lblSavingsTitle);
             this.pnlSavingsCard.Controls.Add(this.picSavings);
             this.pnlSavingsCard.FillColor = System.Drawing.Color.White;
-            this.pnlSavingsCard.Location = new System.Drawing.Point(674, 192);
+            this.pnlSavingsCard.Location = new System.Drawing.Point(899, 236);
+            this.pnlSavingsCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSavingsCard.Name = "pnlSavingsCard";
-            this.pnlSavingsCard.Size = new System.Drawing.Size(226, 98);
+            this.pnlSavingsCard.Size = new System.Drawing.Size(301, 121);
             this.pnlSavingsCard.TabIndex = 10;
             // 
             // lblSavingsCompare
             // 
             this.lblSavingsCompare.AutoSize = true;
             this.lblSavingsCompare.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSavingsCompare.Location = new System.Drawing.Point(85, 66);
+            this.lblSavingsCompare.Location = new System.Drawing.Point(113, 81);
+            this.lblSavingsCompare.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSavingsCompare.Name = "lblSavingsCompare";
-            this.lblSavingsCompare.Size = new System.Drawing.Size(109, 15);
+            this.lblSavingsCompare.Size = new System.Drawing.Size(141, 20);
             this.lblSavingsCompare.TabIndex = 3;
             this.lblSavingsCompare.Text = "+0% vs last month";
             this.lblSavingsCompare.Click += new System.EventHandler(this.lblSavingsCompare_Click);
@@ -126,9 +217,10 @@
             this.lblTotalSavings.AutoSize = true;
             this.lblTotalSavings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblTotalSavings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblTotalSavings.Location = new System.Drawing.Point(85, 36);
+            this.lblTotalSavings.Location = new System.Drawing.Point(113, 44);
+            this.lblTotalSavings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalSavings.Name = "lblTotalSavings";
-            this.lblTotalSavings.Size = new System.Drawing.Size(40, 25);
+            this.lblTotalSavings.Size = new System.Drawing.Size(50, 32);
             this.lblTotalSavings.TabIndex = 2;
             this.lblTotalSavings.Text = "0 đ";
             this.lblTotalSavings.Click += new System.EventHandler(this.lblTotalSavings_Click);
@@ -137,9 +229,10 @@
             // 
             this.lblSavingsTitle.AutoSize = true;
             this.lblSavingsTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSavingsTitle.Location = new System.Drawing.Point(85, 16);
+            this.lblSavingsTitle.Location = new System.Drawing.Point(113, 20);
+            this.lblSavingsTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSavingsTitle.Name = "lblSavingsTitle";
-            this.lblSavingsTitle.Size = new System.Drawing.Size(49, 15);
+            this.lblSavingsTitle.Size = new System.Drawing.Size(62, 20);
             this.lblSavingsTitle.TabIndex = 1;
             this.lblSavingsTitle.Text = "Savings";
             this.lblSavingsTitle.Click += new System.EventHandler(this.lblSavingsTitle_Click);
@@ -148,10 +241,11 @@
             // 
             this.picSavings.Image = global::PersonalExpenseManager.Properties.Resources.save;
             this.picSavings.ImageRotate = 0F;
-            this.picSavings.Location = new System.Drawing.Point(3, 3);
+            this.picSavings.Location = new System.Drawing.Point(4, 4);
+            this.picSavings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picSavings.Name = "picSavings";
             this.picSavings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picSavings.Size = new System.Drawing.Size(76, 92);
+            this.picSavings.Size = new System.Drawing.Size(101, 113);
             this.picSavings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSavings.TabIndex = 0;
             this.picSavings.TabStop = false;
@@ -166,18 +260,20 @@
             this.pnlExpenseCard.Controls.Add(this.lblExpenseTitle);
             this.pnlExpenseCard.Controls.Add(this.picExpense);
             this.pnlExpenseCard.FillColor = System.Drawing.Color.White;
-            this.pnlExpenseCard.Location = new System.Drawing.Point(434, 192);
+            this.pnlExpenseCard.Location = new System.Drawing.Point(579, 236);
+            this.pnlExpenseCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlExpenseCard.Name = "pnlExpenseCard";
-            this.pnlExpenseCard.Size = new System.Drawing.Size(208, 98);
+            this.pnlExpenseCard.Size = new System.Drawing.Size(277, 121);
             this.pnlExpenseCard.TabIndex = 10;
             // 
             // lblExpenseCompare
             // 
             this.lblExpenseCompare.AutoSize = true;
             this.lblExpenseCompare.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblExpenseCompare.Location = new System.Drawing.Point(85, 66);
+            this.lblExpenseCompare.Location = new System.Drawing.Point(113, 81);
+            this.lblExpenseCompare.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExpenseCompare.Name = "lblExpenseCompare";
-            this.lblExpenseCompare.Size = new System.Drawing.Size(106, 15);
+            this.lblExpenseCompare.Size = new System.Drawing.Size(136, 20);
             this.lblExpenseCompare.TabIndex = 3;
             this.lblExpenseCompare.Text = "-0% vs last month";
             // 
@@ -186,9 +282,10 @@
             this.lblTotalExpense.AutoSize = true;
             this.lblTotalExpense.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblTotalExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTotalExpense.Location = new System.Drawing.Point(85, 36);
+            this.lblTotalExpense.Location = new System.Drawing.Point(113, 44);
+            this.lblTotalExpense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalExpense.Name = "lblTotalExpense";
-            this.lblTotalExpense.Size = new System.Drawing.Size(40, 25);
+            this.lblTotalExpense.Size = new System.Drawing.Size(50, 32);
             this.lblTotalExpense.TabIndex = 2;
             this.lblTotalExpense.Text = "0 đ";
             // 
@@ -196,9 +293,10 @@
             // 
             this.lblExpenseTitle.AutoSize = true;
             this.lblExpenseTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblExpenseTitle.Location = new System.Drawing.Point(85, 16);
+            this.lblExpenseTitle.Location = new System.Drawing.Point(113, 20);
+            this.lblExpenseTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExpenseTitle.Name = "lblExpenseTitle";
-            this.lblExpenseTitle.Size = new System.Drawing.Size(83, 15);
+            this.lblExpenseTitle.Size = new System.Drawing.Size(105, 20);
             this.lblExpenseTitle.TabIndex = 1;
             this.lblExpenseTitle.Text = "Total Expense";
             this.lblExpenseTitle.Click += new System.EventHandler(this.lblExpenseTitle_Click);
@@ -207,10 +305,11 @@
             // 
             this.picExpense.Image = global::PersonalExpenseManager.Properties.Resources._6085552d_cdbd_475a_8d56_647ad5bedcd1;
             this.picExpense.ImageRotate = 0F;
-            this.picExpense.Location = new System.Drawing.Point(3, 3);
+            this.picExpense.Location = new System.Drawing.Point(4, 4);
+            this.picExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picExpense.Name = "picExpense";
             this.picExpense.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picExpense.Size = new System.Drawing.Size(76, 92);
+            this.picExpense.Size = new System.Drawing.Size(101, 113);
             this.picExpense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picExpense.TabIndex = 0;
             this.picExpense.TabStop = false;
@@ -225,18 +324,20 @@
             this.pnlIncomeCard.Controls.Add(this.lblIncomeTitle);
             this.pnlIncomeCard.Controls.Add(this.picIncome);
             this.pnlIncomeCard.FillColor = System.Drawing.Color.White;
-            this.pnlIncomeCard.Location = new System.Drawing.Point(194, 192);
+            this.pnlIncomeCard.Location = new System.Drawing.Point(259, 236);
+            this.pnlIncomeCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlIncomeCard.Name = "pnlIncomeCard";
-            this.pnlIncomeCard.Size = new System.Drawing.Size(204, 98);
+            this.pnlIncomeCard.Size = new System.Drawing.Size(272, 121);
             this.pnlIncomeCard.TabIndex = 9;
             // 
             // lblIncomeCompare
             // 
             this.lblIncomeCompare.AutoSize = true;
             this.lblIncomeCompare.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblIncomeCompare.Location = new System.Drawing.Point(85, 66);
+            this.lblIncomeCompare.Location = new System.Drawing.Point(113, 81);
+            this.lblIncomeCompare.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIncomeCompare.Name = "lblIncomeCompare";
-            this.lblIncomeCompare.Size = new System.Drawing.Size(109, 15);
+            this.lblIncomeCompare.Size = new System.Drawing.Size(141, 20);
             this.lblIncomeCompare.TabIndex = 3;
             this.lblIncomeCompare.Text = "+0% vs last month";
             this.lblIncomeCompare.Click += new System.EventHandler(this.label3_Click);
@@ -246,9 +347,10 @@
             this.lblTotalIncome.AutoSize = true;
             this.lblTotalIncome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTotalIncome.Location = new System.Drawing.Point(85, 36);
+            this.lblTotalIncome.Location = new System.Drawing.Point(113, 44);
+            this.lblTotalIncome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalIncome.Name = "lblTotalIncome";
-            this.lblTotalIncome.Size = new System.Drawing.Size(40, 25);
+            this.lblTotalIncome.Size = new System.Drawing.Size(50, 32);
             this.lblTotalIncome.TabIndex = 2;
             this.lblTotalIncome.Text = "0 đ";
             // 
@@ -256,9 +358,10 @@
             // 
             this.lblIncomeTitle.AutoSize = true;
             this.lblIncomeTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncomeTitle.Location = new System.Drawing.Point(85, 16);
+            this.lblIncomeTitle.Location = new System.Drawing.Point(113, 20);
+            this.lblIncomeTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIncomeTitle.Name = "lblIncomeTitle";
-            this.lblIncomeTitle.Size = new System.Drawing.Size(79, 15);
+            this.lblIncomeTitle.Size = new System.Drawing.Size(100, 20);
             this.lblIncomeTitle.TabIndex = 1;
             this.lblIncomeTitle.Text = "Total Income";
             this.lblIncomeTitle.Click += new System.EventHandler(this.lblIncomeTitle_Click);
@@ -267,10 +370,11 @@
             // 
             this.picIncome.Image = global::PersonalExpenseManager.Properties.Resources.de9088b2_eaa8_4842_9b79_9e4b7e101e94;
             this.picIncome.ImageRotate = 0F;
-            this.picIncome.Location = new System.Drawing.Point(3, 3);
+            this.picIncome.Location = new System.Drawing.Point(4, 4);
+            this.picIncome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picIncome.Name = "picIncome";
             this.picIncome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picIncome.Size = new System.Drawing.Size(76, 92);
+            this.picIncome.Size = new System.Drawing.Size(101, 113);
             this.picIncome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picIncome.TabIndex = 0;
             this.picIncome.TabStop = false;
@@ -280,9 +384,10 @@
             // 
             this.lblDateFrom.AutoSize = true;
             this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblDateFrom.Location = new System.Drawing.Point(205, 133);
+            this.lblDateFrom.Location = new System.Drawing.Point(273, 164);
+            this.lblDateFrom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateFrom.Name = "lblDateFrom";
-            this.lblDateFrom.Size = new System.Drawing.Size(83, 16);
+            this.lblDateFrom.Size = new System.Drawing.Size(104, 20);
             this.lblDateFrom.TabIndex = 8;
             this.lblDateFrom.Text = "Date From:";
             // 
@@ -290,9 +395,10 @@
             // 
             this.lblReportTitle.AutoSize = true;
             this.lblReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportTitle.Location = new System.Drawing.Point(165, 77);
+            this.lblReportTitle.Location = new System.Drawing.Point(220, 95);
+            this.lblReportTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReportTitle.Name = "lblReportTitle";
-            this.lblReportTitle.Size = new System.Drawing.Size(82, 24);
+            this.lblReportTitle.Size = new System.Drawing.Size(105, 29);
             this.lblReportTitle.TabIndex = 7;
             this.lblReportTitle.Text = "Reports";
             // 
@@ -309,9 +415,10 @@
             this.btnExportReport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportReport.ForeColor = System.Drawing.Color.Black;
             this.btnExportReport.Image = global::PersonalExpenseManager.Properties.Resources.in21;
-            this.btnExportReport.Location = new System.Drawing.Point(702, 77);
+            this.btnExportReport.Location = new System.Drawing.Point(936, 95);
+            this.btnExportReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExportReport.Name = "btnExportReport";
-            this.btnExportReport.Size = new System.Drawing.Size(160, 37);
+            this.btnExportReport.Size = new System.Drawing.Size(213, 46);
             this.btnExportReport.TabIndex = 6;
             this.btnExportReport.Text = "Export report";
             // 
@@ -323,11 +430,12 @@
             this.dtpTo.FillColor = System.Drawing.Color.White;
             this.dtpTo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(547, 123);
+            this.dtpTo.Location = new System.Drawing.Point(729, 151);
+            this.dtpTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(133, 26);
+            this.dtpTo.Size = new System.Drawing.Size(177, 32);
             this.dtpTo.TabIndex = 5;
             this.dtpTo.Value = new System.DateTime(2026, 6, 4, 21, 16, 0, 287);
             // 
@@ -339,11 +447,12 @@
             this.dtpFrom.FillColor = System.Drawing.Color.White;
             this.dtpFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(306, 123);
+            this.dtpFrom.Location = new System.Drawing.Point(408, 151);
+            this.dtpFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(133, 26);
+            this.dtpFrom.Size = new System.Drawing.Size(177, 32);
             this.dtpFrom.TabIndex = 4;
             this.dtpFrom.Value = new System.DateTime(2026, 6, 4, 21, 16, 0, 287);
             // 
@@ -351,105 +460,31 @@
             // 
             this.lblDateTo.AutoSize = true;
             this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTo.Location = new System.Drawing.Point(462, 133);
+            this.lblDateTo.Location = new System.Drawing.Point(616, 164);
+            this.lblDateTo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(67, 16);
+            this.lblDateTo.Size = new System.Drawing.Size(82, 20);
             this.lblDateTo.TabIndex = 3;
             this.lblDateTo.Text = "Date To:";
             // 
-            // pnlIncomeChart
-            // 
-            this.pnlIncomeChart.BorderColor = System.Drawing.Color.Gainsboro;
-            this.pnlIncomeChart.BorderRadius = 12;
-            this.pnlIncomeChart.BorderThickness = 1;
-            this.pnlIncomeChart.Controls.Add(this.chartIncome);
-            this.pnlIncomeChart.Controls.Add(this.lblIncomeChartTitle);
-            this.pnlIncomeChart.FillColor = System.Drawing.Color.White;
-            this.pnlIncomeChart.Location = new System.Drawing.Point(168, 325);
-            this.pnlIncomeChart.Name = "pnlIncomeChart";
-            this.pnlIncomeChart.Size = new System.Drawing.Size(347, 243);
-            this.pnlIncomeChart.TabIndex = 11;
-            // 
-            // pnlExpenseChart
-            // 
-            this.pnlExpenseChart.BorderColor = System.Drawing.Color.Gainsboro;
-            this.pnlExpenseChart.BorderRadius = 12;
-            this.pnlExpenseChart.BorderThickness = 1;
-            this.pnlExpenseChart.Controls.Add(this.chartExpense);
-            this.pnlExpenseChart.Controls.Add(this.lblExpenseChartTitle);
-            this.pnlExpenseChart.FillColor = System.Drawing.Color.White;
-            this.pnlExpenseChart.Location = new System.Drawing.Point(553, 325);
-            this.pnlExpenseChart.Name = "pnlExpenseChart";
-            this.pnlExpenseChart.Size = new System.Drawing.Size(347, 243);
-            this.pnlExpenseChart.TabIndex = 12;
-            // 
-            // lblIncomeChartTitle
-            // 
-            this.lblIncomeChartTitle.AutoSize = true;
-            this.lblIncomeChartTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblIncomeChartTitle.Location = new System.Drawing.Point(26, 18);
-            this.lblIncomeChartTitle.Name = "lblIncomeChartTitle";
-            this.lblIncomeChartTitle.Size = new System.Drawing.Size(118, 15);
-            this.lblIncomeChartTitle.TabIndex = 0;
-            this.lblIncomeChartTitle.Text = "Income by Category";
-            // 
-            // lblExpenseChartTitle
-            // 
-            this.lblExpenseChartTitle.AutoSize = true;
-            this.lblExpenseChartTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblExpenseChartTitle.Location = new System.Drawing.Point(22, 18);
-            this.lblExpenseChartTitle.Name = "lblExpenseChartTitle";
-            this.lblExpenseChartTitle.Size = new System.Drawing.Size(122, 15);
-            this.lblExpenseChartTitle.TabIndex = 0;
-            this.lblExpenseChartTitle.Text = "Expense by Category";
-            // 
-            // chartExpense
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartExpense.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartExpense.Legends.Add(legend1);
-            this.chartExpense.Location = new System.Drawing.Point(25, 36);
-            this.chartExpense.Name = "chartExpense";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.YValuesPerPoint = 2;
-            this.chartExpense.Series.Add(series1);
-            this.chartExpense.Size = new System.Drawing.Size(310, 204);
-            this.chartExpense.TabIndex = 2;
-            this.chartExpense.Text = "chart2";
-            // 
-            // chartIncome
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartIncome.Legends.Add(legend2);
-            this.chartIncome.Location = new System.Drawing.Point(16, 36);
-            this.chartIncome.Name = "chartIncome";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 2;
-            this.chartIncome.Series.Add(series2);
-            this.chartIncome.Size = new System.Drawing.Size(310, 204);
-            this.chartIncome.TabIndex = 3;
-            this.chartIncome.Text = "chart1";
-            // 
             // frmReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 580);
+            this.ClientSize = new System.Drawing.Size(1382, 903);
             this.Controls.Add(this.pnlReportContent);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmReport";
             this.Text = "frmReport";
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.pnlReportContent.ResumeLayout(false);
             this.pnlReportContent.PerformLayout();
+            this.pnlExpenseChart.ResumeLayout(false);
+            this.pnlExpenseChart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartExpense)).EndInit();
+            this.pnlIncomeChart.ResumeLayout(false);
+            this.pnlIncomeChart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).EndInit();
             this.pnlSavingsCard.ResumeLayout(false);
             this.pnlSavingsCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSavings)).EndInit();
@@ -459,12 +494,6 @@
             this.pnlIncomeCard.ResumeLayout(false);
             this.pnlIncomeCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIncome)).EndInit();
-            this.pnlIncomeChart.ResumeLayout(false);
-            this.pnlIncomeChart.PerformLayout();
-            this.pnlExpenseChart.ResumeLayout(false);
-            this.pnlExpenseChart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartExpense)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).EndInit();
             this.ResumeLayout(false);
 
         }

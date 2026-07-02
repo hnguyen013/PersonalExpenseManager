@@ -748,7 +748,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 635);
+            this.ClientSize = new System.Drawing.Size(1382, 903);
             this.Controls.Add(this.dgvSavings);
             this.Controls.Add(this.lblLisHeader);
             this.Controls.Add(this.pnlChucNang);

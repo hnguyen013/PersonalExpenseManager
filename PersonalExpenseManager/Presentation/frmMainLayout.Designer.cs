@@ -41,7 +41,6 @@
             this.lblAppName = new System.Windows.Forms.Label();
             this.pnlTopbar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMonth = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lblHello = new System.Windows.Forms.Label();
             this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlSidebar.SuspendLayout();
@@ -67,7 +66,7 @@
             this.pnlSidebar.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(193, 714);
+            this.pnlSidebar.Size = new System.Drawing.Size(214, 903);
             this.pnlSidebar.TabIndex = 0;
             // 
             // btnTransactions
@@ -80,7 +79,7 @@
             this.btnTransactions.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactions.ForeColor = System.Drawing.Color.White;
             this.btnTransactions.ImageSize = new System.Drawing.Size(200, 45);
-            this.btnTransactions.Location = new System.Drawing.Point(12, 152);
+            this.btnTransactions.Location = new System.Drawing.Point(22, 152);
             this.btnTransactions.Name = "btnTransactions";
             this.btnTransactions.Size = new System.Drawing.Size(167, 45);
             this.btnTransactions.TabIndex = 8;
@@ -97,7 +96,7 @@
             this.btnSavings.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSavings.ForeColor = System.Drawing.Color.White;
             this.btnSavings.ImageSize = new System.Drawing.Size(200, 45);
-            this.btnSavings.Location = new System.Drawing.Point(12, 320);
+            this.btnSavings.Location = new System.Drawing.Point(22, 320);
             this.btnSavings.Name = "btnSavings";
             this.btnSavings.Size = new System.Drawing.Size(167, 45);
             this.btnSavings.TabIndex = 7;
@@ -114,7 +113,7 @@
             this.btnReport.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.ImageSize = new System.Drawing.Size(200, 45);
-            this.btnReport.Location = new System.Drawing.Point(12, 376);
+            this.btnReport.Location = new System.Drawing.Point(22, 376);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(167, 45);
             this.btnReport.TabIndex = 6;
@@ -131,7 +130,7 @@
             this.btnBudget.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBudget.ForeColor = System.Drawing.Color.White;
             this.btnBudget.ImageSize = new System.Drawing.Size(200, 45);
-            this.btnBudget.Location = new System.Drawing.Point(12, 265);
+            this.btnBudget.Location = new System.Drawing.Point(22, 265);
             this.btnBudget.Name = "btnBudget";
             this.btnBudget.Size = new System.Drawing.Size(167, 45);
             this.btnBudget.TabIndex = 5;
@@ -148,7 +147,7 @@
             this.btnCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategory.ForeColor = System.Drawing.Color.White;
             this.btnCategory.ImageSize = new System.Drawing.Size(200, 45);
-            this.btnCategory.Location = new System.Drawing.Point(12, 208);
+            this.btnCategory.Location = new System.Drawing.Point(22, 208);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(167, 45);
             this.btnCategory.TabIndex = 4;
@@ -189,7 +188,7 @@
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.ImageSize = new System.Drawing.Size(200, 45);
-            this.btnDashboard.Location = new System.Drawing.Point(12, 96);
+            this.btnDashboard.Location = new System.Drawing.Point(22, 96);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(167, 45);
             this.btnDashboard.TabIndex = 1;
@@ -211,42 +210,29 @@
             // pnlTopbar
             // 
             this.pnlTopbar.Controls.Add(this.btnMonth);
-            this.pnlTopbar.Controls.Add(this.guna2ImageButton1);
             this.pnlTopbar.Controls.Add(this.lblHello);
             this.pnlTopbar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.pnlTopbar.Location = new System.Drawing.Point(0, 0);
             this.pnlTopbar.Name = "pnlTopbar";
-            this.pnlTopbar.Size = new System.Drawing.Size(1002, 71);
+            this.pnlTopbar.Size = new System.Drawing.Size(1176, 71);
             this.pnlTopbar.TabIndex = 0;
             // 
             // btnMonth
             // 
+            this.btnMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.btnMonth.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(118)))), ((int)(((byte)(98)))));
             this.btnMonth.BorderRadius = 10;
             this.btnMonth.BorderThickness = 2;
             this.btnMonth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.btnMonth.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(118)))), ((int)(((byte)(98)))));
-            this.btnMonth.Location = new System.Drawing.Point(740, 20);
+            this.btnMonth.Location = new System.Drawing.Point(984, 15);
             this.btnMonth.Name = "btnMonth";
             this.btnMonth.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnMonth.Size = new System.Drawing.Size(200, 40);
+            this.btnMonth.Size = new System.Drawing.Size(150, 40);
             this.btnMonth.TabIndex = 1;
-            this.btnMonth.Text = "Tháng ";
             this.btnMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMonth.TextOffset = new System.Drawing.Point(3, 0);
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(961, 23);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.Size = new System.Drawing.Size(30, 30);
-            this.guna2ImageButton1.TabIndex = 1;
             // 
             // lblHello
             // 
@@ -255,24 +241,24 @@
             this.lblHello.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHello.Location = new System.Drawing.Point(27, 23);
             this.lblHello.Name = "lblHello";
-            this.lblHello.Size = new System.Drawing.Size(240, 28);
+            this.lblHello.Size = new System.Drawing.Size(120, 28);
             this.lblHello.TabIndex = 0;
-            this.lblHello.Text = "Xin chào, Nguyễn Văn A";
+            this.lblHello.Text = "Hello, user!";
             // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.pnlTopbar);
             this.pnlMain.FillColor = System.Drawing.Color.White;
-            this.pnlMain.Location = new System.Drawing.Point(193, 0);
+            this.pnlMain.Location = new System.Drawing.Point(212, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1002, 73);
+            this.pnlMain.Size = new System.Drawing.Size(1176, 71);
             this.pnlMain.TabIndex = 1;
             // 
             // frmMainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 714);
+            this.ClientSize = new System.Drawing.Size(1382, 903);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -303,7 +289,6 @@
         protected Guna.UI2.WinForms.Guna2Button btnTransactions;
         private Guna.UI2.WinForms.Guna2Panel pnlTopbar;
         protected Guna.UI2.WinForms.Guna2Button btnMonth;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private System.Windows.Forms.Label lblHello;
         protected Guna.UI2.WinForms.Guna2Panel pnlMain;
     }
