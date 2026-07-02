@@ -22,6 +22,7 @@ namespace PersonalExpenseManager.Presentation
         public frmTransactions()
         {
             InitializeComponent();
+            SetupTransactionGrid();
             dgvTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTransactions.MultiSelect = false;
             dgvTransactions.ReadOnly = true;
@@ -30,23 +31,102 @@ namespace PersonalExpenseManager.Presentation
             LoadData();
             LoadCategoryComboBox();
             dgvTransactions.CellClick += dgvTransactions_CellClick;
+
+            chkIncome.CheckedChanged += FilterChanged;
+            chkExpense.CheckedChanged += FilterChanged;
+
+            txtAmount.Enter += TextBox_Enter;
+            txtNotes.Enter += TextBox_Enter;
         }
         void LoadData()
         {
             RefreshData();
         }
+        private void SetupTransactionGrid()
+        {
+            dgvTransactions.EnableHeadersVisualStyles = false;
 
+            // Header
+            dgvTransactions.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(46, 125, 50);
+            dgvTransactions.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvTransactions.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dgvTransactions.ColumnHeadersDefaultCellStyle.Alignment =
+        DataGridViewContentAlignment.MiddleCenter;
+            dgvTransactions.ColumnHeadersHeight = 40;
+
+
+            // Body
+            dgvTransactions.BackgroundColor = Color.White;
+            dgvTransactions.GridColor = Color.FromArgb(230, 230, 230);
+
+            dgvTransactions.DefaultCellStyle.BackColor = Color.White;
+            dgvTransactions.DefaultCellStyle.ForeColor = Color.Black;
+            dgvTransactions.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(232, 245, 233);
+            dgvTransactions.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvTransactions.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(248, 248, 248);
+
+            dgvTransactions.RowTemplate.Height = 35;
+
+            dgvTransactions.BorderStyle = BorderStyle.None;
+            dgvTransactions.RowHeadersVisible = false;
+
+            dgvTransactions.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvTransactions.ColumnHeadersDefaultCellStyle.SelectionBackColor =
+                dgvTransactions.ColumnHeadersDefaultCellStyle.BackColor;
+
+            dgvTransactions.ColumnHeadersDefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            foreach (DataGridViewColumn col in dgvTransactions.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            // Date (cột 1)
+            dgvTransactions.Columns[1].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
+            // Type (cột 2)
+            dgvTransactions.Columns[2].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
+            // Amount (cột 4)
+            dgvTransactions.Columns[4].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleRight;
+        }
         void RefreshData()
         {
             dgvTransactions.Rows.Clear();
 
             List<Transaction> list = transactionDAL.ReadAll();
 
-            for (int i = 0; i < list.Count; i++)
-            {
-                Transaction t = list[i];
+            bool showIncome = chkIncome.Checked;
+            bool showExpense = chkExpense.Checked;
 
-                dgvTransactions.Rows.Add(
+            foreach (Transaction t in list)
+            {
+                // Nếu bỏ tick cả 2 thì xem như All
+                if (showIncome == false && showExpense == false)
+                {
+                    // không filter
+                }
+                else
+                {
+                    if (t.Type == "Income" && !showIncome)
+                        continue;
+
+                    if (t.Type == "Expense" && !showExpense)
+                        continue;
+                }
+
+                int row = dgvTransactions.Rows.Add(
                     t.Id,
                     t.Date.ToShortDateString(),
                     t.Type,
@@ -54,7 +134,28 @@ namespace PersonalExpenseManager.Presentation
                     t.Amount,
                     t.Notes
                 );
+
+                DataGridViewCell amountCell = dgvTransactions.Rows[row].Cells[4];
+
+                if (t.Type == "Income")
+                {
+                    amountCell.Value = "+" + t.Amount.ToString("N0") + " đ";
+                    amountCell.Style.ForeColor = Color.Green;
+                    amountCell.Style.SelectionForeColor = Color.Green;
+                }
+                else
+                {
+                    amountCell.Value = "-" + t.Amount.ToString("N0") + " đ";
+                    amountCell.Style.ForeColor = Color.Red;
+                    amountCell.Style.SelectionForeColor = Color.Red;
+                }
+
+                amountCell.Style.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             }
+        }
+        private void FilterChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
         private void frmTransactions_Load(object sender, EventArgs e)
         {
@@ -219,6 +320,13 @@ namespace PersonalExpenseManager.Presentation
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+            if (sender is Guna.UI2.WinForms.Guna2TextBox tb)
+            {
+                tb.BeginInvoke(new Action(() => tb.SelectAll()));
+            }
         }
     }
 }
