@@ -82,6 +82,7 @@
             this.pnlIncome.Name = "pnlIncome";
             this.pnlIncome.Size = new System.Drawing.Size(340, 127);
             this.pnlIncome.TabIndex = 2;
+            this.pnlIncome.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlIncome_Paint);
             // 
             // lblTotalIncome
             // 
