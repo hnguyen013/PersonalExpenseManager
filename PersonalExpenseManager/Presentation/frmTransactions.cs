@@ -37,6 +37,7 @@ namespace PersonalExpenseManager.Presentation
 
             txtAmount.Enter += TextBox_Enter;
             txtNotes.Enter += TextBox_Enter;
+
         }
         void LoadData()
         {
@@ -110,6 +111,9 @@ namespace PersonalExpenseManager.Presentation
             bool showIncome = chkIncome.Checked;
             bool showExpense = chkExpense.Checked;
 
+            double income = 0;
+            double expense = 0;
+
             foreach (Transaction t in list)
             {
                 // Nếu bỏ tick cả 2 thì xem như All
@@ -150,8 +154,18 @@ namespace PersonalExpenseManager.Presentation
                     amountCell.Style.SelectionForeColor = Color.Red;
                 }
 
+                if (t.Type == "Income")
+                    income += t.Amount;
+                else
+                    expense += t.Amount;
+
                 amountCell.Style.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             }
+
+            lblTotalIncome.Text = income.ToString("N0") + " đ";
+            lblTotalExpense.Text = expense.ToString("N0") + " đ";
+            lblBalance.Text = (income - expense).ToString("N0") + " đ";
+
         }
         private void FilterChanged(object sender, EventArgs e)
         {
