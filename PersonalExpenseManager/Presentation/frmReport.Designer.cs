@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlReportContent = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlExpenseChart = new Guna.UI2.WinForms.Guna2Panel();
             this.chartExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -91,10 +91,11 @@
             this.pnlReportContent.Controls.Add(this.lblDateTo);
             this.pnlReportContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlReportContent.Location = new System.Drawing.Point(0, 0);
-            this.pnlReportContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlReportContent.Margin = new System.Windows.Forms.Padding(4);
             this.pnlReportContent.Name = "pnlReportContent";
             this.pnlReportContent.Size = new System.Drawing.Size(1382, 903);
             this.pnlReportContent.TabIndex = 2;
+            this.pnlReportContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlReportContent_Paint);
             // 
             // pnlExpenseChart
             // 
@@ -104,28 +105,28 @@
             this.pnlExpenseChart.Controls.Add(this.chartExpense);
             this.pnlExpenseChart.Controls.Add(this.lblExpenseChartTitle);
             this.pnlExpenseChart.FillColor = System.Drawing.Color.White;
-            this.pnlExpenseChart.Location = new System.Drawing.Point(737, 400);
-            this.pnlExpenseChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlExpenseChart.Location = new System.Drawing.Point(780, 400);
+            this.pnlExpenseChart.Margin = new System.Windows.Forms.Padding(4);
             this.pnlExpenseChart.Name = "pnlExpenseChart";
-            this.pnlExpenseChart.Size = new System.Drawing.Size(463, 299);
+            this.pnlExpenseChart.Size = new System.Drawing.Size(589, 479);
             this.pnlExpenseChart.TabIndex = 12;
             // 
             // chartExpense
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartExpense.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartExpense.Legends.Add(legend1);
-            this.chartExpense.Location = new System.Drawing.Point(33, 44);
-            this.chartExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea5.Name = "ChartArea1";
+            this.chartExpense.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartExpense.Legends.Add(legend5);
+            this.chartExpense.Location = new System.Drawing.Point(56, 63);
+            this.chartExpense.Margin = new System.Windows.Forms.Padding(4);
             this.chartExpense.Name = "chartExpense";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.YValuesPerPoint = 2;
-            this.chartExpense.Series.Add(series1);
-            this.chartExpense.Size = new System.Drawing.Size(413, 251);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            series5.YValuesPerPoint = 2;
+            this.chartExpense.Series.Add(series5);
+            this.chartExpense.Size = new System.Drawing.Size(497, 386);
             this.chartExpense.TabIndex = 2;
             this.chartExpense.Text = "chart2";
             // 
@@ -133,12 +134,13 @@
             // 
             this.lblExpenseChartTitle.AutoSize = true;
             this.lblExpenseChartTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblExpenseChartTitle.Location = new System.Drawing.Point(29, 22);
+            this.lblExpenseChartTitle.Location = new System.Drawing.Point(214, 23);
             this.lblExpenseChartTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExpenseChartTitle.Name = "lblExpenseChartTitle";
             this.lblExpenseChartTitle.Size = new System.Drawing.Size(155, 20);
             this.lblExpenseChartTitle.TabIndex = 0;
             this.lblExpenseChartTitle.Text = "Expense by Category";
+            this.lblExpenseChartTitle.Click += new System.EventHandler(this.lblExpenseChartTitle_Click);
             // 
             // pnlIncomeChart
             // 
@@ -149,27 +151,27 @@
             this.pnlIncomeChart.Controls.Add(this.lblIncomeChartTitle);
             this.pnlIncomeChart.FillColor = System.Drawing.Color.White;
             this.pnlIncomeChart.Location = new System.Drawing.Point(224, 400);
-            this.pnlIncomeChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlIncomeChart.Margin = new System.Windows.Forms.Padding(4);
             this.pnlIncomeChart.Name = "pnlIncomeChart";
-            this.pnlIncomeChart.Size = new System.Drawing.Size(463, 299);
+            this.pnlIncomeChart.Size = new System.Drawing.Size(548, 479);
             this.pnlIncomeChart.TabIndex = 11;
             // 
             // chartIncome
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartIncome.Legends.Add(legend2);
-            this.chartIncome.Location = new System.Drawing.Point(21, 44);
-            this.chartIncome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            chartArea6.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartIncome.Legends.Add(legend6);
+            this.chartIncome.Location = new System.Drawing.Point(21, 63);
+            this.chartIncome.Margin = new System.Windows.Forms.Padding(4);
             this.chartIncome.Name = "chartIncome";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 2;
-            this.chartIncome.Series.Add(series2);
-            this.chartIncome.Size = new System.Drawing.Size(413, 251);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            series6.YValuesPerPoint = 2;
+            this.chartIncome.Series.Add(series6);
+            this.chartIncome.Size = new System.Drawing.Size(497, 386);
             this.chartIncome.TabIndex = 3;
             this.chartIncome.Text = "chart1";
             // 
@@ -177,7 +179,7 @@
             // 
             this.lblIncomeChartTitle.AutoSize = true;
             this.lblIncomeChartTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblIncomeChartTitle.Location = new System.Drawing.Point(35, 22);
+            this.lblIncomeChartTitle.Location = new System.Drawing.Point(157, 23);
             this.lblIncomeChartTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIncomeChartTitle.Name = "lblIncomeChartTitle";
             this.lblIncomeChartTitle.Size = new System.Drawing.Size(150, 20);
@@ -194,10 +196,10 @@
             this.pnlSavingsCard.Controls.Add(this.lblSavingsTitle);
             this.pnlSavingsCard.Controls.Add(this.picSavings);
             this.pnlSavingsCard.FillColor = System.Drawing.Color.White;
-            this.pnlSavingsCard.Location = new System.Drawing.Point(899, 236);
-            this.pnlSavingsCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSavingsCard.Location = new System.Drawing.Point(997, 240);
+            this.pnlSavingsCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSavingsCard.Name = "pnlSavingsCard";
-            this.pnlSavingsCard.Size = new System.Drawing.Size(301, 121);
+            this.pnlSavingsCard.Size = new System.Drawing.Size(372, 121);
             this.pnlSavingsCard.TabIndex = 10;
             // 
             // lblSavingsCompare
@@ -242,7 +244,7 @@
             this.picSavings.Image = global::PersonalExpenseManager.Properties.Resources.save;
             this.picSavings.ImageRotate = 0F;
             this.picSavings.Location = new System.Drawing.Point(4, 4);
-            this.picSavings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picSavings.Margin = new System.Windows.Forms.Padding(4);
             this.picSavings.Name = "picSavings";
             this.picSavings.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picSavings.Size = new System.Drawing.Size(101, 113);
@@ -260,10 +262,10 @@
             this.pnlExpenseCard.Controls.Add(this.lblExpenseTitle);
             this.pnlExpenseCard.Controls.Add(this.picExpense);
             this.pnlExpenseCard.FillColor = System.Drawing.Color.White;
-            this.pnlExpenseCard.Location = new System.Drawing.Point(579, 236);
-            this.pnlExpenseCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlExpenseCard.Location = new System.Drawing.Point(608, 236);
+            this.pnlExpenseCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlExpenseCard.Name = "pnlExpenseCard";
-            this.pnlExpenseCard.Size = new System.Drawing.Size(277, 121);
+            this.pnlExpenseCard.Size = new System.Drawing.Size(372, 121);
             this.pnlExpenseCard.TabIndex = 10;
             // 
             // lblExpenseCompare
@@ -306,7 +308,7 @@
             this.picExpense.Image = global::PersonalExpenseManager.Properties.Resources._6085552d_cdbd_475a_8d56_647ad5bedcd1;
             this.picExpense.ImageRotate = 0F;
             this.picExpense.Location = new System.Drawing.Point(4, 4);
-            this.picExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picExpense.Margin = new System.Windows.Forms.Padding(4);
             this.picExpense.Name = "picExpense";
             this.picExpense.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picExpense.Size = new System.Drawing.Size(101, 113);
@@ -324,10 +326,10 @@
             this.pnlIncomeCard.Controls.Add(this.lblIncomeTitle);
             this.pnlIncomeCard.Controls.Add(this.picIncome);
             this.pnlIncomeCard.FillColor = System.Drawing.Color.White;
-            this.pnlIncomeCard.Location = new System.Drawing.Point(259, 236);
-            this.pnlIncomeCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlIncomeCard.Location = new System.Drawing.Point(225, 236);
+            this.pnlIncomeCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlIncomeCard.Name = "pnlIncomeCard";
-            this.pnlIncomeCard.Size = new System.Drawing.Size(272, 121);
+            this.pnlIncomeCard.Size = new System.Drawing.Size(372, 121);
             this.pnlIncomeCard.TabIndex = 9;
             // 
             // lblIncomeCompare
@@ -371,7 +373,7 @@
             this.picIncome.Image = global::PersonalExpenseManager.Properties.Resources.de9088b2_eaa8_4842_9b79_9e4b7e101e94;
             this.picIncome.ImageRotate = 0F;
             this.picIncome.Location = new System.Drawing.Point(4, 4);
-            this.picIncome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picIncome.Margin = new System.Windows.Forms.Padding(4);
             this.picIncome.Name = "picIncome";
             this.picIncome.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picIncome.Size = new System.Drawing.Size(101, 113);
@@ -383,11 +385,11 @@
             // lblDateFrom
             // 
             this.lblDateFrom.AutoSize = true;
-            this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblDateFrom.Location = new System.Drawing.Point(273, 164);
+            this.lblDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateFrom.Location = new System.Drawing.Point(269, 158);
             this.lblDateFrom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateFrom.Name = "lblDateFrom";
-            this.lblDateFrom.Size = new System.Drawing.Size(104, 20);
+            this.lblDateFrom.Size = new System.Drawing.Size(119, 25);
             this.lblDateFrom.TabIndex = 8;
             this.lblDateFrom.Text = "Date From:";
             // 
@@ -412,13 +414,13 @@
             this.btnExportReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnExportReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExportReport.FillColor = System.Drawing.Color.White;
-            this.btnExportReport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportReport.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportReport.ForeColor = System.Drawing.Color.Black;
             this.btnExportReport.Image = global::PersonalExpenseManager.Properties.Resources.in21;
-            this.btnExportReport.Location = new System.Drawing.Point(936, 95);
-            this.btnExportReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportReport.Location = new System.Drawing.Point(1062, 95);
+            this.btnExportReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportReport.Name = "btnExportReport";
-            this.btnExportReport.Size = new System.Drawing.Size(213, 46);
+            this.btnExportReport.Size = new System.Drawing.Size(307, 77);
             this.btnExportReport.TabIndex = 6;
             this.btnExportReport.Text = "Export report";
             // 
@@ -431,11 +433,11 @@
             this.dtpTo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTo.Location = new System.Drawing.Point(729, 151);
-            this.dtpTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTo.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(177, 32);
+            this.dtpTo.Size = new System.Drawing.Size(188, 32);
             this.dtpTo.TabIndex = 5;
             this.dtpTo.Value = new System.DateTime(2026, 6, 4, 21, 16, 0, 287);
             // 
@@ -448,22 +450,22 @@
             this.dtpFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFrom.Location = new System.Drawing.Point(408, 151);
-            this.dtpFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFrom.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(177, 32);
+            this.dtpFrom.Size = new System.Drawing.Size(189, 32);
             this.dtpFrom.TabIndex = 4;
             this.dtpFrom.Value = new System.DateTime(2026, 6, 4, 21, 16, 0, 287);
             // 
             // lblDateTo
             // 
             this.lblDateTo.AutoSize = true;
-            this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTo.Location = new System.Drawing.Point(616, 164);
+            this.lblDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateTo.Location = new System.Drawing.Point(617, 158);
             this.lblDateTo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(82, 20);
+            this.lblDateTo.Size = new System.Drawing.Size(96, 25);
             this.lblDateTo.TabIndex = 3;
             this.lblDateTo.Text = "Date To:";
             // 
@@ -473,7 +475,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 903);
             this.Controls.Add(this.pnlReportContent);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmReport";
             this.Text = "frmReport";
             this.Load += new System.EventHandler(this.frmReport_Load);

@@ -226,5 +226,15 @@ namespace PersonalExpenseManager
         {
 
         }
+
+        private void lblExpenseChartTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlReportContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
