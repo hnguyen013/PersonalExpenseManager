@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudget));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.pnlAddBudet = new Guna.UI2.WinForms.Guna2Panel();
             this.cmbPeriod = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -68,6 +68,11 @@
             this.lblBalance = new System.Windows.Forms.Label();
             this.lblBalanceTitle = new System.Windows.Forms.Label();
             this.imgBalance = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.chkDaily = new System.Windows.Forms.CheckBox();
+            this.chkWeekly = new System.Windows.Forms.CheckBox();
+            this.chkMonthly = new System.Windows.Forms.CheckBox();
+            this.chkYearly = new System.Windows.Forms.CheckBox();
+            this.lblBugetslist = new System.Windows.Forms.Label();
             this.pnlAddBudet.SuspendLayout();
             this.pnlChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvButdgets)).BeginInit();
@@ -84,7 +89,8 @@
             this.lblMainTitle.Name = "lblMainTitle";
             this.lblMainTitle.Size = new System.Drawing.Size(107, 38);
             this.lblMainTitle.TabIndex = 2;
-            this.lblMainTitle.Text = "Bugets";
+            this.lblMainTitle.Text = "Budets";
+            this.lblMainTitle.Click += new System.EventHandler(this.lblMainTitle_Click);
             // 
             // pnlAddBudet
             // 
@@ -342,16 +348,16 @@
             // 
             // dgvButdgets
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvButdgets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvButdgets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvButdgets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvButdgets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvButdgets.ColumnHeadersHeight = 19;
             this.dgvButdgets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvButdgets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -361,21 +367,21 @@
             this.colSpent,
             this.ColProgress,
             this.ColPeriod});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvButdgets.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvButdgets.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvButdgets.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvButdgets.Location = new System.Drawing.Point(254, 561);
+            this.dgvButdgets.Location = new System.Drawing.Point(254, 574);
             this.dgvButdgets.Name = "dgvButdgets";
             this.dgvButdgets.RowHeadersVisible = false;
             this.dgvButdgets.RowHeadersWidth = 51;
             this.dgvButdgets.RowTemplate.Height = 24;
-            this.dgvButdgets.Size = new System.Drawing.Size(1073, 234);
+            this.dgvButdgets.Size = new System.Drawing.Size(1073, 221);
             this.dgvButdgets.TabIndex = 5;
             this.dgvButdgets.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvButdgets.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -566,12 +572,85 @@
             this.imgBalance.Size = new System.Drawing.Size(106, 100);
             this.imgBalance.TabIndex = 2;
             // 
+            // chkDaily
+            // 
+            this.chkDaily.AutoSize = true;
+            this.chkDaily.Checked = true;
+            this.chkDaily.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkDaily.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkDaily.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.chkDaily.Location = new System.Drawing.Point(951, 544);
+            this.chkDaily.Name = "chkDaily";
+            this.chkDaily.Size = new System.Drawing.Size(74, 24);
+            this.chkDaily.TabIndex = 8;
+            this.chkDaily.Text = "Daily";
+            this.chkDaily.UseVisualStyleBackColor = true;
+            this.chkDaily.CheckedChanged += new System.EventHandler(this.chkIncome_CheckedChanged);
+            // 
+            // chkWeekly
+            // 
+            this.chkWeekly.AutoSize = true;
+            this.chkWeekly.Checked = true;
+            this.chkWeekly.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkWeekly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkWeekly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.chkWeekly.Location = new System.Drawing.Point(1040, 544);
+            this.chkWeekly.Name = "chkWeekly";
+            this.chkWeekly.Size = new System.Drawing.Size(91, 24);
+            this.chkWeekly.TabIndex = 9;
+            this.chkWeekly.Text = "Weekly";
+            this.chkWeekly.UseVisualStyleBackColor = true;
+            // 
+            // chkMonthly
+            // 
+            this.chkMonthly.AutoSize = true;
+            this.chkMonthly.Checked = true;
+            this.chkMonthly.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMonthly.ForeColor = System.Drawing.Color.Gray;
+            this.chkMonthly.Location = new System.Drawing.Point(1155, 544);
+            this.chkMonthly.Name = "chkMonthly";
+            this.chkMonthly.Size = new System.Drawing.Size(96, 24);
+            this.chkMonthly.TabIndex = 10;
+            this.chkMonthly.Text = "Monthly\n";
+            this.chkMonthly.UseVisualStyleBackColor = true;
+            // 
+            // chkYearly
+            // 
+            this.chkYearly.AutoSize = true;
+            this.chkYearly.Checked = true;
+            this.chkYearly.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkYearly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkYearly.ForeColor = System.Drawing.Color.Blue;
+            this.chkYearly.Location = new System.Drawing.Point(1266, 544);
+            this.chkYearly.Name = "chkYearly";
+            this.chkYearly.Size = new System.Drawing.Size(83, 24);
+            this.chkYearly.TabIndex = 11;
+            this.chkYearly.Text = "Yearly";
+            this.chkYearly.UseVisualStyleBackColor = true;
+            // 
+            // lblBugetslist
+            // 
+            this.lblBugetslist.AutoSize = true;
+            this.lblBugetslist.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblBugetslist.ForeColor = System.Drawing.Color.Green;
+            this.lblBugetslist.Location = new System.Drawing.Point(239, 541);
+            this.lblBugetslist.Name = "lblBugetslist";
+            this.lblBugetslist.Size = new System.Drawing.Size(120, 25);
+            this.lblBugetslist.TabIndex = 12;
+            this.lblBugetslist.Text = "Budgets List";
+            // 
             // frmBudget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1382, 903);
+            this.Controls.Add(this.lblBugetslist);
+            this.Controls.Add(this.chkYearly);
+            this.Controls.Add(this.chkMonthly);
+            this.Controls.Add(this.chkWeekly);
+            this.Controls.Add(this.chkDaily);
             this.Controls.Add(this.pnlBalance);
             this.Controls.Add(this.pnlExpense);
             this.Controls.Add(this.pnlIncome);
@@ -634,5 +713,10 @@
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label lblBalanceTitle;
         private Guna.UI2.WinForms.Guna2ImageButton imgBalance;
+        private System.Windows.Forms.CheckBox chkDaily;
+        private System.Windows.Forms.CheckBox chkWeekly;
+        private System.Windows.Forms.CheckBox chkMonthly;
+        private System.Windows.Forms.CheckBox chkYearly;
+        private System.Windows.Forms.Label lblBugetslist;
     }
 }

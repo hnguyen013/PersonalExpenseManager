@@ -18,7 +18,7 @@ namespace PersonalExpenseManager
     {
         BudgetDAL budgetDAL = new BudgetDAL();
         ICategoryDAL categoryDAL = new CategoryDAL();
-
+        ITransactionDAL transactionDAL = new TransactionDAL();
         string selectedBudgetId = "";
         public frmBudget()
         {
@@ -27,6 +27,14 @@ namespace PersonalExpenseManager
             btnBudget.FillColor = Color.FromArgb(239, 196, 85);
             btnBudget.ForeColor = Color.FromArgb(47, 93, 80);
             this.Load += frmBudget_Load;
+            chkDaily.CheckedChanged += FilterChanged;
+            chkWeekly.CheckedChanged += FilterChanged;
+            chkMonthly.CheckedChanged += FilterChanged;
+            chkYearly.CheckedChanged += FilterChanged;
+        }
+        private void FilterChanged(object sender, EventArgs e)
+        {
+            LoadBudgets(); // Gọi làm mới lại dữ liệu khi nhấn thay đổi bộ lọc
         }
 
         private void SetupBudgetGrid()
@@ -79,7 +87,33 @@ namespace PersonalExpenseManager
             {
                 dgvButdgets.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
+
+            if (dgvButdgets.Columns.Count > 4)
+            {
+                dgvButdgets.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+   
         }
+
+        private void RefreshTopStats()
+        {
+            List<Transaction> listTrans = transactionDAL.ReadAll();
+            double income = 0;
+            double expense = 0;
+
+            foreach (Transaction t in listTrans)
+            {
+                if (t.Type == "Income")
+                    income += t.Amount;
+                else
+                    expense += t.Amount;
+            }
+
+            lblTotalIncome.Text = income.ToString("N0") + " đ";
+            lblTotalExpense.Text = expense.ToString("N0") + " đ";
+            lblBalance.Text = (income - expense).ToString("N0") + " đ";
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -111,8 +145,25 @@ namespace PersonalExpenseManager
 
             List<Category> categories = categoryDAL.ReadAll();
 
+            bool showDaily = chkDaily.Checked;
+            bool showWeekly = chkWeekly.Checked;
+            bool showMonthly = chkMonthly.Checked;
+            bool showYearly = chkYearly.Checked;
+
             foreach (Budget b in budgetDAL.ReadAll())
             {
+                if (showDaily == false && showWeekly == false && showMonthly == false && showYearly == false)
+                {
+                    // Không chặn gì cả, chạy thẳng xuống đoạn add dữ liệu phía dưới
+                }
+                else
+                {
+                    // Nếu có nút được tick chọn, loại bỏ các chu kỳ không phù hợp
+                    if (b.Period == "Daily" && !showDaily) continue;
+                    if (b.Period == "Weekly" && !showWeekly) continue;
+                    if (b.Period == "Monthly" && !showMonthly) continue;
+                    if (b.Period == "Yearly" && !showYearly) continue;
+                }
                 double progress = 0;
 
                 if (b.BudgetAmount > 0)
@@ -127,12 +178,12 @@ namespace PersonalExpenseManager
                     b.Id,
                     b.BudgetName,
                     categoryName,
-                    b.Spent.ToString("N0"),
+                    b.Spent.ToString("N0") + " đ",
                     progress.ToString("0.##") + "%",
                     b.Period
                 );
             }
-
+            RefreshTopStats();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -319,6 +370,16 @@ namespace PersonalExpenseManager
             txtAmont.Text = b.BudgetAmount.ToString();
             cboCategory.SelectedValue = b.CategoryID;
             cmbPeriod.Text = b.Period;
+        }
+
+        private void chkIncome_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMainTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
