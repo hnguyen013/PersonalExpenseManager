@@ -23,11 +23,63 @@ namespace PersonalExpenseManager
         public frmBudget()
         {
             InitializeComponent();
+            SetupBudgetGrid();
             btnBudget.FillColor = Color.FromArgb(239, 196, 85);
             btnBudget.ForeColor = Color.FromArgb(47, 93, 80);
             this.Load += frmBudget_Load;
         }
 
+        private void SetupBudgetGrid()
+        {
+            dgvButdgets.EnableHeadersVisualStyles = false;
+
+            // 1. Header (Tiêu đề cột): Chữ trắng, nền xanh đậm và CĂN GIỮA TOÀN BỘ
+            dgvButdgets.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(46, 125, 50);
+            dgvButdgets.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvButdgets.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvButdgets.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvButdgets.ColumnHeadersHeight = 40;
+
+            // 2. Body (Thân lưới hiển thị dữ liệu)
+            dgvButdgets.BackgroundColor = Color.White;
+            dgvButdgets.GridColor = Color.FromArgb(230, 230, 230);
+
+            dgvButdgets.DefaultCellStyle.BackColor = Color.White;
+            dgvButdgets.DefaultCellStyle.ForeColor = Color.Black;
+            dgvButdgets.DefaultCellStyle.SelectionBackColor = Color.FromArgb(232, 245, 233);
+            dgvButdgets.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvButdgets.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
+            dgvButdgets.RowTemplate.Height = 35;
+
+            dgvButdgets.BorderStyle = BorderStyle.None;
+            dgvButdgets.RowHeadersVisible = false;
+            dgvButdgets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvButdgets.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvButdgets.ColumnHeadersDefaultCellStyle.BackColor;
+            dgvButdgets.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
+            foreach (DataGridViewColumn col in dgvButdgets.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+
+                // Mặc định ban đầu cho toàn bộ các cột căn giữa
+                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            // 3. CĂN CHỈNH RIÊNG VỊ TRÍ CHO CÁC CỘT ĐẶC BIỆT
+            // Cột Budget Name (Cột thứ 2, index là 1) -> Căn trái
+            if (dgvButdgets.Columns.Count > 1)
+            {
+                dgvButdgets.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            // Cột Spent (Cột thứ 4, index là 3) -> Căn phải
+            if (dgvButdgets.Columns.Count > 3)
+            {
+                dgvButdgets.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
