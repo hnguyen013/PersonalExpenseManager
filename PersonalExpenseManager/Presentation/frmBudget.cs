@@ -17,6 +17,8 @@ namespace PersonalExpenseManager
     public partial class frmBudget : frmMainLayout
     {
         BudgetDAL budgetDAL = new BudgetDAL();
+        ICategoryDAL categoryDAL = new CategoryDAL();
+
         string selectedBudgetId = "";
         public frmBudget()
         {
@@ -55,6 +57,8 @@ namespace PersonalExpenseManager
         {
             dgvButdgets.Rows.Clear();
 
+            List<Category> categories = categoryDAL.ReadAll();
+
             foreach (Budget b in budgetDAL.ReadAll())
             {
                 double progress = 0;
@@ -64,10 +68,13 @@ namespace PersonalExpenseManager
                     progress = b.Spent / b.BudgetAmount * 100;
                 }
 
+                Category matchedCategory = categories.FirstOrDefault(c => c.Id == b.CategoryID);
+                string categoryName = matchedCategory != null ? matchedCategory.Name : b.CategoryID;
+
                 dgvButdgets.Rows.Add(
                     b.Id,
                     b.BudgetName,
-                    b.Category,
+                    categoryName,
                     b.Spent.ToString("N0"),
                     progress.ToString("0.##") + "%",
                     b.Period
@@ -96,7 +103,7 @@ namespace PersonalExpenseManager
             Budget b = new Budget(
                 budgetDAL.GetNextId(),
                 txtBudgetName.Text,
-                cboCategory.Text,
+                cboCategory.SelectedValue?.ToString(),
                 amount,
                 0,
                 cmbPeriod.Text
@@ -142,7 +149,7 @@ namespace PersonalExpenseManager
             Budget b = new Budget(
             selectedBudgetId,
             txtBudgetName.Text,
-            cboCategory.Text,
+            cboCategory.SelectedValue?.ToString(),
             amount,
             oldBudget.Spent,
             cmbPeriod.Text
@@ -231,12 +238,9 @@ namespace PersonalExpenseManager
             cmbPeriod.Items.Add("Monthly");
             cmbPeriod.Items.Add("Yearly");
 
-            cboCategory.Items.Add("Food");
-            cboCategory.Items.Add("Transport");
-            cboCategory.Items.Add("Shopping");
-            cboCategory.Items.Add("Education");
-            cboCategory.Items.Add("Health");
-            cboCategory.Items.Add("Other");
+            cboCategory.DataSource = categoryDAL.ReadAll();
+            cboCategory.DisplayMember = "Name";
+            cboCategory.ValueMember = "Id";
 
             LoadBudgets();
         }
@@ -248,7 +252,8 @@ namespace PersonalExpenseManager
 
             DataGridViewRow row = dgvButdgets.Rows[e.RowIndex];
 
-            selectedBudgetId = row.Cells["colID"].Value.ToString();
+            selectedBudgetId = row.Cells["ID"].Value.ToString();
+
 
             Budget b = budgetDAL.ReadById(selectedBudgetId);
 
@@ -260,7 +265,7 @@ namespace PersonalExpenseManager
 
             txtBudgetName.Text = b.BudgetName;
             txtAmont.Text = b.BudgetAmount.ToString();
-            cboCategory.Text = b.Category;
+            cboCategory.SelectedValue = b.CategoryID;
             cmbPeriod.Text = b.Period;
         }
     }

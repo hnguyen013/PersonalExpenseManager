@@ -19,6 +19,7 @@ namespace PersonalExpenseManager.Presentation
     {
         ITransactionDAL transactionDAL = new TransactionDAL();
         ICategoryDAL categoryDAL = new CategoryDAL();
+        IBudgetDAL budgetDAL = new BudgetDAL();
         public frmTransactions()
         {
             InitializeComponent();
@@ -134,7 +135,7 @@ namespace PersonalExpenseManager.Presentation
                     t.Id,
                     t.Date.ToShortDateString(),
                     t.Type,
-                    t.Category,
+                    t.CategoryID,
                     t.Amount,
                     t.Notes
                 );
@@ -241,14 +242,19 @@ namespace PersonalExpenseManager.Presentation
 
             string id = TaoMaTuDong();
             string type = cmbTransactionType.Text;
-            string category = cmbCategory.Text;
+            string category = cmbCategory.SelectedValue?.ToString();
             DateTime date = dtpDate.Value;
             string notes = txtNotes.Text;
+            string budgetId = cmbBudget.SelectedValue?.ToString();
 
-            Transaction t = new Transaction(id, type, category, amount, date, notes);
+            Transaction t = new Transaction(id, type, category, amount, date, notes, budgetId);
 
             if (transactionDAL.Create(t))
             {
+                if (type == "Expense" && !string.IsNullOrEmpty(budgetId))
+                {
+                    budgetDAL.UpdateSpentById(budgetId, amount);
+                }
                 RefreshData();
                 ResetForm();
             }
@@ -268,8 +274,15 @@ namespace PersonalExpenseManager.Presentation
 
             string id = dgvTransactions.SelectedRows[0].Cells[0].Value.ToString();
 
+            Transaction old = transactionDAL.ReadById(id);
+
             if (transactionDAL.DeleteById(id))
             {
+                if (old != null && old.Type == "Expense" && !string.IsNullOrEmpty(old.BudgetId))
+                {
+                    budgetDAL.UpdateSpentByCategory(old.CategoryID, -old.Amount);
+                }
+
                 RefreshData();
                 ResetForm();
             }
@@ -305,30 +318,84 @@ namespace PersonalExpenseManager.Presentation
                 return;
             }
 
-            DataGridViewRow row = dgvTransactions.CurrentRow;
+            if (cmbTransactionType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại giao dịch");
+                return;
+            }
 
-            row.Cells["Type"].Value = cmbTransactionType.Text;
-            row.Cells["Category"].Value = cmbCategory.Text;
-            row.Cells["Date"].Value = dtpDate.Value.ToShortDateString();
+            if (cmbCategory.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn danh mục");
+                return;
+            }
 
-            row.Cells["Amount"].Value = txtAmount.Text;
-            row.Cells["Notes"].Value = txtNotes.Text;
+            double amount;
+            if (double.TryParse(txtAmount.Text, out amount) == false)
+            {
+                MessageBox.Show("Vui lòng nhập số tiền hợp lệ");
+                return;
+            }
 
-            MessageBox.Show("Updated successfully!");
+            string id = dgvTransactions.CurrentRow.Cells["ID"].Value.ToString();
+            string type = cmbTransactionType.Text;
+            string category = cmbCategory.SelectedValue?.ToString();
+            DateTime date = dtpDate.Value;
+            string notes = txtNotes.Text;
+            string budgetId = cmbBudget.SelectedValue?.ToString();
+
+            Transaction t = new Transaction(id, type, category, amount, date, notes, budgetId);
+
+            if (transactionDAL.Update(t))
+            {
+                MessageBox.Show("Updated successfully!");
+                RefreshData();
+                ResetForm();
+            }
+            else
+            {
+                MessageBox.Show(transactionDAL.GetError());
+            }
         }
         private void LoadCategoryComboBox()
         {
-            cmbCategory.Items.Clear();
-
-            foreach (Category c in categoryDAL.ReadAll())
-            {
-                cmbCategory.Items.Add(c.Name);
-            }
+            cmbCategory.DataSource = categoryDAL.ReadAll();
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";
 
             if (cmbCategory.Items.Count > 0)
             {
                 cmbCategory.SelectedIndex = 0;
             }
+
+            cmbCategory.SelectedIndexChanged += CmbCategory_SelectedIndexChanged;
+            LoadBudgetComboBox();
+        }
+
+        private void CmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadBudgetComboBox();
+        }
+
+        private void LoadBudgetComboBox()
+        {
+            string selectedCategoryId = cmbCategory.SelectedValue?.ToString();
+
+            List<Budget> options = new List<Budget>();
+            options.Add(new Budget("", "-- No budget --", "", 0, 0, ""));
+
+            if (!string.IsNullOrEmpty(selectedCategoryId))
+            {
+                var matched = budgetDAL.ReadAll()
+                    .Where(b => b.CategoryID == selectedCategoryId)
+                    .ToList();
+                options.AddRange(matched);
+            }
+
+            cmbBudget.DataSource = options;
+            cmbBudget.DisplayMember = "BudgetName";
+            cmbBudget.ValueMember = "ID";
+            cmbBudget.SelectedIndex = 0;
         }
 
         private void label3_Click(object sender, EventArgs e)

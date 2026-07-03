@@ -22,15 +22,15 @@ namespace PersonalExpenseManager.DAL
                 conn.Open();
 
                 string sql = @"INSERT INTO budgets
-                               (ID, BudgetName, Category, BudgetAmount, Spent, Period)
+                               (ID, BudgetName, CategoryID, BudgetAmount, Spent, Period)
                                VALUES
-                               (@ID, @BudgetName, @Category, @BudgetAmount, @Spent, @Period)";
+                               (@ID, @BudgetName, @CategoryID, @BudgetAmount, @Spent, @Period)";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@ID", b.Id);
                 cmd.Parameters.AddWithValue("@BudgetName", b.BudgetName);
-                cmd.Parameters.AddWithValue("@Category", b.Category);
+                cmd.Parameters.AddWithValue("@CategoryID", b.CategoryID);
                 cmd.Parameters.AddWithValue("@BudgetAmount", b.BudgetAmount);
                 cmd.Parameters.AddWithValue("@Spent", b.Spent);
                 cmd.Parameters.AddWithValue("@Period", b.Period);
@@ -67,7 +67,7 @@ namespace PersonalExpenseManager.DAL
                     Budget b = new Budget(
                         reader["ID"].ToString(),
                         reader["BudgetName"].ToString(),
-                        reader["Category"].ToString(),
+                        reader["categoryId"].ToString(),
                         Convert.ToDouble(reader["BudgetAmount"]),
                         Convert.ToDouble(reader["Spent"]),
                         reader["Period"].ToString()
@@ -109,7 +109,7 @@ namespace PersonalExpenseManager.DAL
                     Budget b = new Budget(
                         reader["ID"].ToString(),
                         reader["BudgetName"].ToString(),
-                        reader["Category"].ToString(),
+                        reader["categoryId"].ToString(),
                         Convert.ToDouble(reader["BudgetAmount"]),
                         Convert.ToDouble(reader["Spent"]),
                         reader["Period"].ToString()
@@ -143,7 +143,7 @@ namespace PersonalExpenseManager.DAL
 
                 string sql = @"UPDATE budgets SET
                                BudgetName = @BudgetName,
-                               Category = @Category,
+                               CategoryID = @CategoryID,
                                BudgetAmount = @BudgetAmount,
                                Spent = @Spent,
                                Period = @Period
@@ -153,7 +153,7 @@ namespace PersonalExpenseManager.DAL
 
                 cmd.Parameters.AddWithValue("@ID", b.Id);
                 cmd.Parameters.AddWithValue("@BudgetName", b.BudgetName);
-                cmd.Parameters.AddWithValue("@Category", b.Category);
+                cmd.Parameters.AddWithValue("@CategoryID", b.CategoryID);
                 cmd.Parameters.AddWithValue("@BudgetAmount", b.BudgetAmount);
                 cmd.Parameters.AddWithValue("@Spent", b.Spent);
                 cmd.Parameters.AddWithValue("@Period", b.Period);
@@ -244,10 +244,68 @@ namespace PersonalExpenseManager.DAL
                 conn.Close();
             }
         }
+        public bool UpdateSpentByCategory(string categoryId, double amount)
+        {
+            SQLiteConnection conn = new SQLiteConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = @"UPDATE budgets SET
+                       Spent = Spent + @Amount
+                       WHERE CategoryID = @CategoryID";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Amount", amount);
+                cmd.Parameters.AddWithValue("@CategoryID", categoryId);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         public string GetError()
         {
             return error;
+        }
+        public bool UpdateSpentById(string budgetId, double amount)
+        {
+            SQLiteConnection conn = new SQLiteConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string sql = @"UPDATE budgets SET
+                               Spent = Spent + @Amount
+                               WHERE ID = @BudgetId";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Amount", amount);
+                cmd.Parameters.AddWithValue("@BudgetId", budgetId);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
         public string GetNextId()
         {

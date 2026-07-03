@@ -10,7 +10,7 @@ namespace PersonalExpenseManager.Entity
     {
         string id;
         string budgetName;
-        string category;
+        string categoryId;
         double budgetAmount;
         double spent;
         string period;
@@ -19,12 +19,12 @@ namespace PersonalExpenseManager.Entity
         {
         }
 
-        public Budget(string id, string budgetName, string category,
+        public Budget(string id, string budgetName, string categoryId,
             double budgetAmount, double spent, string period)
         {
             this.id = id;
             this.budgetName = budgetName;
-            this.category = category;
+            this.categoryId = categoryId;
             this.budgetAmount = budgetAmount;
             this.spent = spent;
             this.period = period;
@@ -32,7 +32,7 @@ namespace PersonalExpenseManager.Entity
 
         public string Id { get => id; set => id = value; }
         public string BudgetName { get => budgetName; set => budgetName = value; }
-        public string Category { get => category; set => category = value; }
+        public string CategoryID { get => categoryId; set => categoryId = value; }
         public double BudgetAmount { get => budgetAmount; set => budgetAmount = value; }
         public double Spent { get => spent; set => spent = value; }
         public string Period { get => period; set => period = value; }

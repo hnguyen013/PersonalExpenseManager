@@ -61,6 +61,8 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTransactionInfo = new Guna.UI2.WinForms.Guna2Panel();
+            this.cmbBudget = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -110,7 +112,7 @@
             this.chkExpense.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.chkExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.chkExpense.Location = new System.Drawing.Point(1040, 479);
+            this.chkExpense.Location = new System.Drawing.Point(1034, 476);
             this.chkExpense.Name = "chkExpense";
             this.chkExpense.Size = new System.Drawing.Size(102, 24);
             this.chkExpense.TabIndex = 8;
@@ -124,7 +126,7 @@
             this.chkIncome.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
-            this.chkIncome.Location = new System.Drawing.Point(930, 479);
+            this.chkIncome.Location = new System.Drawing.Point(924, 476);
             this.chkIncome.Name = "chkIncome";
             this.chkIncome.Size = new System.Drawing.Size(91, 24);
             this.chkIncome.TabIndex = 7;
@@ -311,13 +313,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTransactions.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTransactions.GridColor = System.Drawing.Color.Silver;
-            this.dgvTransactions.Location = new System.Drawing.Point(53, 517);
+            this.dgvTransactions.Location = new System.Drawing.Point(56, 508);
             this.dgvTransactions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowHeadersVisible = false;
             this.dgvTransactions.RowHeadersWidth = 51;
             this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(1101, 229);
+            this.dgvTransactions.Size = new System.Drawing.Size(1101, 244);
             this.dgvTransactions.TabIndex = 5;
             this.dgvTransactions.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
             this.dgvTransactions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
@@ -373,7 +375,7 @@
             this.lblSubTitleList.AutoSize = true;
             this.lblSubTitleList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblSubTitleList.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblSubTitleList.Location = new System.Drawing.Point(48, 479);
+            this.lblSubTitleList.Location = new System.Drawing.Point(48, 476);
             this.lblSubTitleList.Name = "lblSubTitleList";
             this.lblSubTitleList.Size = new System.Drawing.Size(188, 25);
             this.lblSubTitleList.TabIndex = 4;
@@ -389,11 +391,11 @@
             this.pnlChucNanng.Controls.Add(this.btnThem);
             this.pnlChucNanng.Controls.Add(this.btnSua);
             this.pnlChucNanng.FillColor = System.Drawing.Color.White;
-            this.pnlChucNanng.Location = new System.Drawing.Point(904, 238);
+            this.pnlChucNanng.Location = new System.Drawing.Point(904, 228);
             this.pnlChucNanng.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChucNanng.Name = "pnlChucNanng";
             this.pnlChucNanng.ShadowDecoration.Enabled = true;
-            this.pnlChucNanng.Size = new System.Drawing.Size(251, 220);
+            this.pnlChucNanng.Size = new System.Drawing.Size(251, 229);
             this.pnlChucNanng.TabIndex = 2;
             // 
             // btnLamMoi
@@ -484,6 +486,8 @@
             // 
             this.pnlTransactionInfo.BackColor = System.Drawing.Color.Transparent;
             this.pnlTransactionInfo.BorderRadius = 10;
+            this.pnlTransactionInfo.Controls.Add(this.cmbBudget);
+            this.pnlTransactionInfo.Controls.Add(this.label6);
             this.pnlTransactionInfo.Controls.Add(this.txtNotes);
             this.pnlTransactionInfo.Controls.Add(this.label5);
             this.pnlTransactionInfo.Controls.Add(this.dtpDate);
@@ -496,12 +500,38 @@
             this.pnlTransactionInfo.Controls.Add(this.label1);
             this.pnlTransactionInfo.Controls.Add(this.lblSubTItleInfo);
             this.pnlTransactionInfo.FillColor = System.Drawing.Color.White;
-            this.pnlTransactionInfo.Location = new System.Drawing.Point(53, 238);
+            this.pnlTransactionInfo.Location = new System.Drawing.Point(53, 228);
             this.pnlTransactionInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTransactionInfo.Name = "pnlTransactionInfo";
             this.pnlTransactionInfo.ShadowDecoration.Enabled = true;
-            this.pnlTransactionInfo.Size = new System.Drawing.Size(807, 220);
+            this.pnlTransactionInfo.Size = new System.Drawing.Size(807, 229);
             this.pnlTransactionInfo.TabIndex = 1;
+            // 
+            // cmbBudget
+            // 
+            this.cmbBudget.BackColor = System.Drawing.Color.Transparent;
+            this.cmbBudget.BorderRadius = 6;
+            this.cmbBudget.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBudget.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBudget.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbBudget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbBudget.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbBudget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbBudget.ItemHeight = 30;
+            this.cmbBudget.Location = new System.Drawing.Point(529, 162);
+            this.cmbBudget.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBudget.Name = "cmbBudget";
+            this.cmbBudget.Size = new System.Drawing.Size(247, 36);
+            this.cmbBudget.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(456, 172);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Budget :";
             // 
             // txtNotes
             // 
@@ -520,7 +550,7 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.PlaceholderText = "";
             this.txtNotes.SelectedText = "";
-            this.txtNotes.Size = new System.Drawing.Size(629, 36);
+            this.txtNotes.Size = new System.Drawing.Size(284, 36);
             this.txtNotes.TabIndex = 9;
             // 
             // label5
@@ -732,6 +762,8 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtNotes;
         private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbBudget;
+        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel pnlChucNanng;
         private Guna.UI2.WinForms.Guna2Button btnLamMoi;
         private Guna.UI2.WinForms.Guna2Button btnXoa;

@@ -20,7 +20,8 @@ namespace PersonalExpenseManager.DAL
         bool DeleteById(string id);
 
         bool ResetSpent(string id);
-
+        bool UpdateSpentByCategory(string categoryId, double amount);
+        bool UpdateSpentById(string budgetId, double amount);
         string GetError();
     }
 }

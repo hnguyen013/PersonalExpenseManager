@@ -100,7 +100,7 @@ namespace PersonalExpenseManager
             series["DoughnutRadius"] = "55";
 
             var groupData = list
-                .GroupBy(t => t.Category)
+                .GroupBy(t => t.CategoryID)
                 .Select(g => new
                 {
                     Category = g.Key,

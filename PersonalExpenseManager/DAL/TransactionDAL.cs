@@ -7,7 +7,7 @@ namespace PersonalExpenseManager.DAL
 {
     internal class TransactionDAL : ITransactionDAL
     {
-        private string connectionString = "Data Source=data.db;Version=3;";
+        private string connectionString = "Data Source=data.db;Version=3;Foreign Keys=True;";
         private string error = "";
 
         public bool Create(Transaction t)
@@ -19,18 +19,20 @@ namespace PersonalExpenseManager.DAL
                 conn.Open();
 
                 string sql = @"INSERT INTO transactions
-                               (ID, Date, Type, Category, Amount, Notes)
+                               (ID, Date, Type, CategoryId, Amount, Notes, BudgetId)
                                VALUES
-                               (@ID, @Date, @Type, @Category, @Amount, @Notes)";
+                               (@ID, @Date, @Type, @CategoryId, @Amount, @Notes, @BudgetId)";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@ID", t.Id);
                 cmd.Parameters.AddWithValue("@Date", t.Date.ToString("yyyy-MM-dd"));
                 cmd.Parameters.AddWithValue("@Type", t.Type);
-                cmd.Parameters.AddWithValue("@Category", t.Category);
+                cmd.Parameters.AddWithValue("@CategoryId", t.CategoryID);
                 cmd.Parameters.AddWithValue("@Amount", t.Amount);
                 cmd.Parameters.AddWithValue("@Notes", t.Notes);
+                cmd.Parameters.AddWithValue("@BudgetId",
+                    string.IsNullOrEmpty(t.BudgetId) ? (object)DBNull.Value : t.BudgetId);
 
                 cmd.ExecuteNonQuery();
                 return true;
@@ -66,10 +68,11 @@ namespace PersonalExpenseManager.DAL
                     Transaction t = new Transaction(
                         reader["ID"].ToString(),
                         reader["Type"].ToString(),
-                        reader["Category"].ToString(),
+                        reader["CategoryId"].ToString(),
                         Convert.ToDouble(reader["Amount"]),
                         Convert.ToDateTime(reader["Date"]),
-                        reader["Notes"].ToString()
+                        reader["Notes"].ToString(),
+                        reader["BudgetId"] == DBNull.Value ? null : reader["BudgetId"].ToString()
                     );
 
                     list.Add(t);
@@ -109,10 +112,11 @@ namespace PersonalExpenseManager.DAL
                     Transaction t = new Transaction(
                         reader["ID"].ToString(),
                         reader["Type"].ToString(),
-                        reader["Category"].ToString(),
+                        reader["CategoryId"].ToString(),
                         Convert.ToDouble(reader["Amount"]),
                         Convert.ToDateTime(reader["Date"]),
-                        reader["Notes"].ToString()
+                        reader["Notes"].ToString(),
+                        reader["BudgetId"] == DBNull.Value ? null : reader["BudgetId"].ToString()
                     );
 
                     reader.Close();
@@ -144,9 +148,10 @@ namespace PersonalExpenseManager.DAL
                 string sql = @"UPDATE transactions SET
                                Date = @Date,
                                Type = @Type,
-                               Category = @Category,
+                               CategoryId = @CategoryId,
                                Amount = @Amount,
                                Notes = @Notes
+                               BudgetId = @BudgetId
                                WHERE ID = @ID";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
@@ -154,9 +159,11 @@ namespace PersonalExpenseManager.DAL
                 cmd.Parameters.AddWithValue("@ID", t.Id);
                 cmd.Parameters.AddWithValue("@Date", t.Date.ToString("yyyy-MM-dd"));
                 cmd.Parameters.AddWithValue("@Type", t.Type);
-                cmd.Parameters.AddWithValue("@Category", t.Category);
+                cmd.Parameters.AddWithValue("@CategoryId", t.CategoryID);
                 cmd.Parameters.AddWithValue("@Amount", t.Amount);
                 cmd.Parameters.AddWithValue("@Notes", t.Notes);
+                cmd.Parameters.AddWithValue("@BudgetId",
+                    string.IsNullOrEmpty(t.BudgetId) ? (object)DBNull.Value : t.BudgetId);
 
                 int result = cmd.ExecuteNonQuery();
 

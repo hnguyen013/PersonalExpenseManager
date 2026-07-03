@@ -17,7 +17,10 @@ namespace PersonalExpenseManager
     public partial class frmSavings : frmMainLayout
     {
         SavingDAL savingDAL = new SavingDAL();
+        ITransactionDAL transactionDAL = new TransactionDAL();
         string selectedId = "";
+        double oldSavedAmount = 0;
+        private const string SAVINGS_CATEGORY_ID = "CAT010";
         public frmSavings()
         {
             InitializeComponent();
@@ -76,6 +79,7 @@ namespace PersonalExpenseManager
         private void ClearInput()
         {
             selectedId = "";
+            oldSavedAmount = 0;
             txtGoalName.Clear();
             txtTargetAmount.Text = "0";
             txtInitialAmount.Text = "0";
@@ -90,7 +94,12 @@ namespace PersonalExpenseManager
 
             return "In Progress";
         }
-
+        private string TaoMaGiaoDich()
+        {
+            List<Transaction> list = transactionDAL.ReadAll();
+            int stt = list.Count + 1;
+            return "T" + stt.ToString("000");
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (txtGoalName.Text.Trim() == "")
@@ -114,6 +123,19 @@ namespace PersonalExpenseManager
 
             if (savingDAL.Create(s))
             {
+                if (savedAmount > 0)
+                {
+                    Transaction t = new Transaction(
+                        TaoMaGiaoDich(),
+                        "Expense",
+                        SAVINGS_CATEGORY_ID,
+                        savedAmount,
+                        DateTime.Now,
+                        "Initial deposit for savings goal: " + s.GoalName
+                    );
+                    transactionDAL.Create(t);
+                }
+
                 MessageBox.Show("Add saving goal successfully");
                 LoadSavings();
                 ClearInput();
@@ -161,6 +183,21 @@ namespace PersonalExpenseManager
 
             if (savingDAL.Update(s))
             {
+                double delta = savedAmount - oldSavedAmount;
+
+                if (delta > 0)
+                {
+                    Transaction t = new Transaction(
+                        TaoMaGiaoDich(),
+                        "Expense",
+                        SAVINGS_CATEGORY_ID,
+                        delta,
+                        DateTime.Now,
+                        "Additional deposit for savings goal: " + s.GoalName
+                    );
+                    transactionDAL.Create(t);
+                }
+
                 MessageBox.Show("Edit saving goal successfully");
                 LoadSavings();
                 ClearInput();
@@ -217,6 +254,8 @@ namespace PersonalExpenseManager
             txtGoalName.Text = row.Cells[1].Value.ToString();
             txtTargetAmount.Text = row.Cells[2].Value.ToString();
             txtInitialAmount.Text = row.Cells[3].Value.ToString();
+            oldSavedAmount = Convert.ToDouble(row.Cells[3].Value);
+
 
             string dateText = row.Cells[5].Value.ToString();
 

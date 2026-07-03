@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudget));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.pnlAddBudet = new Guna.UI2.WinForms.Guna2Panel();
             this.cmbPeriod = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -101,10 +101,10 @@
             this.pnlAddBudet.Controls.Add(this.label2);
             this.pnlAddBudet.Controls.Add(this.lblAddHeader);
             this.pnlAddBudet.FillColor = System.Drawing.Color.White;
-            this.pnlAddBudet.Location = new System.Drawing.Point(254, 285);
+            this.pnlAddBudet.Location = new System.Drawing.Point(254, 272);
             this.pnlAddBudet.Name = "pnlAddBudet";
             this.pnlAddBudet.ShadowDecoration.Enabled = true;
-            this.pnlAddBudet.Size = new System.Drawing.Size(671, 231);
+            this.pnlAddBudet.Size = new System.Drawing.Size(717, 249);
             this.pnlAddBudet.TabIndex = 3;
             // 
             // cmbPeriod
@@ -120,16 +120,16 @@
             this.cmbPeriod.ItemHeight = 30;
             this.cmbPeriod.Items.AddRange(new object[] {
             "Monthly"});
-            this.cmbPeriod.Location = new System.Drawing.Point(370, 166);
+            this.cmbPeriod.Location = new System.Drawing.Point(427, 166);
             this.cmbPeriod.Name = "cmbPeriod";
-            this.cmbPeriod.Size = new System.Drawing.Size(180, 36);
+            this.cmbPeriod.Size = new System.Drawing.Size(240, 36);
             this.cmbPeriod.TabIndex = 14;
             // 
             // lblPeriod
             // 
             this.lblPeriod.AutoSize = true;
             this.lblPeriod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblPeriod.Location = new System.Drawing.Point(366, 143);
+            this.lblPeriod.Location = new System.Drawing.Point(423, 143);
             this.lblPeriod.Name = "lblPeriod";
             this.lblPeriod.Size = new System.Drawing.Size(53, 20);
             this.lblPeriod.TabIndex = 13;
@@ -147,19 +147,19 @@
             this.txtAmont.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAmont.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAmont.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAmont.Location = new System.Drawing.Point(370, 82);
+            this.txtAmont.Location = new System.Drawing.Point(469, 82);
             this.txtAmont.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmont.Name = "txtAmont";
             this.txtAmont.PlaceholderText = "Enter amont";
             this.txtAmont.SelectedText = "";
-            this.txtAmont.Size = new System.Drawing.Size(180, 36);
+            this.txtAmont.Size = new System.Drawing.Size(198, 36);
             this.txtAmont.TabIndex = 11;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblAmount.Location = new System.Drawing.Point(366, 58);
+            this.lblAmount.Location = new System.Drawing.Point(465, 58);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(115, 20);
             this.lblAmount.TabIndex = 10;
@@ -181,7 +181,7 @@
             "Select category"});
             this.cboCategory.Location = new System.Drawing.Point(48, 166);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(180, 36);
+            this.cboCategory.Size = new System.Drawing.Size(291, 36);
             this.cboCategory.TabIndex = 9;
             // 
             // lblCategory
@@ -211,7 +211,7 @@
             this.txtBudgetName.Name = "txtBudgetName";
             this.txtBudgetName.PlaceholderText = "Enter budget name";
             this.txtBudgetName.SelectedText = "";
-            this.txtBudgetName.Size = new System.Drawing.Size(180, 36);
+            this.txtBudgetName.Size = new System.Drawing.Size(388, 36);
             this.txtBudgetName.TabIndex = 7;
             // 
             // lblBugetName
@@ -253,10 +253,10 @@
             this.pnlChucNang.Controls.Add(this.btnAdd);
             this.pnlChucNang.Controls.Add(this.btnXoa);
             this.pnlChucNang.FillColor = System.Drawing.Color.White;
-            this.pnlChucNang.Location = new System.Drawing.Point(1029, 267);
+            this.pnlChucNang.Location = new System.Drawing.Point(1029, 272);
             this.pnlChucNang.Name = "pnlChucNang";
             this.pnlChucNang.ShadowDecoration.Enabled = true;
-            this.pnlChucNang.Size = new System.Drawing.Size(247, 278);
+            this.pnlChucNang.Size = new System.Drawing.Size(247, 249);
             this.pnlChucNang.TabIndex = 4;
             this.pnlChucNang.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlChucNang_Paint);
             // 
@@ -273,9 +273,9 @@
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLamMoi.ForeColor = System.Drawing.Color.Black;
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
-            this.btnLamMoi.Location = new System.Drawing.Point(34, 218);
+            this.btnLamMoi.Location = new System.Drawing.Point(34, 184);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(180, 45);
+            this.btnLamMoi.Size = new System.Drawing.Size(180, 38);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Reset";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
@@ -293,9 +293,9 @@
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.Location = new System.Drawing.Point(34, 87);
+            this.btnEdit.Location = new System.Drawing.Point(34, 77);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(180, 45);
+            this.btnEdit.Size = new System.Drawing.Size(180, 38);
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -315,7 +315,7 @@
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.Location = new System.Drawing.Point(34, 23);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(180, 45);
+            this.btnAdd.Size = new System.Drawing.Size(180, 38);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -333,25 +333,25 @@
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(34, 154);
+            this.btnXoa.Location = new System.Drawing.Point(34, 131);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(180, 45);
+            this.btnXoa.Size = new System.Drawing.Size(180, 38);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Delete";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // dgvButdgets
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvButdgets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvButdgets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvButdgets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvButdgets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvButdgets.ColumnHeadersHeight = 19;
             this.dgvButdgets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvButdgets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -361,14 +361,14 @@
             this.colSpent,
             this.ColProgress,
             this.ColPeriod});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvButdgets.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvButdgets.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvButdgets.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvButdgets.Location = new System.Drawing.Point(254, 561);
             this.dgvButdgets.Name = "dgvButdgets";

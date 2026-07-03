@@ -48,7 +48,7 @@ namespace PersonalExpenseManager.Presentation
                 dgvRecentTransactions.Rows.Add(
                     t.Date.ToShortDateString(),
                     t.Notes,
-                    t.Category,
+                    t.CategoryID,
                     t.Type,
                     t.Amount.ToString("N0") + " đ"
                 );
