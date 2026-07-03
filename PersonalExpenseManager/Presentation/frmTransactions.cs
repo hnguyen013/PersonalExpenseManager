@@ -411,5 +411,10 @@ namespace PersonalExpenseManager.Presentation
                 tb.BeginInvoke(new Action(() => tb.SelectAll()));
             }
         }
+
+        private void lblSubTitleList_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

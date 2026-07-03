@@ -380,6 +380,7 @@
             this.lblSubTitleList.Size = new System.Drawing.Size(188, 25);
             this.lblSubTitleList.TabIndex = 4;
             this.lblSubTitleList.Text = "TRANSACTION LIST";
+            this.lblSubTitleList.Click += new System.EventHandler(this.lblSubTitleList_Click);
             // 
             // pnlChucNanng
             // 
