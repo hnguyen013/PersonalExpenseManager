@@ -98,7 +98,9 @@ namespace PersonalExpenseManager.Presentation
             // Type (cột 2)
             dgvTransactions.Columns[2].DefaultCellStyle.Alignment =
                 DataGridViewContentAlignment.MiddleCenter;
-
+            // Category/Icon (cột 3)
+            dgvTransactions.Columns[3].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleLeft;
             // Amount (cột 4)
             dgvTransactions.Columns[4].DefaultCellStyle.Alignment =
                 DataGridViewContentAlignment.MiddleRight;

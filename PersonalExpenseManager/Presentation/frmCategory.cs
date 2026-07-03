@@ -16,7 +16,6 @@ namespace PersonalExpenseManager
     public partial class frmCategory : frmMainLayout
     {
         ICategoryDAL categoryDAL = new CategoryDAL();
-        ITransactionDAL transactionDAL = new TransactionDAL();
         string selectedId = "";
         public frmCategory()
         {
@@ -29,7 +28,7 @@ namespace PersonalExpenseManager
             btnCategory.FillColor = Color.FromArgb(239, 196, 85);
             btnCategory.ForeColor = Color.FromArgb(47, 93, 80);
             LoadCategories();
-            ThongKeThuChi();
+            ThongKeDanhMuc();
 
             chkIncome.CheckedChanged += FilterChanged;
             chkExpense.CheckedChanged += FilterChanged;
@@ -166,27 +165,23 @@ namespace PersonalExpenseManager
             }
         }
 
-        // TRÍCH XUẤT CHUẨN: Tính tổng số tiền giao dịch đổ lên thẻ thống kê ở Top Form
-        private void ThongKeThuChi()
+        // Đếm số lượng danh mục theo loại để đổ lên 3 thẻ thống kê ở Top Form
+        private void ThongKeDanhMuc()
         {
             try
             {
-                List<Transaction> list = transactionDAL.ReadAll();
-                double income = 0;
-                double expense = 0;
+                List<Category> list = categoryDAL.ReadAll();
 
-                foreach (Transaction t in list)
-                {
-                    if (t.Type == "Income")
-                        income += t.Amount;
-                    else
-                        expense += t.Amount;
-                }
+                int totalCategories = list.Count;
+                int incomeCategories = list.Count(c => c.Type == "Income");
+                int expenseCategories = list.Count(c => c.Type == "Expense");
 
-                // Gán chuỗi tiền tệ định dạng "N0" + " đ" lên các Label
-                lblTotalIncome.Text = income.ToString("N0") + " đ";
-                lblTotalExpense.Text = expense.ToString("N0") + " đ";
-                lblBalance.Text = (income - expense).ToString("N0") + " đ";
+                // Thẻ 1 (pnlIncome - xanh): số danh mục Thu
+                lblTotalIncome.Text = incomeCategories.ToString();
+                // Thẻ 2 (pnlExpense - đỏ): số danh mục Chi
+                lblTotalExpense.Text = expenseCategories.ToString();
+                // Thẻ 3 (pnlBalance - trung tính): tổng số danh mục
+                lblBalance.Text = totalCategories.ToString();
             }
             catch { }
         }
@@ -215,7 +210,7 @@ namespace PersonalExpenseManager
 
                 LoadCategories();
                 ResetForm();
-                ThongKeThuChi();
+                ThongKeDanhMuc();
             }
             else
             {
@@ -244,7 +239,7 @@ namespace PersonalExpenseManager
                 MessageBox.Show("Update successful!");
                 LoadCategories();
                 ResetForm();
-                ThongKeThuChi();
+                ThongKeDanhMuc();
             }
             else
             {
@@ -266,7 +261,7 @@ namespace PersonalExpenseManager
 
                 LoadCategories();
                 ResetForm();
-                ThongKeThuChi();
+                ThongKeDanhMuc();
             }
             else
             {

@@ -28,11 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategory));
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.chkExpense = new System.Windows.Forms.CheckBox();
+            this.chkIncome = new System.Windows.Forms.CheckBox();
+            this.pnlBalance = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.lblBalanceTitle = new System.Windows.Forms.Label();
+            this.imgBalance = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pnlExpense = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalExpense = new System.Windows.Forms.Label();
+            this.lblExpenseTitle = new System.Windows.Forms.Label();
+            this.imgExpense = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pnlIncome = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalIncome = new System.Windows.Forms.Label();
+            this.lblTotalIncomeTitle = new System.Windows.Forms.Label();
+            this.imgIncome = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.dgvCategories = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Transactions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlAddCategory = new Guna.UI2.WinForms.Guna2Panel();
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -47,43 +67,283 @@
             this.txtCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblCategoryName = new System.Windows.Forms.Label();
             this.lblAddCategoryHeader = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvCategories = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Transactions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlIncome = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalIncome = new System.Windows.Forms.Label();
-            this.lblTotalIncomeTitle = new System.Windows.Forms.Label();
-            this.imgIncome = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pnlExpense = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalExpense = new System.Windows.Forms.Label();
-            this.lblExpenseTitle = new System.Windows.Forms.Label();
-            this.imgExpense = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pnlBalance = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblBalance = new System.Windows.Forms.Label();
-            this.lblBalanceTitle = new System.Windows.Forms.Label();
-            this.imgBalance = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.chkIncome = new System.Windows.Forms.CheckBox();
-            this.chkExpense = new System.Windows.Forms.CheckBox();
-            this.pnlAddCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
-            this.pnlIncome.SuspendLayout();
-            this.pnlExpense.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlBalance.SuspendLayout();
+            this.pnlExpense.SuspendLayout();
+            this.pnlIncome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
+            this.pnlAddCategory.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // chkExpense
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(218, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 38);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Categories";
+            this.chkExpense.AutoSize = true;
+            this.chkExpense.Checked = true;
+            this.chkExpense.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.chkExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.chkExpense.Location = new System.Drawing.Point(1216, 529);
+            this.chkExpense.Name = "chkExpense";
+            this.chkExpense.Size = new System.Drawing.Size(102, 24);
+            this.chkExpense.TabIndex = 9;
+            this.chkExpense.Text = "Expense";
+            this.chkExpense.UseVisualStyleBackColor = true;
+            // 
+            // chkIncome
+            // 
+            this.chkIncome.AutoSize = true;
+            this.chkIncome.Checked = true;
+            this.chkIncome.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
+            this.chkIncome.Location = new System.Drawing.Point(1110, 529);
+            this.chkIncome.Name = "chkIncome";
+            this.chkIncome.Size = new System.Drawing.Size(91, 24);
+            this.chkIncome.TabIndex = 8;
+            this.chkIncome.Text = "Income\n";
+            this.chkIncome.UseVisualStyleBackColor = true;
+            // 
+            // pnlBalance
+            // 
+            this.pnlBalance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlBalance.BorderRadius = 10;
+            this.pnlBalance.BorderThickness = 1;
+            this.pnlBalance.Controls.Add(this.lblBalance);
+            this.pnlBalance.Controls.Add(this.lblBalanceTitle);
+            this.pnlBalance.Controls.Add(this.imgBalance);
+            this.pnlBalance.FillColor = System.Drawing.Color.White;
+            this.pnlBalance.Location = new System.Drawing.Point(969, 137);
+            this.pnlBalance.Name = "pnlBalance";
+            this.pnlBalance.Size = new System.Drawing.Size(324, 127);
+            this.pnlBalance.TabIndex = 5;
+            // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(98)))), ((int)(((byte)(253)))));
+            this.lblBalance.Location = new System.Drawing.Point(125, 53);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(33, 38);
+            this.lblBalance.TabIndex = 1;
+            this.lblBalance.Text = "0";
+            // 
+            // lblBalanceTitle
+            // 
+            this.lblBalanceTitle.AutoSize = true;
+            this.lblBalanceTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBalanceTitle.Location = new System.Drawing.Point(105, 33);
+            this.lblBalanceTitle.Name = "lblBalanceTitle";
+            this.lblBalanceTitle.Size = new System.Drawing.Size(122, 20);
+            this.lblBalanceTitle.TabIndex = 0;
+            this.lblBalanceTitle.Text = "Total Categories";
+            // 
+            // imgBalance
+            // 
+            this.imgBalance.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgBalance.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgBalance.Image = ((System.Drawing.Image)(resources.GetObject("imgBalance.Image")));
+            this.imgBalance.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgBalance.ImageRotate = 0F;
+            this.imgBalance.Location = new System.Drawing.Point(3, 14);
+            this.imgBalance.Name = "imgBalance";
+            this.imgBalance.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgBalance.Size = new System.Drawing.Size(106, 100);
+            this.imgBalance.TabIndex = 2;
+            // 
+            // pnlExpense
+            // 
+            this.pnlExpense.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlExpense.BorderRadius = 10;
+            this.pnlExpense.BorderThickness = 1;
+            this.pnlExpense.Controls.Add(this.lblTotalExpense);
+            this.pnlExpense.Controls.Add(this.lblExpenseTitle);
+            this.pnlExpense.Controls.Add(this.imgExpense);
+            this.pnlExpense.FillColor = System.Drawing.Color.White;
+            this.pnlExpense.Location = new System.Drawing.Point(613, 137);
+            this.pnlExpense.Name = "pnlExpense";
+            this.pnlExpense.Size = new System.Drawing.Size(324, 127);
+            this.pnlExpense.TabIndex = 4;
+            // 
+            // lblTotalExpense
+            // 
+            this.lblTotalExpense.AutoSize = true;
+            this.lblTotalExpense.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.lblTotalExpense.Location = new System.Drawing.Point(125, 53);
+            this.lblTotalExpense.Name = "lblTotalExpense";
+            this.lblTotalExpense.Size = new System.Drawing.Size(33, 38);
+            this.lblTotalExpense.TabIndex = 1;
+            this.lblTotalExpense.Text = "0";
+            // 
+            // lblExpenseTitle
+            // 
+            this.lblExpenseTitle.AutoSize = true;
+            this.lblExpenseTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpenseTitle.Location = new System.Drawing.Point(105, 33);
+            this.lblExpenseTitle.Name = "lblExpenseTitle";
+            this.lblExpenseTitle.Size = new System.Drawing.Size(144, 20);
+            this.lblExpenseTitle.TabIndex = 0;
+            this.lblExpenseTitle.Text = "Expense Categories";
+            // 
+            // imgExpense
+            // 
+            this.imgExpense.BackColor = System.Drawing.Color.White;
+            this.imgExpense.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgExpense.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgExpense.Image = ((System.Drawing.Image)(resources.GetObject("imgExpense.Image")));
+            this.imgExpense.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgExpense.ImageRotate = 0F;
+            this.imgExpense.Location = new System.Drawing.Point(3, 14);
+            this.imgExpense.Name = "imgExpense";
+            this.imgExpense.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgExpense.Size = new System.Drawing.Size(106, 100);
+            this.imgExpense.TabIndex = 2;
+            // 
+            // pnlIncome
+            // 
+            this.pnlIncome.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlIncome.BorderRadius = 10;
+            this.pnlIncome.BorderThickness = 1;
+            this.pnlIncome.Controls.Add(this.lblTotalIncome);
+            this.pnlIncome.Controls.Add(this.lblTotalIncomeTitle);
+            this.pnlIncome.Controls.Add(this.imgIncome);
+            this.pnlIncome.FillColor = System.Drawing.Color.White;
+            this.pnlIncome.Location = new System.Drawing.Point(254, 137);
+            this.pnlIncome.Name = "pnlIncome";
+            this.pnlIncome.Size = new System.Drawing.Size(324, 127);
+            this.pnlIncome.TabIndex = 6;
+            this.pnlIncome.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlIncome_Paint);
+            // 
+            // lblTotalIncome
+            // 
+            this.lblTotalIncome.AutoSize = true;
+            this.lblTotalIncome.BackColor = System.Drawing.Color.White;
+            this.lblTotalIncome.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(140)))), ((int)(((byte)(60)))));
+            this.lblTotalIncome.Location = new System.Drawing.Point(125, 53);
+            this.lblTotalIncome.Name = "lblTotalIncome";
+            this.lblTotalIncome.Size = new System.Drawing.Size(33, 38);
+            this.lblTotalIncome.TabIndex = 1;
+            this.lblTotalIncome.Text = "0";
+            // 
+            // lblTotalIncomeTitle
+            // 
+            this.lblTotalIncomeTitle.AutoSize = true;
+            this.lblTotalIncomeTitle.BackColor = System.Drawing.Color.White;
+            this.lblTotalIncomeTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalIncomeTitle.Location = new System.Drawing.Point(105, 33);
+            this.lblTotalIncomeTitle.Name = "lblTotalIncomeTitle";
+            this.lblTotalIncomeTitle.Size = new System.Drawing.Size(139, 20);
+            this.lblTotalIncomeTitle.TabIndex = 0;
+            this.lblTotalIncomeTitle.Text = "Income Categories";
+            // 
+            // imgIncome
+            // 
+            this.imgIncome.BackColor = System.Drawing.Color.White;
+            this.imgIncome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgIncome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgIncome.Image = ((System.Drawing.Image)(resources.GetObject("imgIncome.Image")));
+            this.imgIncome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgIncome.ImageRotate = 0F;
+            this.imgIncome.Location = new System.Drawing.Point(3, 14);
+            this.imgIncome.Name = "imgIncome";
+            this.imgIncome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgIncome.Size = new System.Drawing.Size(106, 100);
+            this.imgIncome.TabIndex = 2;
+            // 
+            // dgvCategories
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
+            this.dgvCategories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCategories.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCategories.ColumnHeadersHeight = 22;
+            this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.CategoryName,
+            this.Type,
+            this.Description,
+            this.Transactions});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCategories.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
+            this.dgvCategories.Location = new System.Drawing.Point(244, 559);
+            this.dgvCategories.Name = "dgvCategories";
+            this.dgvCategories.RowHeadersVisible = false;
+            this.dgvCategories.RowHeadersWidth = 51;
+            this.dgvCategories.RowTemplate.Height = 24;
+            this.dgvCategories.Size = new System.Drawing.Size(1074, 249);
+            this.dgvCategories.TabIndex = 5;
+            this.dgvCategories.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
+            this.dgvCategories.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
+            this.dgvCategories.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
+            this.dgvCategories.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.dgvCategories.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dgvCategories.ThemeStyle.HeaderStyle.Height = 22;
+            this.dgvCategories.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
+            this.dgvCategories.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
+            this.dgvCategories.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dgvCategories.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvCategories.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvCategories.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
+            this.dgvCategories.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCategories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.HeaderText = "Category Name";
+            this.CategoryName.MinimumWidth = 6;
+            this.CategoryName.Name = "CategoryName";
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 6;
+            this.Type.Name = "Type";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            // 
+            // Transactions
+            // 
+            this.Transactions.HeaderText = "Icon";
+            this.Transactions.MinimumWidth = 6;
+            this.Transactions.Name = "Transactions";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Green;
+            this.label2.Location = new System.Drawing.Point(227, 511);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "☰ Category List";
             // 
             // pnlAddCategory
             // 
@@ -332,275 +592,15 @@
             this.lblAddCategoryHeader.TabIndex = 0;
             this.lblAddCategoryHeader.Text = "📁  Add Category";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(227, 511);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "☰ Category List";
-            // 
-            // dgvCategories
-            // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
-            this.dgvCategories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvCategories.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvCategories.ColumnHeadersHeight = 22;
-            this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.CategoryName,
-            this.Type,
-            this.Description,
-            this.Transactions});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvCategories.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
-            this.dgvCategories.Location = new System.Drawing.Point(244, 559);
-            this.dgvCategories.Name = "dgvCategories";
-            this.dgvCategories.RowHeadersVisible = false;
-            this.dgvCategories.RowHeadersWidth = 51;
-            this.dgvCategories.RowTemplate.Height = 24;
-            this.dgvCategories.Size = new System.Drawing.Size(1074, 249);
-            this.dgvCategories.TabIndex = 5;
-            this.dgvCategories.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
-            this.dgvCategories.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
-            this.dgvCategories.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
-            this.dgvCategories.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.dgvCategories.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dgvCategories.ThemeStyle.HeaderStyle.Height = 22;
-            this.dgvCategories.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
-            this.dgvCategories.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
-            this.dgvCategories.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dgvCategories.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvCategories.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvCategories.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
-            this.dgvCategories.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvCategories.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.HeaderText = "Category Name";
-            this.CategoryName.MinimumWidth = 6;
-            this.CategoryName.Name = "CategoryName";
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 6;
-            this.Type.Name = "Type";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            // 
-            // Transactions
-            // 
-            this.Transactions.HeaderText = "Icon";
-            this.Transactions.MinimumWidth = 6;
-            this.Transactions.Name = "Transactions";
-            // 
-            // pnlIncome
-            // 
-            this.pnlIncome.BorderColor = System.Drawing.Color.Gainsboro;
-            this.pnlIncome.BorderRadius = 10;
-            this.pnlIncome.BorderThickness = 1;
-            this.pnlIncome.Controls.Add(this.lblTotalIncome);
-            this.pnlIncome.Controls.Add(this.lblTotalIncomeTitle);
-            this.pnlIncome.Controls.Add(this.imgIncome);
-            this.pnlIncome.FillColor = System.Drawing.Color.White;
-            this.pnlIncome.Location = new System.Drawing.Point(254, 137);
-            this.pnlIncome.Name = "pnlIncome";
-            this.pnlIncome.Size = new System.Drawing.Size(324, 127);
-            this.pnlIncome.TabIndex = 6;
-            this.pnlIncome.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlIncome_Paint);
-            // 
-            // lblTotalIncome
-            // 
-            this.lblTotalIncome.AutoSize = true;
-            this.lblTotalIncome.BackColor = System.Drawing.Color.White;
-            this.lblTotalIncome.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(140)))), ((int)(((byte)(60)))));
-            this.lblTotalIncome.Location = new System.Drawing.Point(102, 53);
-            this.lblTotalIncome.Name = "lblTotalIncome";
-            this.lblTotalIncome.Size = new System.Drawing.Size(187, 38);
-            this.lblTotalIncome.TabIndex = 1;
-            this.lblTotalIncome.Text = "25.750.000 đ";
-            // 
-            // lblTotalIncomeTitle
-            // 
-            this.lblTotalIncomeTitle.AutoSize = true;
-            this.lblTotalIncomeTitle.BackColor = System.Drawing.Color.White;
-            this.lblTotalIncomeTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIncomeTitle.Location = new System.Drawing.Point(105, 33);
-            this.lblTotalIncomeTitle.Name = "lblTotalIncomeTitle";
-            this.lblTotalIncomeTitle.Size = new System.Drawing.Size(100, 20);
-            this.lblTotalIncomeTitle.TabIndex = 0;
-            this.lblTotalIncomeTitle.Text = "Total Income";
-            // 
-            // imgIncome
-            // 
-            this.imgIncome.BackColor = System.Drawing.Color.White;
-            this.imgIncome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgIncome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgIncome.Image = ((System.Drawing.Image)(resources.GetObject("imgIncome.Image")));
-            this.imgIncome.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgIncome.ImageRotate = 0F;
-            this.imgIncome.Location = new System.Drawing.Point(3, 14);
-            this.imgIncome.Name = "imgIncome";
-            this.imgIncome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgIncome.Size = new System.Drawing.Size(106, 100);
-            this.imgIncome.TabIndex = 2;
-            // 
-            // pnlExpense
-            // 
-            this.pnlExpense.BorderColor = System.Drawing.Color.Gainsboro;
-            this.pnlExpense.BorderRadius = 10;
-            this.pnlExpense.BorderThickness = 1;
-            this.pnlExpense.Controls.Add(this.lblTotalExpense);
-            this.pnlExpense.Controls.Add(this.lblExpenseTitle);
-            this.pnlExpense.Controls.Add(this.imgExpense);
-            this.pnlExpense.FillColor = System.Drawing.Color.White;
-            this.pnlExpense.Location = new System.Drawing.Point(613, 137);
-            this.pnlExpense.Name = "pnlExpense";
-            this.pnlExpense.Size = new System.Drawing.Size(324, 127);
-            this.pnlExpense.TabIndex = 4;
-            // 
-            // lblTotalExpense
-            // 
-            this.lblTotalExpense.AutoSize = true;
-            this.lblTotalExpense.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
-            this.lblTotalExpense.Location = new System.Drawing.Point(102, 53);
-            this.lblTotalExpense.Name = "lblTotalExpense";
-            this.lblTotalExpense.Size = new System.Drawing.Size(187, 38);
-            this.lblTotalExpense.TabIndex = 1;
-            this.lblTotalExpense.Text = "16.500.000 đ";
-            // 
-            // lblExpenseTitle
-            // 
-            this.lblExpenseTitle.AutoSize = true;
-            this.lblExpenseTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpenseTitle.Location = new System.Drawing.Point(105, 33);
-            this.lblExpenseTitle.Name = "lblExpenseTitle";
-            this.lblExpenseTitle.Size = new System.Drawing.Size(105, 20);
-            this.lblExpenseTitle.TabIndex = 0;
-            this.lblExpenseTitle.Text = "Total Expense";
-            // 
-            // imgExpense
-            // 
-            this.imgExpense.BackColor = System.Drawing.Color.White;
-            this.imgExpense.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgExpense.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgExpense.Image = ((System.Drawing.Image)(resources.GetObject("imgExpense.Image")));
-            this.imgExpense.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgExpense.ImageRotate = 0F;
-            this.imgExpense.Location = new System.Drawing.Point(3, 14);
-            this.imgExpense.Name = "imgExpense";
-            this.imgExpense.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgExpense.Size = new System.Drawing.Size(106, 100);
-            this.imgExpense.TabIndex = 2;
-            // 
-            // pnlBalance
-            // 
-            this.pnlBalance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.pnlBalance.BorderRadius = 10;
-            this.pnlBalance.BorderThickness = 1;
-            this.pnlBalance.Controls.Add(this.lblBalance);
-            this.pnlBalance.Controls.Add(this.lblBalanceTitle);
-            this.pnlBalance.Controls.Add(this.imgBalance);
-            this.pnlBalance.FillColor = System.Drawing.Color.White;
-            this.pnlBalance.Location = new System.Drawing.Point(969, 137);
-            this.pnlBalance.Name = "pnlBalance";
-            this.pnlBalance.Size = new System.Drawing.Size(324, 127);
-            this.pnlBalance.TabIndex = 5;
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(98)))), ((int)(((byte)(253)))));
-            this.lblBalance.Location = new System.Drawing.Point(102, 53);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(187, 38);
-            this.lblBalance.TabIndex = 1;
-            this.lblBalance.Text = "12.450.000 đ";
-            // 
-            // lblBalanceTitle
-            // 
-            this.lblBalanceTitle.AutoSize = true;
-            this.lblBalanceTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalanceTitle.Location = new System.Drawing.Point(105, 33);
-            this.lblBalanceTitle.Name = "lblBalanceTitle";
-            this.lblBalanceTitle.Size = new System.Drawing.Size(63, 20);
-            this.lblBalanceTitle.TabIndex = 0;
-            this.lblBalanceTitle.Text = "Balance";
-            // 
-            // imgBalance
-            // 
-            this.imgBalance.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgBalance.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgBalance.Image = ((System.Drawing.Image)(resources.GetObject("imgBalance.Image")));
-            this.imgBalance.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgBalance.ImageRotate = 0F;
-            this.imgBalance.Location = new System.Drawing.Point(3, 14);
-            this.imgBalance.Name = "imgBalance";
-            this.imgBalance.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgBalance.Size = new System.Drawing.Size(106, 100);
-            this.imgBalance.TabIndex = 2;
-            // 
-            // chkIncome
-            // 
-            this.chkIncome.AutoSize = true;
-            this.chkIncome.Checked = true;
-            this.chkIncome.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
-            this.chkIncome.Location = new System.Drawing.Point(1110, 529);
-            this.chkIncome.Name = "chkIncome";
-            this.chkIncome.Size = new System.Drawing.Size(91, 24);
-            this.chkIncome.TabIndex = 8;
-            this.chkIncome.Text = "Income\n";
-            this.chkIncome.UseVisualStyleBackColor = true;
-            // 
-            // chkExpense
-            // 
-            this.chkExpense.AutoSize = true;
-            this.chkExpense.Checked = true;
-            this.chkExpense.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.chkExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.chkExpense.Location = new System.Drawing.Point(1216, 529);
-            this.chkExpense.Name = "chkExpense";
-            this.chkExpense.Size = new System.Drawing.Size(102, 24);
-            this.chkExpense.TabIndex = 9;
-            this.chkExpense.Text = "Expense";
-            this.chkExpense.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(218, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 38);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Categories";
             // 
             // frmCategory
             // 
@@ -620,15 +620,15 @@
             this.Name = "frmCategory";
             this.Text = "frmCategory";
             this.Load += new System.EventHandler(this.frmCategory_Load);
-            this.pnlAddCategory.ResumeLayout(false);
-            this.pnlAddCategory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
-            this.pnlIncome.ResumeLayout(false);
-            this.pnlIncome.PerformLayout();
-            this.pnlExpense.ResumeLayout(false);
-            this.pnlExpense.PerformLayout();
             this.pnlBalance.ResumeLayout(false);
             this.pnlBalance.PerformLayout();
+            this.pnlExpense.ResumeLayout(false);
+            this.pnlExpense.PerformLayout();
+            this.pnlIncome.ResumeLayout(false);
+            this.pnlIncome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
+            this.pnlAddCategory.ResumeLayout(false);
+            this.pnlAddCategory.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
