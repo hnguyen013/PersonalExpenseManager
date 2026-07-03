@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategory));
             this.label1 = new System.Windows.Forms.Label();
             this.pnlAddCategory = new Guna.UI2.WinForms.Guna2Panel();
@@ -66,6 +66,8 @@
             this.lblBalance = new System.Windows.Forms.Label();
             this.lblBalanceTitle = new System.Windows.Forms.Label();
             this.imgBalance = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.chkIncome = new System.Windows.Forms.CheckBox();
+            this.chkExpense = new System.Windows.Forms.CheckBox();
             this.pnlAddCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.pnlIncome.SuspendLayout();
@@ -343,17 +345,17 @@
             // 
             // dgvCategories
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
-            this.dgvCategories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
+            this.dgvCategories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCategories.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCategories.ColumnHeadersHeight = 22;
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -362,16 +364,16 @@
             this.Type,
             this.Description,
             this.Transactions});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCategories.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCategories.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
-            this.dgvCategories.Location = new System.Drawing.Point(244, 548);
+            this.dgvCategories.Location = new System.Drawing.Point(244, 559);
             this.dgvCategories.Name = "dgvCategories";
             this.dgvCategories.RowHeadersVisible = false;
             this.dgvCategories.RowHeadersWidth = 51;
@@ -572,12 +574,42 @@
             this.imgBalance.Size = new System.Drawing.Size(106, 100);
             this.imgBalance.TabIndex = 2;
             // 
+            // chkIncome
+            // 
+            this.chkIncome.AutoSize = true;
+            this.chkIncome.Checked = true;
+            this.chkIncome.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
+            this.chkIncome.Location = new System.Drawing.Point(1110, 529);
+            this.chkIncome.Name = "chkIncome";
+            this.chkIncome.Size = new System.Drawing.Size(91, 24);
+            this.chkIncome.TabIndex = 8;
+            this.chkIncome.Text = "Income\n";
+            this.chkIncome.UseVisualStyleBackColor = true;
+            // 
+            // chkExpense
+            // 
+            this.chkExpense.AutoSize = true;
+            this.chkExpense.Checked = true;
+            this.chkExpense.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.chkExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.chkExpense.Location = new System.Drawing.Point(1216, 529);
+            this.chkExpense.Name = "chkExpense";
+            this.chkExpense.Size = new System.Drawing.Size(102, 24);
+            this.chkExpense.TabIndex = 9;
+            this.chkExpense.Text = "Expense";
+            this.chkExpense.UseVisualStyleBackColor = true;
+            // 
             // frmCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1382, 903);
+            this.Controls.Add(this.chkExpense);
+            this.Controls.Add(this.chkIncome);
             this.Controls.Add(this.pnlBalance);
             this.Controls.Add(this.pnlExpense);
             this.Controls.Add(this.pnlIncome);
@@ -638,5 +670,7 @@
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label lblBalanceTitle;
         private Guna.UI2.WinForms.Guna2ImageButton imgBalance;
+        private System.Windows.Forms.CheckBox chkIncome;
+        private System.Windows.Forms.CheckBox chkExpense;
     }
 }
