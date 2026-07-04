@@ -408,7 +408,6 @@
             this.btnMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(118)))), ((int)(((byte)(98)))));
             this.btnMonth.Location = new System.Drawing.Point(957, 18);
             this.btnMonth.Name = "btnMonth";
-            this.btnMonth.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnMonth.Size = new System.Drawing.Size(190, 40);
             this.btnMonth.TabIndex = 1;
             this.btnMonth.TextFormatNoPrefix = true;
