@@ -158,7 +158,7 @@
             this.txtAmont.Name = "txtAmont";
             this.txtAmont.PlaceholderText = "Enter amont";
             this.txtAmont.SelectedText = "";
-            this.txtAmont.Size = new System.Drawing.Size(198, 36);
+            this.txtAmont.Size = new System.Drawing.Size(198, 40);
             this.txtAmont.TabIndex = 11;
             // 
             // lblAmount
@@ -217,7 +217,7 @@
             this.txtBudgetName.Name = "txtBudgetName";
             this.txtBudgetName.PlaceholderText = "Enter budget name";
             this.txtBudgetName.SelectedText = "";
-            this.txtBudgetName.Size = new System.Drawing.Size(388, 36);
+            this.txtBudgetName.Size = new System.Drawing.Size(388, 40);
             this.txtBudgetName.TabIndex = 7;
             // 
             // lblBugetName
