@@ -151,7 +151,7 @@ namespace PersonalExpenseManager.DAL
                                CategoryId = @CategoryId,
                                Amount = @Amount,
                                Notes = @Notes,
-                               BudgetId = @BudgetId,
+                               BudgetId = @BudgetId
                                WHERE ID = @ID";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);

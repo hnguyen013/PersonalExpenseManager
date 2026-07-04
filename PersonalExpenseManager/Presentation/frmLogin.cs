@@ -18,15 +18,17 @@ namespace PersonalExpenseManager.Presentation
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
+            // Kiểm tra thông tin bỏ trống (Dịch sang tiếng Anh)
             if (username == "" || password == "")
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ tài khoản và mật khẩu!");
+                MessageBox.Show("Please enter both username and password!");
                 return;
             }
 
+            // Kiểm tra logic đăng nhập
             if (userDAL.CheckLogin(username, password))
             {
-                MessageBox.Show("Đăng nhập thành công!");
+                // Đã xóa bỏ hoàn toàn MessageBox thông báo đăng nhập thành công theo yêu cầu
 
                 frmDashboard dashboard = new frmDashboard();
                 dashboard.Show();
@@ -34,7 +36,8 @@ namespace PersonalExpenseManager.Presentation
             }
             else
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!");
+                // Thông báo sai tài khoản/mật khẩu (Dịch sang tiếng Anh)
+                MessageBox.Show("Invalid username or password!");
             }
         }
 

@@ -112,7 +112,7 @@
             this.pnlBalance.Controls.Add(this.lblBalanceTitle);
             this.pnlBalance.Controls.Add(this.imgBalance);
             this.pnlBalance.FillColor = System.Drawing.Color.White;
-            this.pnlBalance.Location = new System.Drawing.Point(969, 137);
+            this.pnlBalance.Location = new System.Drawing.Point(994, 137);
             this.pnlBalance.Name = "pnlBalance";
             this.pnlBalance.Size = new System.Drawing.Size(324, 127);
             this.pnlBalance.TabIndex = 5;
@@ -160,7 +160,7 @@
             this.pnlExpense.Controls.Add(this.lblExpenseTitle);
             this.pnlExpense.Controls.Add(this.imgExpense);
             this.pnlExpense.FillColor = System.Drawing.Color.White;
-            this.pnlExpense.Location = new System.Drawing.Point(613, 137);
+            this.pnlExpense.Location = new System.Drawing.Point(633, 137);
             this.pnlExpense.Name = "pnlExpense";
             this.pnlExpense.Size = new System.Drawing.Size(324, 127);
             this.pnlExpense.TabIndex = 4;
@@ -348,7 +348,9 @@
             // pnlAddCategory
             // 
             this.pnlAddCategory.BackColor = System.Drawing.Color.Transparent;
+            this.pnlAddCategory.BorderColor = System.Drawing.Color.Gainsboro;
             this.pnlAddCategory.BorderRadius = 12;
+            this.pnlAddCategory.BorderThickness = 1;
             this.pnlAddCategory.Controls.Add(this.btnReset);
             this.pnlAddCategory.Controls.Add(this.btnDelete);
             this.pnlAddCategory.Controls.Add(this.btnEdit);
@@ -362,9 +364,12 @@
             this.pnlAddCategory.Controls.Add(this.txtCategoryName);
             this.pnlAddCategory.Controls.Add(this.lblCategoryName);
             this.pnlAddCategory.Controls.Add(this.lblAddCategoryHeader);
+            this.pnlAddCategory.CustomBorderColor = System.Drawing.Color.Gainsboro;
             this.pnlAddCategory.FillColor = System.Drawing.Color.White;
             this.pnlAddCategory.Location = new System.Drawing.Point(254, 292);
             this.pnlAddCategory.Name = "pnlAddCategory";
+            this.pnlAddCategory.ShadowDecoration.BorderRadius = 0;
+            this.pnlAddCategory.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.pnlAddCategory.ShadowDecoration.Enabled = true;
             this.pnlAddCategory.Size = new System.Drawing.Size(1064, 207);
             this.pnlAddCategory.TabIndex = 3;
@@ -471,7 +476,7 @@
             "👝 Salary",
             "🎁 Bonus",
             "📶 Investment"});
-            this.cmbIcon.Location = new System.Drawing.Point(774, 74);
+            this.cmbIcon.Location = new System.Drawing.Point(774, 83);
             this.cmbIcon.Name = "cmbIcon";
             this.cmbIcon.Size = new System.Drawing.Size(242, 36);
             this.cmbIcon.TabIndex = 9;
@@ -499,7 +504,7 @@
             this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Location = new System.Drawing.Point(496, 75);
+            this.txtDescription.Location = new System.Drawing.Point(496, 84);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PlaceholderText = "Enter description";
@@ -533,7 +538,7 @@
             this.cmbType.Items.AddRange(new object[] {
             "Expense",
             "Income"});
-            this.cmbType.Location = new System.Drawing.Point(282, 75);
+            this.cmbType.Location = new System.Drawing.Point(282, 84);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(140, 36);
             this.cmbType.TabIndex = 4;
@@ -562,7 +567,7 @@
             this.txtCategoryName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCategoryName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCategoryName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCategoryName.Location = new System.Drawing.Point(32, 74);
+            this.txtCategoryName.Location = new System.Drawing.Point(32, 83);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.PlaceholderText = "Enter category name";
@@ -618,7 +623,7 @@
             this.Controls.Add(this.pnlAddCategory);
             this.Controls.Add(this.label1);
             this.Name = "frmCategory";
-            this.Text = "frmCategory";
+            this.Text = "Category";
             this.Load += new System.EventHandler(this.frmCategory_Load);
             this.pnlBalance.ResumeLayout(false);
             this.pnlBalance.PerformLayout();

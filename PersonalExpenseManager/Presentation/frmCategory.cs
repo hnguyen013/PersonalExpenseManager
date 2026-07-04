@@ -17,6 +17,7 @@ namespace PersonalExpenseManager
     {
         ICategoryDAL categoryDAL = new CategoryDAL();
         string selectedId = "";
+
         public frmCategory()
         {
             InitializeComponent();
@@ -33,9 +34,11 @@ namespace PersonalExpenseManager
             chkIncome.CheckedChanged += FilterChanged;
             chkExpense.CheckedChanged += FilterChanged;
         }
+
         private void SetupCategoryGrid()
         {
             dgvCategories.EnableHeadersVisualStyles = false;
+            dgvCategories.AllowUserToAddRows = false;
 
             // Header (Tiêu đề cột): Căn giữa chữ
             dgvCategories.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(46, 125, 50);
@@ -77,28 +80,25 @@ namespace PersonalExpenseManager
             if (dgvCategories.Columns.Count > 2)
                 dgvCategories.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            // Cột 4: Icon -> Căn giữa
+            // Cột 4: Icon -> Căn trái
             if (dgvCategories.Columns.Count > 4)
-                dgvCategories.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvCategories.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
         }
+
         private void frmCategory_Load(object sender, EventArgs e)
         {
-
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void lblType_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblDescription_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dgvCategories_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,16 +117,14 @@ namespace PersonalExpenseManager
         {
             dgvCategories.Rows.Clear();
 
-            // Lấy trạng thái check giống hệt RefreshData() của Transactions
             bool showIncome = chkIncome.Checked;
             bool showExpense = chkExpense.Checked;
 
             foreach (Category c in categoryDAL.ReadAll())
             {
-                // Áp dụng thuật toán bộ lọc gốc loại trừ (Đã đổi biến t thành c)
                 if (showIncome == false && showExpense == false)
                 {
-                    // Nếu bỏ tích cả hai thì hiển thị tất cả (Không filter)
+                    // Nếu bỏ tích cả hai thì hiển thị tất cả
                 }
                 else
                 {
@@ -137,7 +135,6 @@ namespace PersonalExpenseManager
                         continue;
                 }
 
-                // Thêm dòng mới vào Grid
                 int row = dgvCategories.Rows.Add(
                     c.Id,
                     c.Name,
@@ -146,7 +143,6 @@ namespace PersonalExpenseManager
                     c.Icon
                 );
 
-                // TRÍCH XUẤT ĐỔI MÀU: Nhắm trực tiếp vào cột Type (Cột index số 2) để nhuộm màu chữ
                 DataGridViewCell typeCell = dgvCategories.Rows[row].Cells[2];
 
                 if (c.Type == "Income")
@@ -160,7 +156,6 @@ namespace PersonalExpenseManager
                     typeCell.Style.SelectionForeColor = Color.Red;
                 }
 
-                // Chuyển font chữ ô Type thành Bold đậm cho rõ ràng
                 typeCell.Style.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             }
         }
@@ -186,12 +181,9 @@ namespace PersonalExpenseManager
             catch { }
         }
 
-        // Kích hoạt lại hàm tải lưới khi click đổi bộ lọc
         private void FilterChanged(object sender, EventArgs e)
         {
             LoadCategories();
-
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -206,8 +198,7 @@ namespace PersonalExpenseManager
 
             if (categoryDAL.Create(c))
             {
-                MessageBox.Show("Add successful!");
-
+                // Đã xóa bỏ MessageBox.Show thông báo thành công
                 LoadCategories();
                 ResetForm();
                 ThongKeDanhMuc();
@@ -236,7 +227,7 @@ namespace PersonalExpenseManager
 
             if (categoryDAL.Update(c))
             {
-                MessageBox.Show("Update successful!");
+                // Đã xóa bỏ MessageBox.Show thông báo thành công
                 LoadCategories();
                 ResetForm();
                 ThongKeDanhMuc();
@@ -257,8 +248,7 @@ namespace PersonalExpenseManager
 
             if (categoryDAL.Delete(selectedId))
             {
-                MessageBox.Show("Delete successful!");
-
+                // Đã xóa bỏ MessageBox.Show thông báo thành công
                 LoadCategories();
                 ResetForm();
                 ThongKeDanhMuc();
@@ -268,6 +258,7 @@ namespace PersonalExpenseManager
                 MessageBox.Show(categoryDAL.GetError());
             }
         }
+
         private void ResetForm()
         {
             selectedId = "";
@@ -278,24 +269,23 @@ namespace PersonalExpenseManager
             cmbType.SelectedIndex = -1;
             cmbIcon.SelectedIndex = -1;
         }
+
         private void btnReset_Click(object sender, EventArgs e)
         {
             ResetForm();
+            // Không sử dụng MessageBox thông báo reset ở đây
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void pnlIncome_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void cmbIcon_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
     }
 }

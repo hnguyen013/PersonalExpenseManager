@@ -34,19 +34,24 @@ namespace PersonalExpenseManager
 
             btnSavings.FillColor = Color.FromArgb(239, 196, 85);
             btnSavings.ForeColor = Color.FromArgb(47, 93, 80);
-        }
 
+            chkInProgress.CheckedChanged += FilterChanged;
+            chkCompleted.CheckedChanged += FilterChanged;
+        }
+        private void FilterChanged(object sender, EventArgs e)
+        {
+            LoadSavings();
+        }
         private void SetupSavingsGrid()
         {
+            dgvSavings.AllowUserToAddRows = false;
             dgvSavings.EnableHeadersVisualStyles = false;
 
             // Header
             dgvSavings.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(46, 125, 50);
             dgvSavings.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvSavings.ColumnHeadersDefaultCellStyle.Font =
-                new Font("Segoe UI", 10, FontStyle.Bold);
-            dgvSavings.ColumnHeadersDefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleCenter;
+            dgvSavings.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvSavings.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSavings.ColumnHeadersHeight = 40;
 
             // Body
@@ -59,7 +64,6 @@ namespace PersonalExpenseManager
             dgvSavings.DefaultCellStyle.SelectionForeColor = Color.Black;
 
             dgvSavings.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
-
             dgvSavings.RowTemplate.Height = 35;
 
             dgvSavings.BorderStyle = BorderStyle.None;
@@ -68,8 +72,7 @@ namespace PersonalExpenseManager
 
             dgvSavings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgvSavings.ColumnHeadersDefaultCellStyle.SelectionBackColor =
-                dgvSavings.ColumnHeadersDefaultCellStyle.BackColor;
+            dgvSavings.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvSavings.ColumnHeadersDefaultCellStyle.BackColor;
             dgvSavings.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
 
             foreach (DataGridViewColumn col in dgvSavings.Columns)
@@ -78,32 +81,25 @@ namespace PersonalExpenseManager
             }
 
             // Căn giữa ID
-            dgvSavings.Columns[0].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleCenter;
+            dgvSavings.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // Goal Name căn trái
-            dgvSavings.Columns[1].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleLeft;
+            dgvSavings.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             // TargetAmount căn phải
-            dgvSavings.Columns[2].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleRight;
+            dgvSavings.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             // Saved Amount căn phải
-            dgvSavings.Columns[3].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleRight;
+            dgvSavings.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            // Progress căn giữa
-            dgvSavings.Columns[4].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleCenter;
+            // Progress căn phải
+            dgvSavings.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            // Target Date căn giữa
-            dgvSavings.Columns[5].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleCenter;
+            // Target Date căn phải
+            dgvSavings.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             // Status căn giữa
-            dgvSavings.Columns[6].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleCenter;
+            dgvSavings.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void frmSavings_Load(object sender, EventArgs e)
@@ -113,13 +109,12 @@ namespace PersonalExpenseManager
 
         private void txtNotes_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void txtGoalName_TextChanged(object sender, EventArgs e)
         {
-
         }
+
         private void LoadSavings()
         {
             dgvSavings.Rows.Clear();
@@ -127,22 +122,48 @@ namespace PersonalExpenseManager
             double totalTarget = 0;
             double totalSaved = 0;
 
+            bool showInProgress = chkInProgress.Checked;
+            bool showCompleted = chkCompleted.Checked;
+
             foreach (Saving s in savingDAL.ReadAll())
             {
+                if (showInProgress == false && showCompleted == false)
+                {
+                    // Bỏ tích cả 2 -> hiển thị tất cả
+                }
+                else
+                {
+                    if (s.Status == "In Progress" && !showInProgress)
+                        continue;
+
+                    if (s.Status == "Completed" && !showCompleted)
+                        continue;
+                }
+
                 double progress = 0;
 
                 if (s.TargetAmount > 0)
                     progress = s.SavedAmount / s.TargetAmount * 100;
 
-                dgvSavings.Rows.Add(
+                int rowIndex = dgvSavings.Rows.Add(
                     s.Id,
                     s.GoalName,
-                    s.TargetAmount,
-                    s.SavedAmount,
+                    s.TargetAmount.ToString("N0") + " đ",
+                    s.SavedAmount.ToString("N0") + " đ",
                     progress.ToString("0") + "%",
                     s.TargetDate.ToString("dd/MM/yyyy"),
                     s.Status
                 );
+                if (s.Status == "In Progress")
+                {
+                    dgvSavings.Rows[rowIndex].Cells["colStatus"].Style.ForeColor = Color.Red;
+                }
+                else if (s.Status == "Completed")
+                {
+                    dgvSavings.Rows[rowIndex].Cells["colStatus"].Style.ForeColor = Color.Blue;
+                }
+
+                dgvSavings.Rows[rowIndex].Cells["colStatus"].Style.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 
                 totalTarget += s.TargetAmount;
                 totalSaved += s.SavedAmount;
@@ -172,12 +193,14 @@ namespace PersonalExpenseManager
 
             return "In Progress";
         }
+
         private string TaoMaGiaoDich()
         {
             List<Transaction> list = transactionDAL.ReadAll();
             int stt = list.Count + 1;
             return "T" + stt.ToString("000");
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (txtGoalName.Text.Trim() == "")
@@ -186,8 +209,17 @@ namespace PersonalExpenseManager
                 return;
             }
 
-            double targetAmount = Convert.ToDouble(txtTargetAmount.Text);
-            double savedAmount = Convert.ToDouble(txtInitialAmount.Text);
+            if (!double.TryParse(txtTargetAmount.Text, out double targetAmount))
+            {
+                MessageBox.Show("Please enter a valid target amount");
+                return;
+            }
+
+            if (!double.TryParse(txtInitialAmount.Text, out double savedAmount))
+            {
+                MessageBox.Show("Please enter a valid initial amount");
+                return;
+            }
 
             Saving s = new Saving(
                 savingDAL.GetNextId(),
@@ -214,7 +246,7 @@ namespace PersonalExpenseManager
                     transactionDAL.Create(t);
                 }
 
-                MessageBox.Show("Add saving goal successfully");
+                // Đã xóa bỏ MessageBox thông báo "Add saving goal successfully"
                 LoadSavings();
                 ClearInput();
             }
@@ -276,7 +308,7 @@ namespace PersonalExpenseManager
                     transactionDAL.Create(t);
                 }
 
-                MessageBox.Show("Edit saving goal successfully");
+                // Đã xóa bỏ MessageBox thông báo "Edit saving goal successfully"
                 LoadSavings();
                 ClearInput();
             }
@@ -305,7 +337,7 @@ namespace PersonalExpenseManager
             {
                 if (savingDAL.DeleteById(selectedId))
                 {
-                    MessageBox.Show("Delete saving goal successfully");
+                    // Đã xóa bỏ MessageBox thông báo "Delete saving goal successfully"
                     LoadSavings();
                     ClearInput();
                 }
@@ -326,25 +358,25 @@ namespace PersonalExpenseManager
             if (e.RowIndex < 0)
                 return;
 
+            if (dgvSavings.Rows[e.RowIndex].IsNewRow)
+                return;
+
             DataGridViewRow row = dgvSavings.Rows[e.RowIndex];
 
             selectedId = row.Cells[0].Value.ToString();
-            txtGoalName.Text = row.Cells[1].Value.ToString();
-            txtTargetAmount.Text = row.Cells[2].Value.ToString();
-            txtInitialAmount.Text = row.Cells[3].Value.ToString();
-            oldSavedAmount = Convert.ToDouble(row.Cells[3].Value);
 
+            // Lấy dữ liệu GỐC (số thô, chưa format) từ Database, thay vì đọc từ ô bảng đã format sẵn
+            Saving s = savingDAL.ReadById(selectedId);
 
-            string dateText = row.Cells[5].Value.ToString();
+            if (s == null)
+                return;
 
-            DateTime date;
-            if (DateTime.TryParseExact(dateText, "dd/MM/yyyy",
-                CultureInfo.InvariantCulture,
-                DateTimeStyles.None,
-                out date))
-            {
-                dtpTargetDate.Value = date;
-            }
+            txtGoalName.Text = s.GoalName;
+            txtTargetAmount.Text = s.TargetAmount.ToString();
+            txtInitialAmount.Text = s.SavedAmount.ToString();
+            oldSavedAmount = s.SavedAmount;
+
+            dtpTargetDate.Value = s.TargetDate;
 
             txtNotes.Text = "";
         }

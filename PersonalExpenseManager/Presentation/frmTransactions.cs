@@ -10,9 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
-
 namespace PersonalExpenseManager.Presentation
 {
     public partial class frmTransactions : frmMainLayout
@@ -20,6 +17,7 @@ namespace PersonalExpenseManager.Presentation
         ITransactionDAL transactionDAL = new TransactionDAL();
         ICategoryDAL categoryDAL = new CategoryDAL();
         IBudgetDAL budgetDAL = new BudgetDAL();
+
         public frmTransactions()
         {
             InitializeComponent();
@@ -38,26 +36,25 @@ namespace PersonalExpenseManager.Presentation
 
             txtAmount.Enter += TextBox_Enter;
             txtNotes.Enter += TextBox_Enter;
-
         }
+
         void LoadData()
         {
             RefreshData();
         }
+
         private void SetupTransactionGrid()
         {
             dgvTransactions.EnableHeadersVisualStyles = false;
+            dgvTransactions.AllowUserToAddRows = false;
+
 
             // Header
             dgvTransactions.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(46, 125, 50);
             dgvTransactions.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvTransactions.ColumnHeadersDefaultCellStyle.Font =
-                new Font("Segoe UI", 10, FontStyle.Bold);
-
-            dgvTransactions.ColumnHeadersDefaultCellStyle.Alignment =
-        DataGridViewContentAlignment.MiddleCenter;
+            dgvTransactions.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvTransactions.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvTransactions.ColumnHeadersHeight = 40;
-
 
             // Body
             dgvTransactions.BackgroundColor = Color.White;
@@ -65,51 +62,45 @@ namespace PersonalExpenseManager.Presentation
 
             dgvTransactions.DefaultCellStyle.BackColor = Color.White;
             dgvTransactions.DefaultCellStyle.ForeColor = Color.Black;
-            dgvTransactions.DefaultCellStyle.SelectionBackColor =
-                Color.FromArgb(232, 245, 233);
+            dgvTransactions.DefaultCellStyle.SelectionBackColor = Color.FromArgb(232, 245, 233);
             dgvTransactions.DefaultCellStyle.SelectionForeColor = Color.Black;
 
-            dgvTransactions.AlternatingRowsDefaultCellStyle.BackColor =
-                Color.FromArgb(248, 248, 248);
-
+            dgvTransactions.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
             dgvTransactions.RowTemplate.Height = 35;
 
             dgvTransactions.BorderStyle = BorderStyle.None;
             dgvTransactions.RowHeadersVisible = false;
+            dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgvTransactions.AutoSizeColumnsMode =
-                DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvTransactions.ColumnHeadersDefaultCellStyle.SelectionBackColor =
-                dgvTransactions.ColumnHeadersDefaultCellStyle.BackColor;
-
-            dgvTransactions.ColumnHeadersDefaultCellStyle.SelectionForeColor =
-                Color.White;
+            dgvTransactions.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvTransactions.ColumnHeadersDefaultCellStyle.BackColor;
+            dgvTransactions.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
 
             foreach (DataGridViewColumn col in dgvTransactions.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
+            // ID (cột 0)
+            dgvTransactions.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             // Date (cột 1)
-            dgvTransactions.Columns[1].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleCenter;
+            dgvTransactions.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // Type (cột 2)
-            dgvTransactions.Columns[2].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleCenter;
+            dgvTransactions.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             // Category/Icon (cột 3)
-            dgvTransactions.Columns[3].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleLeft;
+            dgvTransactions.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             // Amount (cột 4)
-            dgvTransactions.Columns[4].DefaultCellStyle.Alignment =
-                DataGridViewContentAlignment.MiddleRight;
+            dgvTransactions.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
+
         void RefreshData()
         {
             dgvTransactions.Rows.Clear();
 
             List<Transaction> list = transactionDAL.ReadAll();
+            List<Category> categories = categoryDAL.ReadAll();
 
             bool showIncome = chkIncome.Checked;
             bool showExpense = chkExpense.Checked;
@@ -119,7 +110,6 @@ namespace PersonalExpenseManager.Presentation
 
             foreach (Transaction t in list)
             {
-                // Nếu bỏ tick cả 2 thì xem như All
                 if (showIncome == false && showExpense == false)
                 {
                     // không filter
@@ -132,12 +122,13 @@ namespace PersonalExpenseManager.Presentation
                     if (t.Type == "Expense" && !showExpense)
                         continue;
                 }
-
+                string categoryName = categories
+                    .FirstOrDefault(c => c.Id == t.CategoryID)?.Name ?? t.CategoryID;
                 int row = dgvTransactions.Rows.Add(
                     t.Id,
                     t.Date.ToShortDateString(),
                     t.Type,
-                    t.CategoryID,
+                    categoryName,
                     t.Amount,
                     t.Notes
                 );
@@ -168,25 +159,23 @@ namespace PersonalExpenseManager.Presentation
             lblTotalIncome.Text = income.ToString("N0") + " đ";
             lblTotalExpense.Text = expense.ToString("N0") + " đ";
             lblBalance.Text = (income - expense).ToString("N0") + " đ";
-
         }
+
         private void FilterChanged(object sender, EventArgs e)
         {
             RefreshData();
         }
+
         private void frmTransactions_Load(object sender, EventArgs e)
         {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dgvTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -201,44 +190,43 @@ namespace PersonalExpenseManager.Presentation
             cmbCategory.Text = row.Cells[3].Value.ToString();
             txtAmount.Text = row.Cells[4].Value.ToString();
             txtNotes.Text = row.Cells[5].Value.ToString();
-
         }
+
         void ResetForm()
         {
             cmbTransactionType.SelectedIndex = -1;
             cmbCategory.SelectedIndex = -1;
             txtAmount.Clear();
             txtNotes.Clear();
-            dtpDate.Value = DateTime.Today;
+            dtpDate.Value = DateTime.Today; // Reset về ngày hôm nay
         }
 
         string TaoMaTuDong()
         {
             List<Transaction> list = transactionDAL.ReadAll();
-
             int stt = list.Count + 1;
-
             return "T" + stt.ToString("000");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            // Dịch thông báo lỗi sang tiếng Anh
             if (cmbTransactionType.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn loại giao dịch");
+                MessageBox.Show("Please select a transaction type.");
                 return;
             }
 
             if (cmbCategory.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn danh mục");
+                MessageBox.Show("Please select a category.");
                 return;
             }
 
             double amount;
             if (double.TryParse(txtAmount.Text, out amount) == false)
             {
-                MessageBox.Show("Vui lòng nhập số tiền hợp lệ");
+                MessageBox.Show("Please enter a valid amount.");
                 return;
             }
 
@@ -257,6 +245,7 @@ namespace PersonalExpenseManager.Presentation
                 {
                     budgetDAL.UpdateSpentById(budgetId, amount);
                 }
+                // Xóa MessageBox thông báo thành công theo yêu cầu
                 RefreshData();
                 ResetForm();
             }
@@ -268,23 +257,24 @@ namespace PersonalExpenseManager.Presentation
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            // Dịch thông báo lỗi sang tiếng Anh
             if (dgvTransactions.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn giao dịch cần xóa");
+                MessageBox.Show("Please select a transaction to delete.");
                 return;
             }
 
             string id = dgvTransactions.SelectedRows[0].Cells[0].Value.ToString();
-
             Transaction old = transactionDAL.ReadById(id);
 
             if (transactionDAL.DeleteById(id))
             {
                 if (old != null && old.Type == "Expense" && !string.IsNullOrEmpty(old.BudgetId))
                 {
-                    budgetDAL.UpdateSpentByCategory(old.CategoryID, -old.Amount);
+                    budgetDAL.UpdateSpentById(old.BudgetId, -old.Amount);
                 }
 
+                // Xóa MessageBox thông báo thành công theo yêu cầu
                 RefreshData();
                 ResetForm();
             }
@@ -298,6 +288,7 @@ namespace PersonalExpenseManager.Presentation
         {
             ResetForm();
         }
+
         private void dgvTransactions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -340,6 +331,10 @@ namespace PersonalExpenseManager.Presentation
             }
 
             string id = dgvTransactions.CurrentRow.Cells["ID"].Value.ToString();
+
+            // Lấy lại giao dịch CŨ trước khi sửa, để biết nó từng ảnh hưởng budget nào
+            Transaction oldTransaction = transactionDAL.ReadById(id);
+
             string type = cmbTransactionType.Text;
             string category = cmbCategory.SelectedValue?.ToString();
             DateTime date = dtpDate.Value;
@@ -350,7 +345,20 @@ namespace PersonalExpenseManager.Presentation
 
             if (transactionDAL.Update(t))
             {
-                MessageBox.Show("Updated successfully!");
+                // 1. Hoàn tác ảnh hưởng của giao dịch CŨ lên budget cũ (nếu có)
+                if (oldTransaction != null && oldTransaction.Type == "Expense" &&
+                    !string.IsNullOrEmpty(oldTransaction.BudgetId))
+                {
+                    budgetDAL.UpdateSpentById(oldTransaction.BudgetId, -oldTransaction.Amount);
+                }
+
+                // 2. Áp dụng ảnh hưởng của giao dịch MỚI lên budget mới (nếu có)
+                if (type == "Expense" && !string.IsNullOrEmpty(budgetId))
+                {
+                    budgetDAL.UpdateSpentById(budgetId, amount);
+                }
+
+                // Đã xóa bỏ MessageBox.Show("Updated successfully!") theo yêu cầu
                 RefreshData();
                 ResetForm();
             }
@@ -359,6 +367,7 @@ namespace PersonalExpenseManager.Presentation
                 MessageBox.Show(transactionDAL.GetError());
             }
         }
+
         private void LoadCategoryComboBox()
         {
             cmbCategory.DataSource = categoryDAL.ReadAll();
@@ -402,8 +411,8 @@ namespace PersonalExpenseManager.Presentation
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
+
         private void TextBox_Enter(object sender, EventArgs e)
         {
             if (sender is Guna.UI2.WinForms.Guna2TextBox tb)
@@ -414,7 +423,6 @@ namespace PersonalExpenseManager.Presentation
 
         private void lblSubTitleList_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

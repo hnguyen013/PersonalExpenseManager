@@ -78,7 +78,7 @@
             this.pnlIncome.Controls.Add(this.lblTotalIncomeTitle);
             this.pnlIncome.Controls.Add(this.imgIncome);
             this.pnlIncome.FillColor = System.Drawing.Color.White;
-            this.pnlIncome.Location = new System.Drawing.Point(226, 104);
+            this.pnlIncome.Location = new System.Drawing.Point(247, 104);
             this.pnlIncome.Name = "pnlIncome";
             this.pnlIncome.Size = new System.Drawing.Size(340, 127);
             this.pnlIncome.TabIndex = 2;
@@ -127,7 +127,7 @@
             this.pnlExpense.Controls.Add(this.lblExpenseTitle);
             this.pnlExpense.Controls.Add(this.imgExpense);
             this.pnlExpense.FillColor = System.Drawing.Color.White;
-            this.pnlExpense.Location = new System.Drawing.Point(600, 104);
+            this.pnlExpense.Location = new System.Drawing.Point(621, 104);
             this.pnlExpense.Name = "pnlExpense";
             this.pnlExpense.Size = new System.Drawing.Size(340, 127);
             this.pnlExpense.TabIndex = 3;
@@ -175,7 +175,7 @@
             this.pnlBalance.Controls.Add(this.lblBalanceTitle);
             this.pnlBalance.Controls.Add(this.imgBalance);
             this.pnlBalance.FillColor = System.Drawing.Color.White;
-            this.pnlBalance.Location = new System.Drawing.Point(974, 104);
+            this.pnlBalance.Location = new System.Drawing.Point(995, 104);
             this.pnlBalance.Name = "pnlBalance";
             this.pnlBalance.Size = new System.Drawing.Size(340, 127);
             this.pnlBalance.TabIndex = 4;
@@ -220,11 +220,11 @@
             this.pnlRecent.BorderRadius = 20;
             this.pnlRecent.BorderThickness = 1;
             this.pnlRecent.Controls.Add(this.dgvRecentTransactions);
-            this.pnlRecent.Controls.Add(this.label1);
-            this.pnlRecent.Location = new System.Drawing.Point(224, 253);
+            this.pnlRecent.Location = new System.Drawing.Point(245, 253);
             this.pnlRecent.Name = "pnlRecent";
-            this.pnlRecent.Size = new System.Drawing.Size(1090, 603);
+            this.pnlRecent.Size = new System.Drawing.Size(1090, 560);
             this.pnlRecent.TabIndex = 5;
+            this.pnlRecent.Controls.SetChildIndex(this.dgvRecentTransactions, 0);
             // 
             // dgvRecentTransactions
             // 
@@ -257,13 +257,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRecentTransactions.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecentTransactions.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRecentTransactions.Location = new System.Drawing.Point(35, 64);
+            this.dgvRecentTransactions.Location = new System.Drawing.Point(35, 31);
             this.dgvRecentTransactions.Name = "dgvRecentTransactions";
             this.dgvRecentTransactions.ReadOnly = true;
             this.dgvRecentTransactions.RowHeadersVisible = false;
             this.dgvRecentTransactions.RowHeadersWidth = 51;
             this.dgvRecentTransactions.RowTemplate.Height = 24;
-            this.dgvRecentTransactions.Size = new System.Drawing.Size(1004, 510);
+            this.dgvRecentTransactions.Size = new System.Drawing.Size(1004, 489);
             this.dgvRecentTransactions.TabIndex = 1;
             this.dgvRecentTransactions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRecentTransactions.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

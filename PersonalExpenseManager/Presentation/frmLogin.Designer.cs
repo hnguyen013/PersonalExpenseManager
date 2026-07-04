@@ -32,7 +32,6 @@
             this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRegister = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.chkRemember = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblSubTitle = new System.Windows.Forms.Label();
@@ -48,15 +47,14 @@
             this.pnlLogin.BorderRadius = 22;
             this.pnlLogin.Controls.Add(this.btnRegister);
             this.pnlLogin.Controls.Add(this.btnLogin);
-            this.pnlLogin.Controls.Add(this.chkRemember);
             this.pnlLogin.Controls.Add(this.txtPassword);
             this.pnlLogin.Controls.Add(this.txtUsername);
             this.pnlLogin.Controls.Add(this.lblSubTitle);
             this.pnlLogin.Controls.Add(this.lblTitle);
             this.pnlLogin.FillColor = System.Drawing.Color.White;
-            this.pnlLogin.Location = new System.Drawing.Point(480, 65);
+            this.pnlLogin.Location = new System.Drawing.Point(480, 93);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(360, 420);
+            this.pnlLogin.Size = new System.Drawing.Size(360, 372);
             this.pnlLogin.TabIndex = 1;
             // 
             // btnRegister
@@ -65,7 +63,7 @@
             this.btnRegister.FillColor = System.Drawing.Color.Transparent;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(94)))), ((int)(((byte)(60)))));
-            this.btnRegister.Location = new System.Drawing.Point(40, 345);
+            this.btnRegister.Location = new System.Drawing.Point(40, 303);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(280, 35);
             this.btnRegister.TabIndex = 6;
@@ -79,32 +77,12 @@
             this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(40, 285);
+            this.btnLogin.Location = new System.Drawing.Point(40, 243);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(280, 45);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // chkRemember
-            // 
-            this.chkRemember.AutoSize = true;
-            this.chkRemember.BackColor = System.Drawing.Color.Transparent;
-            this.chkRemember.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkRemember.CheckedState.BorderRadius = 2;
-            this.chkRemember.CheckedState.BorderThickness = 0;
-            this.chkRemember.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkRemember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(93)))), ((int)(((byte)(80)))));
-            this.chkRemember.Location = new System.Drawing.Point(40, 240);
-            this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(119, 20);
-            this.chkRemember.TabIndex = 4;
-            this.chkRemember.Text = "Remember me";
-            this.chkRemember.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkRemember.UncheckedState.BorderRadius = 2;
-            this.chkRemember.UncheckedState.BorderThickness = 0;
-            this.chkRemember.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkRemember.UseVisualStyleBackColor = false;
             // 
             // txtPassword
             // 
@@ -119,7 +97,7 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(40, 180);
+            this.txtPassword.Location = new System.Drawing.Point(40, 177);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -142,7 +120,7 @@
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(40, 120);
+            this.txtUsername.Location = new System.Drawing.Point(40, 114);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PlaceholderText = "";
@@ -156,7 +134,7 @@
             this.lblSubTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblSubTitle.Font = new System.Drawing.Font("Segoe UI", 9.800001F);
             this.lblSubTitle.ForeColor = System.Drawing.Color.Gray;
-            this.lblSubTitle.Location = new System.Drawing.Point(35, 79);
+            this.lblSubTitle.Location = new System.Drawing.Point(35, 73);
             this.lblSubTitle.Name = "lblSubTitle";
             this.lblSubTitle.Size = new System.Drawing.Size(125, 23);
             this.lblSubTitle.TabIndex = 1;
@@ -168,7 +146,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 21.8F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(45)))), ((int)(((byte)(40)))));
-            this.lblTitle.Location = new System.Drawing.Point(30, 20);
+            this.lblTitle.Location = new System.Drawing.Point(30, 17);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(120, 50);
             this.lblTitle.TabIndex = 0;
@@ -208,7 +186,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel pnlLogin;
-        private Guna.UI2.WinForms.Guna2CheckBox chkRemember;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private System.Windows.Forms.Label lblSubTitle;

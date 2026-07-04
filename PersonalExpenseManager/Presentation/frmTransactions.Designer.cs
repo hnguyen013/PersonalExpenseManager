@@ -61,20 +61,23 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTransactionInfo = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.lblTransactiontype = new System.Windows.Forms.Label();
             this.cmbBudget = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblBudget = new System.Windows.Forms.Label();
             this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblNotes = new System.Windows.Forms.Label();
             this.dtpDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.txtAmount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cmbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cmbTransactionType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblSubTItleInfo = new System.Windows.Forms.Label();
             this.lblMainTitle = new System.Windows.Forms.Label();
+            this.lblcate = new System.Windows.Forms.Label();
+            this.lblCatego = new System.Windows.Forms.Label();
+            this.lblTransaction = new System.Windows.Forms.Label();
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.pnlContent.SuspendLayout();
             this.pnlBalance.SuspendLayout();
@@ -112,7 +115,7 @@
             this.chkExpense.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.chkExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.chkExpense.Location = new System.Drawing.Point(1034, 476);
+            this.chkExpense.Location = new System.Drawing.Point(1034, 469);
             this.chkExpense.Name = "chkExpense";
             this.chkExpense.Size = new System.Drawing.Size(102, 24);
             this.chkExpense.TabIndex = 8;
@@ -126,7 +129,7 @@
             this.chkIncome.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
-            this.chkIncome.Location = new System.Drawing.Point(924, 476);
+            this.chkIncome.Location = new System.Drawing.Point(924, 469);
             this.chkIncome.Name = "chkIncome";
             this.chkIncome.Size = new System.Drawing.Size(91, 24);
             this.chkIncome.TabIndex = 7;
@@ -142,7 +145,7 @@
             this.pnlBalance.Controls.Add(this.lblBalanceTitle);
             this.pnlBalance.Controls.Add(this.imgBalance);
             this.pnlBalance.FillColor = System.Drawing.Color.White;
-            this.pnlBalance.Location = new System.Drawing.Point(815, 73);
+            this.pnlBalance.Location = new System.Drawing.Point(815, 64);
             this.pnlBalance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBalance.Name = "pnlBalance";
             this.pnlBalance.Size = new System.Drawing.Size(340, 127);
@@ -155,9 +158,9 @@
             this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(98)))), ((int)(((byte)(253)))));
             this.lblBalance.Location = new System.Drawing.Point(101, 53);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(187, 38);
+            this.lblBalance.Size = new System.Drawing.Size(59, 38);
             this.lblBalance.TabIndex = 1;
-            this.lblBalance.Text = "12.450.000 đ";
+            this.lblBalance.Text = "0 đ";
             // 
             // lblBalanceTitle
             // 
@@ -192,7 +195,7 @@
             this.pnlExpense.Controls.Add(this.lblExpenseTitle);
             this.pnlExpense.Controls.Add(this.imgExpense);
             this.pnlExpense.FillColor = System.Drawing.Color.White;
-            this.pnlExpense.Location = new System.Drawing.Point(436, 73);
+            this.pnlExpense.Location = new System.Drawing.Point(436, 64);
             this.pnlExpense.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlExpense.Name = "pnlExpense";
             this.pnlExpense.Size = new System.Drawing.Size(340, 127);
@@ -205,9 +208,9 @@
             this.lblTotalExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.lblTotalExpense.Location = new System.Drawing.Point(101, 53);
             this.lblTotalExpense.Name = "lblTotalExpense";
-            this.lblTotalExpense.Size = new System.Drawing.Size(187, 38);
+            this.lblTotalExpense.Size = new System.Drawing.Size(59, 38);
             this.lblTotalExpense.TabIndex = 1;
-            this.lblTotalExpense.Text = "16.500.000 đ";
+            this.lblTotalExpense.Text = "0 đ";
             // 
             // lblExpenseTitle
             // 
@@ -242,7 +245,7 @@
             this.pnlIncome.Controls.Add(this.lblTotalIncomeTitle);
             this.pnlIncome.Controls.Add(this.imgIncome);
             this.pnlIncome.FillColor = System.Drawing.Color.White;
-            this.pnlIncome.Location = new System.Drawing.Point(53, 73);
+            this.pnlIncome.Location = new System.Drawing.Point(53, 64);
             this.pnlIncome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlIncome.Name = "pnlIncome";
             this.pnlIncome.Size = new System.Drawing.Size(340, 127);
@@ -255,9 +258,9 @@
             this.lblTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(140)))), ((int)(((byte)(60)))));
             this.lblTotalIncome.Location = new System.Drawing.Point(101, 53);
             this.lblTotalIncome.Name = "lblTotalIncome";
-            this.lblTotalIncome.Size = new System.Drawing.Size(187, 38);
+            this.lblTotalIncome.Size = new System.Drawing.Size(59, 38);
             this.lblTotalIncome.TabIndex = 1;
-            this.lblTotalIncome.Text = "25.750.000 đ";
+            this.lblTotalIncome.Text = "0 đ";
             // 
             // lblTotalIncomeTitle
             // 
@@ -287,6 +290,7 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
             this.dgvTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTransactions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -313,13 +317,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTransactions.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTransactions.GridColor = System.Drawing.Color.Silver;
-            this.dgvTransactions.Location = new System.Drawing.Point(56, 508);
+            this.dgvTransactions.Location = new System.Drawing.Point(56, 499);
             this.dgvTransactions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowHeadersVisible = false;
             this.dgvTransactions.RowHeadersWidth = 51;
             this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(1101, 244);
+            this.dgvTransactions.Size = new System.Drawing.Size(1101, 263);
             this.dgvTransactions.TabIndex = 5;
             this.dgvTransactions.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Green;
             this.dgvTransactions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
@@ -375,7 +379,7 @@
             this.lblSubTitleList.AutoSize = true;
             this.lblSubTitleList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblSubTitleList.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblSubTitleList.Location = new System.Drawing.Point(48, 476);
+            this.lblSubTitleList.Location = new System.Drawing.Point(48, 467);
             this.lblSubTitleList.Name = "lblSubTitleList";
             this.lblSubTitleList.Size = new System.Drawing.Size(188, 25);
             this.lblSubTitleList.TabIndex = 4;
@@ -385,6 +389,7 @@
             // pnlChucNanng
             // 
             this.pnlChucNanng.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChucNanng.BorderColor = System.Drawing.Color.Gainsboro;
             this.pnlChucNanng.BorderRadius = 10;
             this.pnlChucNanng.BorderThickness = 1;
             this.pnlChucNanng.Controls.Add(this.btnLamMoi);
@@ -392,9 +397,11 @@
             this.pnlChucNanng.Controls.Add(this.btnThem);
             this.pnlChucNanng.Controls.Add(this.btnSua);
             this.pnlChucNanng.FillColor = System.Drawing.Color.White;
-            this.pnlChucNanng.Location = new System.Drawing.Point(904, 228);
+            this.pnlChucNanng.Location = new System.Drawing.Point(904, 219);
             this.pnlChucNanng.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlChucNanng.Name = "pnlChucNanng";
+            this.pnlChucNanng.ShadowDecoration.BorderRadius = 0;
+            this.pnlChucNanng.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.pnlChucNanng.ShadowDecoration.Enabled = true;
             this.pnlChucNanng.Size = new System.Drawing.Size(251, 229);
             this.pnlChucNanng.TabIndex = 2;
@@ -486,27 +493,58 @@
             // pnlTransactionInfo
             // 
             this.pnlTransactionInfo.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTransactionInfo.BorderColor = System.Drawing.Color.Gainsboro;
             this.pnlTransactionInfo.BorderRadius = 10;
+            this.pnlTransactionInfo.BorderThickness = 1;
+            this.pnlTransactionInfo.Controls.Add(this.lblCategory);
+            this.pnlTransactionInfo.Controls.Add(this.lblAmount);
+            this.pnlTransactionInfo.Controls.Add(this.lblTransactiontype);
             this.pnlTransactionInfo.Controls.Add(this.cmbBudget);
-            this.pnlTransactionInfo.Controls.Add(this.label6);
+            this.pnlTransactionInfo.Controls.Add(this.lblBudget);
             this.pnlTransactionInfo.Controls.Add(this.txtNotes);
-            this.pnlTransactionInfo.Controls.Add(this.label5);
+            this.pnlTransactionInfo.Controls.Add(this.lblNotes);
             this.pnlTransactionInfo.Controls.Add(this.dtpDate);
-            this.pnlTransactionInfo.Controls.Add(this.label4);
+            this.pnlTransactionInfo.Controls.Add(this.lblDate);
             this.pnlTransactionInfo.Controls.Add(this.txtAmount);
-            this.pnlTransactionInfo.Controls.Add(this.label3);
             this.pnlTransactionInfo.Controls.Add(this.cmbCategory);
-            this.pnlTransactionInfo.Controls.Add(this.label2);
             this.pnlTransactionInfo.Controls.Add(this.cmbTransactionType);
-            this.pnlTransactionInfo.Controls.Add(this.label1);
             this.pnlTransactionInfo.Controls.Add(this.lblSubTItleInfo);
             this.pnlTransactionInfo.FillColor = System.Drawing.Color.White;
-            this.pnlTransactionInfo.Location = new System.Drawing.Point(53, 228);
+            this.pnlTransactionInfo.Location = new System.Drawing.Point(53, 219);
             this.pnlTransactionInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTransactionInfo.Name = "pnlTransactionInfo";
+            this.pnlTransactionInfo.ShadowDecoration.BorderRadius = 0;
+            this.pnlTransactionInfo.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.pnlTransactionInfo.ShadowDecoration.Enabled = true;
             this.pnlTransactionInfo.Size = new System.Drawing.Size(807, 229);
             this.pnlTransactionInfo.TabIndex = 1;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(456, 59);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(68, 16);
+            this.lblCategory.TabIndex = 14;
+            this.lblCategory.Text = "Category :";
+            // 
+            // lblAmount
+            // 
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Location = new System.Drawing.Point(19, 118);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(58, 16);
+            this.lblAmount.TabIndex = 13;
+            this.lblAmount.Text = "Amount :";
+            // 
+            // lblTransactiontype
+            // 
+            this.lblTransactiontype.AutoSize = true;
+            this.lblTransactiontype.Location = new System.Drawing.Point(19, 59);
+            this.lblTransactiontype.Name = "lblTransactiontype";
+            this.lblTransactiontype.Size = new System.Drawing.Size(113, 16);
+            this.lblTransactiontype.TabIndex = 12;
+            this.lblTransactiontype.Text = "Transaction type :";
             // 
             // cmbBudget
             // 
@@ -525,14 +563,14 @@
             this.cmbBudget.Size = new System.Drawing.Size(247, 36);
             this.cmbBudget.TabIndex = 10;
             // 
-            // label6
+            // lblBudget
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(456, 172);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 16);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Budget :";
+            this.lblBudget.AutoSize = true;
+            this.lblBudget.Location = new System.Drawing.Point(456, 172);
+            this.lblBudget.Name = "lblBudget";
+            this.lblBudget.Size = new System.Drawing.Size(56, 16);
+            this.lblBudget.TabIndex = 11;
+            this.lblBudget.Text = "Budget :";
             // 
             // txtNotes
             // 
@@ -554,14 +592,14 @@
             this.txtNotes.Size = new System.Drawing.Size(284, 36);
             this.txtNotes.TabIndex = 9;
             // 
-            // label5
+            // lblNotes
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Notes :";
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(19, 175);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(49, 16);
+            this.lblNotes.TabIndex = 8;
+            this.lblNotes.Text = "Notes :";
             // 
             // dtpDate
             // 
@@ -579,16 +617,16 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(164, 36);
             this.dtpDate.TabIndex = 7;
-            this.dtpDate.Value = new System.DateTime(2026, 6, 1, 11, 27, 50, 929);
+            this.dtpDate.Value = new System.DateTime(2026, 7, 4, 0, 0, 0, 0);
             // 
-            // label4
+            // lblDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(456, 113);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Date :";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(456, 113);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(42, 16);
+            this.lblDate.TabIndex = 6;
+            this.lblDate.Text = "Date :";
             // 
             // txtAmount
             // 
@@ -609,16 +647,6 @@
             this.txtAmount.SelectedText = "";
             this.txtAmount.Size = new System.Drawing.Size(284, 36);
             this.txtAmount.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Amount :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cmbCategory
             // 
@@ -642,15 +670,6 @@
             this.cmbCategory.Size = new System.Drawing.Size(249, 36);
             this.cmbCategory.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(456, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Category :";
-            // 
             // cmbTransactionType
             // 
             this.cmbTransactionType.BackColor = System.Drawing.Color.Transparent;
@@ -670,15 +689,6 @@
             this.cmbTransactionType.Name = "cmbTransactionType";
             this.cmbTransactionType.Size = new System.Drawing.Size(284, 36);
             this.cmbTransactionType.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Transaction type :";
             // 
             // lblSubTItleInfo
             // 
@@ -702,6 +712,34 @@
             this.lblMainTitle.TabIndex = 0;
             this.lblMainTitle.Text = "Transactions";
             // 
+            // lblcate
+            // 
+            this.lblcate.AutoSize = true;
+            this.lblcate.Location = new System.Drawing.Point(19, 113);
+            this.lblcate.Name = "lblcate";
+            this.lblcate.Size = new System.Drawing.Size(58, 16);
+            this.lblcate.TabIndex = 4;
+            this.lblcate.Text = "Amount :";
+            this.lblcate.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lblCatego
+            // 
+            this.lblCatego.AutoSize = true;
+            this.lblCatego.Location = new System.Drawing.Point(456, 58);
+            this.lblCatego.Name = "lblCatego";
+            this.lblCatego.Size = new System.Drawing.Size(68, 16);
+            this.lblCatego.TabIndex = 3;
+            this.lblCatego.Text = "Category :";
+            // 
+            // lblTransaction
+            // 
+            this.lblTransaction.AutoSize = true;
+            this.lblTransaction.Location = new System.Drawing.Point(19, 58);
+            this.lblTransaction.Name = "lblTransaction";
+            this.lblTransaction.Size = new System.Drawing.Size(113, 16);
+            this.lblTransaction.TabIndex = 1;
+            this.lblTransaction.Text = "Transaction type :";
+            // 
             // guna2CheckBox1
             // 
             this.guna2CheckBox1.AutoSize = true;
@@ -723,12 +761,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1381, 846);
+            this.ClientSize = new System.Drawing.Size(1382, 903);
             this.Controls.Add(this.guna2CheckBox1);
             this.Controls.Add(this.pnlContent);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTransactions";
-            this.Text = "frmTransactions";
+            this.Text = "Transactions";
             this.Load += new System.EventHandler(this.frmTransactions_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
@@ -753,18 +791,18 @@
         private System.Windows.Forms.Label lblMainTitle;
         private Guna.UI2.WinForms.Guna2Panel pnlTransactionInfo;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTransactionType;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTransaction;
         private System.Windows.Forms.Label lblSubTItleInfo;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDate;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblDate;
         private Guna.UI2.WinForms.Guna2TextBox txtAmount;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblcate;
         private Guna.UI2.WinForms.Guna2ComboBox cmbCategory;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCatego;
         private Guna.UI2.WinForms.Guna2TextBox txtNotes;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblNotes;
         private Guna.UI2.WinForms.Guna2ComboBox cmbBudget;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblBudget;
         private Guna.UI2.WinForms.Guna2Panel pnlChucNanng;
         private Guna.UI2.WinForms.Guna2Button btnLamMoi;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
@@ -793,5 +831,8 @@
         private System.Windows.Forms.CheckBox chkExpense;
         private System.Windows.Forms.CheckBox chkIncome;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label lblTransactiontype;
     }
 }

@@ -99,11 +99,14 @@ namespace PersonalExpenseManager
             series.IsValueShownAsLabel = false;
             series["DoughnutRadius"] = "55";
 
+            List<Category> categories = categoryDAL.ReadAll();
+
             var groupData = list
                 .GroupBy(t => t.CategoryID)
                 .Select(g => new
                 {
-                    Category = g.Key,
+                    CategoryId = g.Key,
+                    CategoryName = categories.FirstOrDefault(c => c.Id == g.Key)?.Name ?? g.Key,
                     Total = g.Sum(t => t.Amount)
                 })
                 .Where(x => x.Total > 0)
@@ -119,15 +122,16 @@ namespace PersonalExpenseManager
             {
                 foreach (var item in groupData)
                 {
-                    int pointIndex = series.Points.AddXY(item.Category, item.Total);
+                    int pointIndex = series.Points.AddXY(item.CategoryName, item.Total);
                     series.Points[pointIndex].LegendText =
-                        item.Category + " - " + FormatMoney(item.Total);
+                        item.CategoryName + " - " + FormatMoney(item.Total);
                 }
             }
 
             chart.Series.Add(series);
         }
 
+        // Đã sửa lại kiểu dữ liệu trả về là bool chuẩn xác
         private bool IsIncome(string type)
         {
             if (type == null)
@@ -135,10 +139,10 @@ namespace PersonalExpenseManager
 
             string value = type.ToLower();
 
-            return value.Contains("income")
-                || value.Contains("thu");
+            return value.Contains("income") || value.Contains("thu");
         }
 
+        // Đã sửa lại kiểu dữ liệu trả về là bool chuẩn xác
         private bool IsExpense(string type)
         {
             if (type == null)
@@ -146,8 +150,7 @@ namespace PersonalExpenseManager
 
             string value = type.ToLower();
 
-            return value.Contains("expense")
-                || value.Contains("chi");
+            return value.Contains("expense") || value.Contains("chi");
         }
 
         private string FormatMoney(double money)
@@ -173,68 +176,56 @@ namespace PersonalExpenseManager
 
                 System.IO.File.WriteAllText(saveFileDialog.FileName, content);
 
-                MessageBox.Show("Export report successfully!");
+                // Đã xóa bỏ hoàn toàn MessageBox.Show thông báo thành công tại đây
             }
         }
 
         private void pnlFilter_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void lblDateFrom_Click(object sender, EventArgs e)
         {
-
         }
 
         private void frmReport_Load(object sender, EventArgs e)
         {
-
         }
 
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblExpenseTitle_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblSavingsTitle_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblTotalSavings_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblIncomeTitle_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblSavingsCompare_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblExpenseChartTitle_Click(object sender, EventArgs e)
         {
-
         }
 
         private void pnlReportContent_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

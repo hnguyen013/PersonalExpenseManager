@@ -42,8 +42,8 @@
             this.lblCategory = new System.Windows.Forms.Label();
             this.txtBudgetName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblBugetName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblAddHeader = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlChucNang = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
@@ -95,7 +95,9 @@
             // pnlAddBudet
             // 
             this.pnlAddBudet.BackColor = System.Drawing.Color.Transparent;
-            this.pnlAddBudet.BorderRadius = 12;
+            this.pnlAddBudet.BorderColor = System.Drawing.Color.Gainsboro;
+            this.pnlAddBudet.BorderRadius = 10;
+            this.pnlAddBudet.BorderThickness = 1;
             this.pnlAddBudet.Controls.Add(this.cmbPeriod);
             this.pnlAddBudet.Controls.Add(this.lblPeriod);
             this.pnlAddBudet.Controls.Add(this.txtAmont);
@@ -104,11 +106,12 @@
             this.pnlAddBudet.Controls.Add(this.lblCategory);
             this.pnlAddBudet.Controls.Add(this.txtBudgetName);
             this.pnlAddBudet.Controls.Add(this.lblBugetName);
-            this.pnlAddBudet.Controls.Add(this.label2);
             this.pnlAddBudet.Controls.Add(this.lblAddHeader);
             this.pnlAddBudet.FillColor = System.Drawing.Color.White;
             this.pnlAddBudet.Location = new System.Drawing.Point(254, 272);
             this.pnlAddBudet.Name = "pnlAddBudet";
+            this.pnlAddBudet.ShadowDecoration.BorderRadius = 0;
+            this.pnlAddBudet.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.pnlAddBudet.ShadowDecoration.Enabled = true;
             this.pnlAddBudet.Size = new System.Drawing.Size(717, 249);
             this.pnlAddBudet.TabIndex = 3;
@@ -230,14 +233,6 @@
             this.lblBugetName.TabIndex = 6;
             this.lblBugetName.Text = "Budget name";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(174, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 16);
-            this.label2.TabIndex = 4;
-            // 
             // lblAddHeader
             // 
             this.lblAddHeader.AutoSize = true;
@@ -249,9 +244,18 @@
             this.lblAddHeader.TabIndex = 1;
             this.lblAddHeader.Text = "Add Budget";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(174, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.TabIndex = 4;
+            // 
             // pnlChucNang
             // 
             this.pnlChucNang.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChucNang.BorderColor = System.Drawing.Color.Gainsboro;
             this.pnlChucNang.BorderRadius = 10;
             this.pnlChucNang.BorderThickness = 1;
             this.pnlChucNang.Controls.Add(this.btnLamMoi);
@@ -261,6 +265,7 @@
             this.pnlChucNang.FillColor = System.Drawing.Color.White;
             this.pnlChucNang.Location = new System.Drawing.Point(1064, 272);
             this.pnlChucNang.Name = "pnlChucNang";
+            this.pnlChucNang.ShadowDecoration.Color = System.Drawing.Color.Transparent;
             this.pnlChucNang.ShadowDecoration.Enabled = true;
             this.pnlChucNang.Size = new System.Drawing.Size(247, 249);
             this.pnlChucNang.TabIndex = 4;
@@ -412,7 +417,7 @@
             // 
             // colSpent
             // 
-            this.colSpent.HeaderText = "Spent";
+            this.colSpent.HeaderText = "Remaining";
             this.colSpent.MinimumWidth = 6;
             this.colSpent.Name = "colSpent";
             // 
@@ -579,7 +584,7 @@
             this.chkDaily.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkDaily.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDaily.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.chkDaily.Location = new System.Drawing.Point(951, 544);
+            this.chkDaily.Location = new System.Drawing.Point(934, 544);
             this.chkDaily.Name = "chkDaily";
             this.chkDaily.Size = new System.Drawing.Size(74, 24);
             this.chkDaily.TabIndex = 8;
@@ -594,7 +599,7 @@
             this.chkWeekly.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkWeekly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkWeekly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.chkWeekly.Location = new System.Drawing.Point(1040, 544);
+            this.chkWeekly.Location = new System.Drawing.Point(1023, 544);
             this.chkWeekly.Name = "chkWeekly";
             this.chkWeekly.Size = new System.Drawing.Size(91, 24);
             this.chkWeekly.TabIndex = 9;
@@ -608,7 +613,7 @@
             this.chkMonthly.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkMonthly.ForeColor = System.Drawing.Color.Gray;
-            this.chkMonthly.Location = new System.Drawing.Point(1155, 544);
+            this.chkMonthly.Location = new System.Drawing.Point(1138, 544);
             this.chkMonthly.Name = "chkMonthly";
             this.chkMonthly.Size = new System.Drawing.Size(96, 24);
             this.chkMonthly.TabIndex = 10;
@@ -622,7 +627,7 @@
             this.chkYearly.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkYearly.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkYearly.ForeColor = System.Drawing.Color.Blue;
-            this.chkYearly.Location = new System.Drawing.Point(1266, 544);
+            this.chkYearly.Location = new System.Drawing.Point(1249, 544);
             this.chkYearly.Name = "chkYearly";
             this.chkYearly.Size = new System.Drawing.Size(83, 24);
             this.chkYearly.TabIndex = 11;
@@ -659,7 +664,7 @@
             this.Controls.Add(this.pnlAddBudet);
             this.Controls.Add(this.lblMainTitle);
             this.Name = "frmBudget";
-            this.Text = "frmBudget";
+            this.Text = "Budget";
             this.pnlAddBudet.ResumeLayout(false);
             this.pnlAddBudet.PerformLayout();
             this.pnlChucNang.ResumeLayout(false);
@@ -695,12 +700,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLamMoi;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2DataGridView dgvButdgets;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColBudgetName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSpent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColProgress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPeriod;
         private Guna.UI2.WinForms.Guna2Panel pnlIncome;
         private System.Windows.Forms.Label lblTotalIncome;
         private System.Windows.Forms.Label lblTotalIncomeTitle;
@@ -718,5 +717,11 @@
         private System.Windows.Forms.CheckBox chkMonthly;
         private System.Windows.Forms.CheckBox chkYearly;
         private System.Windows.Forms.Label lblBugetslist;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColBudgetName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColProgress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPeriod;
     }
 }

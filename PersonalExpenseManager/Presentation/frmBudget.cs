@@ -20,6 +20,7 @@ namespace PersonalExpenseManager
         ICategoryDAL categoryDAL = new CategoryDAL();
         ITransactionDAL transactionDAL = new TransactionDAL();
         string selectedBudgetId = "";
+
         public frmBudget()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace PersonalExpenseManager
             chkMonthly.CheckedChanged += FilterChanged;
             chkYearly.CheckedChanged += FilterChanged;
         }
+
         private void FilterChanged(object sender, EventArgs e)
         {
             LoadBudgets(); // Gọi làm mới lại dữ liệu khi nhấn thay đổi bộ lọc
@@ -92,21 +94,15 @@ namespace PersonalExpenseManager
             {
                 dgvButdgets.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
-   
         }
 
         private void RefreshTopStats()
         {
-            // Lấy toàn bộ danh sách ngân sách hiện tại (đã được lọc hoặc tất cả)
-            // Để chính xác nhất, ta tính toán dựa trên các dòng đang hiển thị thực tế trên Grid
             double totalBudget = 0;
             double totalSpent = 0;
 
-            // Duyệt qua dữ liệu gốc từ DB để tính tổng hạn mức (BudgetAmount) và đã tiêu (Spent)
-            // Hoặc tính trực tiếp từ danh sách bốc từ budgetDAL
             List<Budget> allBudgets = budgetDAL.ReadAll();
 
-            // Áp dụng bộ lọc chu kỳ (Period) giống hệt như lúc bạn nạp vào Grid
             bool showDaily = chkDaily.Checked;
             bool showWeekly = chkWeekly.Checked;
             bool showMonthly = chkMonthly.Checked;
@@ -128,47 +124,39 @@ namespace PersonalExpenseManager
 
             double remaining = totalBudget - totalSpent;
 
-            // Cập nhật lên giao diện (Thay tên các Label tương ứng của bạn nếu có thay đổi)
-            lblTotalIncome.Text = totalBudget.ToString("N0") + " đ";  // Bây giờ đóng vai trò là Total Budget
-            lblTotalExpense.Text = totalSpent.ToString("N0") + " đ";  // Bây giờ đóng vai trò là Total Spent
+            lblTotalIncome.Text = totalBudget.ToString("N0") + " đ";
+            lblTotalExpense.Text = totalSpent.ToString("N0") + " đ";
 
-            // Phần còn lại (Balance cũ)
             if (remaining >= 0)
             {
                 lblBalance.Text = remaining.ToString("N0") + " đ";
-                lblBalance.ForeColor = Color.FromArgb(47, 93, 80); // Còn dư thì để màu xanh thanh lịch
+                lblBalance.ForeColor = Color.FromArgb(47, 93, 80);
             }
             else
             {
-                // Nếu chi tiêu vượt quá hạn mức ngân sách đặt ra
                 lblBalance.Text = "Vượt " + Math.Abs(remaining).ToString("N0") + " đ";
-                lblBalance.ForeColor = Color.Red; // Vượt hạn mức thì báo đỏ
+                lblBalance.ForeColor = Color.Red;
             }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void guna2ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-
         }
 
         private void lblAmount_Click(object sender, EventArgs e)
         {
-
         }
 
         private void pnlChucNang_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void LoadBudgets()
@@ -190,7 +178,6 @@ namespace PersonalExpenseManager
                 }
                 else
                 {
-                    // Nếu có nút được tick chọn, loại bỏ các chu kỳ không phù hợp
                     if (b.Period == "Daily" && !showDaily) continue;
                     if (b.Period == "Weekly" && !showWeekly) continue;
                     if (b.Period == "Monthly" && !showMonthly) continue;
@@ -205,15 +192,19 @@ namespace PersonalExpenseManager
 
                 Category matchedCategory = categories.FirstOrDefault(c => c.Id == b.CategoryID);
                 string categoryName = matchedCategory != null ? matchedCategory.Name : b.CategoryID;
-
-                dgvButdgets.Rows.Add(
+                double remaining = b.BudgetAmount - b.Spent;
+                int rowIndex = dgvButdgets.Rows.Add(
                     b.Id,
                     b.BudgetName,
                     categoryName,
-                    b.Spent.ToString("N0") + " đ",
+                    remaining.ToString("N0") + " đ",
                     progress.ToString("0.##") + "%",
                     b.Period
                 );
+                if (remaining < 0)
+                {
+                    dgvButdgets.Rows[rowIndex].Cells["colSpent"].Style.ForeColor = Color.Red;
+                }
             }
             RefreshTopStats();
         }
@@ -246,7 +237,7 @@ namespace PersonalExpenseManager
 
             if (budgetDAL.Create(b))
             {
-                MessageBox.Show("Add budget successfully");
+                // Đã xóa bỏ thông báo "Add budget successfully"
                 LoadBudgets();
                 ClearInput();
             }
@@ -292,7 +283,7 @@ namespace PersonalExpenseManager
 
             if (budgetDAL.Update(b))
             {
-                MessageBox.Show("Update budget successfully");
+                // Đã xóa bỏ thông báo "Update budget successfully"
                 LoadBudgets();
                 ClearInput();
             }
@@ -321,7 +312,7 @@ namespace PersonalExpenseManager
             {
                 if (budgetDAL.DeleteById(selectedBudgetId))
                 {
-                    MessageBox.Show("Delete budget successfully");
+                    // Đã xóa bỏ thông báo "Delete budget successfully"
                     LoadBudgets();
                     ClearInput();
                 }
@@ -342,7 +333,7 @@ namespace PersonalExpenseManager
 
             if (budgetDAL.ResetSpent(selectedBudgetId))
             {
-                MessageBox.Show("Reset budget successfully");
+                // Đã xóa bỏ thông báo "Reset budget successfully"
                 LoadBudgets();
                 ClearInput();
             }
@@ -354,8 +345,8 @@ namespace PersonalExpenseManager
 
         private void dgvButdgets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
+
         private void ClearInput()
         {
             selectedBudgetId = "";
@@ -365,6 +356,7 @@ namespace PersonalExpenseManager
             cboCategory.SelectedIndex = -1;
             cmbPeriod.SelectedIndex = -1;
         }
+
         private void frmBudget_Load(object sender, EventArgs e)
         {
             cmbPeriod.Items.Clear();
@@ -389,7 +381,6 @@ namespace PersonalExpenseManager
 
             selectedBudgetId = row.Cells["ID"].Value.ToString();
 
-
             Budget b = budgetDAL.ReadById(selectedBudgetId);
 
             if (b == null)
@@ -406,12 +397,10 @@ namespace PersonalExpenseManager
 
         private void chkIncome_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void lblMainTitle_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

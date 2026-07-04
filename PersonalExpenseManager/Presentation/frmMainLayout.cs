@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PersonalExpenseManager.DAL;
+using FontAwesome.Sharp;
 
 
 namespace PersonalExpenseManager.Presentation
@@ -21,7 +22,7 @@ namespace PersonalExpenseManager.Presentation
         }
     private void frmMainLayout_Load(object sender, EventArgs e)
         {
-            btnMonth.Text = DateTime.Now.ToString("MM/yyyy") + "   ˅";
+            btnMonth.Text = DateTime.Now.ToString("dddd, dd MMM yyyy");
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -64,6 +65,23 @@ namespace PersonalExpenseManager.Presentation
             frmReport f = new frmReport();
             f.Show();
             this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "Are you sure you want to log out?",
+        "Confirm Logout",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    );
+
+            if (result == DialogResult.Yes)
+            {
+                frmLogin login = new frmLogin();
+                login.Show();
+                this.Close();
+            }
         }
     }
 }

@@ -21,27 +21,31 @@ namespace PersonalExpenseManager.Presentation
             string password = txtPassword.Text.Trim();
             string confirmPassword = txtConfirmPassword.Text.Trim();
 
+            // Kiểm tra thông tin bỏ trống (Dịch sang tiếng Anh)
             if (fullName == "" || username == "" || password == "" || confirmPassword == "")
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                MessageBox.Show("Please fill in all the information!");
                 return;
             }
 
+            // Kiểm tra trùng tài khoản (Dịch sang tiếng Anh)
             if (userDAL.IsUsernameExists(username))
             {
-                MessageBox.Show("Tên đăng nhập đã tồn tại!");
+                MessageBox.Show("Username already exists!");
                 return;
             }
 
+            // Kiểm tra khớp mật khẩu (Dịch sang tiếng Anh)
             if (password != confirmPassword)
             {
-                MessageBox.Show("Mật khẩu xác nhận không khớp!");
+                MessageBox.Show("Confirm password does not match!");
                 return;
             }
 
+            // Kiểm tra checkbox điều khoản (Dịch sang tiếng Anh)
             if (!chkAgree.Checked)
             {
-                MessageBox.Show("Bạn cần đồng ý với điều khoản trước khi đăng ký!");
+                MessageBox.Show("You must agree to the terms and conditions before registering!");
                 return;
             }
 
@@ -51,7 +55,7 @@ namespace PersonalExpenseManager.Presentation
 
             if (result)
             {
-                MessageBox.Show("Đăng ký thành công!");
+                // Đã xóa bỏ hoàn toàn MessageBox.Show("Đăng ký thành công!") theo yêu cầu
 
                 frmLogin login = new frmLogin();
                 login.Show();
@@ -59,7 +63,8 @@ namespace PersonalExpenseManager.Presentation
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập đã tồn tại!");
+                // Thông báo lỗi khi lưu thất bại (Dịch sang tiếng Anh)
+                MessageBox.Show("Username already exists!");
             }
         }
 
@@ -72,22 +77,18 @@ namespace PersonalExpenseManager.Presentation
 
         private void pnlLogin_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void picBackground_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
