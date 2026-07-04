@@ -21,11 +21,89 @@ namespace PersonalExpenseManager
         string selectedId = "";
         double oldSavedAmount = 0;
         private const string SAVINGS_CATEGORY_ID = "CAT010";
+
         public frmSavings()
         {
             InitializeComponent();
+
+            SetupSavingsGrid();
+
+            dgvSavings.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSavings.MultiSelect = false;
+            dgvSavings.ReadOnly = true;
+
             btnSavings.FillColor = Color.FromArgb(239, 196, 85);
             btnSavings.ForeColor = Color.FromArgb(47, 93, 80);
+        }
+
+        private void SetupSavingsGrid()
+        {
+            dgvSavings.EnableHeadersVisualStyles = false;
+
+            // Header
+            dgvSavings.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(46, 125, 50);
+            dgvSavings.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvSavings.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvSavings.ColumnHeadersDefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+            dgvSavings.ColumnHeadersHeight = 40;
+
+            // Body
+            dgvSavings.BackgroundColor = Color.White;
+            dgvSavings.GridColor = Color.FromArgb(230, 230, 230);
+
+            dgvSavings.DefaultCellStyle.BackColor = Color.White;
+            dgvSavings.DefaultCellStyle.ForeColor = Color.Black;
+            dgvSavings.DefaultCellStyle.SelectionBackColor = Color.FromArgb(232, 245, 233);
+            dgvSavings.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            dgvSavings.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
+
+            dgvSavings.RowTemplate.Height = 35;
+
+            dgvSavings.BorderStyle = BorderStyle.None;
+            dgvSavings.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvSavings.RowHeadersVisible = false;
+
+            dgvSavings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvSavings.ColumnHeadersDefaultCellStyle.SelectionBackColor =
+                dgvSavings.ColumnHeadersDefaultCellStyle.BackColor;
+            dgvSavings.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
+            foreach (DataGridViewColumn col in dgvSavings.Columns)
+            {
+                col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            // Căn giữa ID
+            dgvSavings.Columns[0].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
+            // Goal Name căn trái
+            dgvSavings.Columns[1].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleLeft;
+
+            // TargetAmount căn phải
+            dgvSavings.Columns[2].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleRight;
+
+            // Saved Amount căn phải
+            dgvSavings.Columns[3].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleRight;
+
+            // Progress căn giữa
+            dgvSavings.Columns[4].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
+            // Target Date căn giữa
+            dgvSavings.Columns[5].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
+            // Status căn giữa
+            dgvSavings.Columns[6].DefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void frmSavings_Load(object sender, EventArgs e)
