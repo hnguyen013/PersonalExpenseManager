@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudget));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.pnlAddBudet = new Guna.UI2.WinForms.Guna2Panel();
             this.cmbPeriod = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -348,16 +348,16 @@
             // 
             // dgvButdgets
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvButdgets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvButdgets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvButdgets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvButdgets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvButdgets.ColumnHeadersHeight = 19;
             this.dgvButdgets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvButdgets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -367,14 +367,14 @@
             this.colSpent,
             this.ColProgress,
             this.ColPeriod});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvButdgets.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvButdgets.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvButdgets.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvButdgets.Location = new System.Drawing.Point(254, 574);
             this.dgvButdgets.Name = "dgvButdgets";
@@ -449,9 +449,9 @@
             this.lblTotalIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(140)))), ((int)(((byte)(60)))));
             this.lblTotalIncome.Location = new System.Drawing.Point(102, 53);
             this.lblTotalIncome.Name = "lblTotalIncome";
-            this.lblTotalIncome.Size = new System.Drawing.Size(187, 38);
+            this.lblTotalIncome.Size = new System.Drawing.Size(59, 38);
             this.lblTotalIncome.TabIndex = 1;
-            this.lblTotalIncome.Text = "25.750.000 đ";
+            this.lblTotalIncome.Text = "0 đ";
             // 
             // lblTotalIncomeTitle
             // 
@@ -459,9 +459,9 @@
             this.lblTotalIncomeTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalIncomeTitle.Location = new System.Drawing.Point(105, 33);
             this.lblTotalIncomeTitle.Name = "lblTotalIncomeTitle";
-            this.lblTotalIncomeTitle.Size = new System.Drawing.Size(100, 20);
+            this.lblTotalIncomeTitle.Size = new System.Drawing.Size(99, 20);
             this.lblTotalIncomeTitle.TabIndex = 0;
-            this.lblTotalIncomeTitle.Text = "Total Income";
+            this.lblTotalIncomeTitle.Text = "Total Budget";
             // 
             // imgIncome
             // 
@@ -497,9 +497,9 @@
             this.lblTotalExpense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.lblTotalExpense.Location = new System.Drawing.Point(102, 53);
             this.lblTotalExpense.Name = "lblTotalExpense";
-            this.lblTotalExpense.Size = new System.Drawing.Size(187, 38);
+            this.lblTotalExpense.Size = new System.Drawing.Size(59, 38);
             this.lblTotalExpense.TabIndex = 1;
-            this.lblTotalExpense.Text = "16.500.000 đ";
+            this.lblTotalExpense.Text = "0 đ";
             // 
             // lblExpenseTitle
             // 
@@ -507,9 +507,9 @@
             this.lblExpenseTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpenseTitle.Location = new System.Drawing.Point(105, 33);
             this.lblExpenseTitle.Name = "lblExpenseTitle";
-            this.lblExpenseTitle.Size = new System.Drawing.Size(105, 20);
+            this.lblExpenseTitle.Size = new System.Drawing.Size(88, 20);
             this.lblExpenseTitle.TabIndex = 0;
-            this.lblExpenseTitle.Text = "Total Expense";
+            this.lblExpenseTitle.Text = "Total Spent";
             // 
             // imgExpense
             // 
@@ -545,9 +545,9 @@
             this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(98)))), ((int)(((byte)(253)))));
             this.lblBalance.Location = new System.Drawing.Point(102, 53);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(187, 38);
+            this.lblBalance.Size = new System.Drawing.Size(59, 38);
             this.lblBalance.TabIndex = 1;
-            this.lblBalance.Text = "12.450.000 đ";
+            this.lblBalance.Text = "0 đ";
             // 
             // lblBalanceTitle
             // 
@@ -555,9 +555,9 @@
             this.lblBalanceTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBalanceTitle.Location = new System.Drawing.Point(105, 33);
             this.lblBalanceTitle.Name = "lblBalanceTitle";
-            this.lblBalanceTitle.Size = new System.Drawing.Size(63, 20);
+            this.lblBalanceTitle.Size = new System.Drawing.Size(84, 20);
             this.lblBalanceTitle.TabIndex = 0;
-            this.lblBalanceTitle.Text = "Balance";
+            this.lblBalanceTitle.Text = "Remaining";
             // 
             // imgBalance
             // 

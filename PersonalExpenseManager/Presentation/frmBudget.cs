@@ -97,21 +97,53 @@ namespace PersonalExpenseManager
 
         private void RefreshTopStats()
         {
-            List<Transaction> listTrans = transactionDAL.ReadAll();
-            double income = 0;
-            double expense = 0;
+            // Lấy toàn bộ danh sách ngân sách hiện tại (đã được lọc hoặc tất cả)
+            // Để chính xác nhất, ta tính toán dựa trên các dòng đang hiển thị thực tế trên Grid
+            double totalBudget = 0;
+            double totalSpent = 0;
 
-            foreach (Transaction t in listTrans)
+            // Duyệt qua dữ liệu gốc từ DB để tính tổng hạn mức (BudgetAmount) và đã tiêu (Spent)
+            // Hoặc tính trực tiếp từ danh sách bốc từ budgetDAL
+            List<Budget> allBudgets = budgetDAL.ReadAll();
+
+            // Áp dụng bộ lọc chu kỳ (Period) giống hệt như lúc bạn nạp vào Grid
+            bool showDaily = chkDaily.Checked;
+            bool showWeekly = chkWeekly.Checked;
+            bool showMonthly = chkMonthly.Checked;
+            bool showYearly = chkYearly.Checked;
+
+            foreach (Budget b in allBudgets)
             {
-                if (t.Type == "Income")
-                    income += t.Amount;
-                else
-                    expense += t.Amount;
+                if (!(showDaily == false && showWeekly == false && showMonthly == false && showYearly == false))
+                {
+                    if (b.Period == "Daily" && !showDaily) continue;
+                    if (b.Period == "Weekly" && !showWeekly) continue;
+                    if (b.Period == "Monthly" && !showMonthly) continue;
+                    if (b.Period == "Yearly" && !showYearly) continue;
+                }
+
+                totalBudget += b.BudgetAmount;
+                totalSpent += b.Spent;
             }
 
-            lblTotalIncome.Text = income.ToString("N0") + " đ";
-            lblTotalExpense.Text = expense.ToString("N0") + " đ";
-            lblBalance.Text = (income - expense).ToString("N0") + " đ";
+            double remaining = totalBudget - totalSpent;
+
+            // Cập nhật lên giao diện (Thay tên các Label tương ứng của bạn nếu có thay đổi)
+            lblTotalIncome.Text = totalBudget.ToString("N0") + " đ";  // Bây giờ đóng vai trò là Total Budget
+            lblTotalExpense.Text = totalSpent.ToString("N0") + " đ";  // Bây giờ đóng vai trò là Total Spent
+
+            // Phần còn lại (Balance cũ)
+            if (remaining >= 0)
+            {
+                lblBalance.Text = remaining.ToString("N0") + " đ";
+                lblBalance.ForeColor = Color.FromArgb(47, 93, 80); // Còn dư thì để màu xanh thanh lịch
+            }
+            else
+            {
+                // Nếu chi tiêu vượt quá hạn mức ngân sách đặt ra
+                lblBalance.Text = "Vượt " + Math.Abs(remaining).ToString("N0") + " đ";
+                lblBalance.ForeColor = Color.Red; // Vượt hạn mức thì báo đỏ
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
