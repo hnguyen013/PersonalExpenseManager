@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSavings));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPageTitle = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTextGoals = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnlGoals = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalGoals = new System.Windows.Forms.Label();
+            this.picGoals = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblNumGoals = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnlTarget = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalTarget = new System.Windows.Forms.Label();
+            this.picTarget = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblTotalTargetAmount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pnlSaved = new Guna.UI2.WinForms.Guna2Panel();
+            this.picSaved = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblTotalSaved = new System.Windows.Forms.Label();
             this.lblTotalSavedAmount = new System.Windows.Forms.Label();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnlRemaining = new Guna.UI2.WinForms.Guna2Panel();
+            this.picRemaining = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblRemainingAmount = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblRemaining = new System.Windows.Forms.Label();
             this.pnlNewGoalBox = new Guna.UI2.WinForms.Guna2Panel();
             this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
@@ -66,8 +66,6 @@
             this.txtGoalName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblGoalName = new System.Windows.Forms.Label();
             this.lblNewGoalHeader = new System.Windows.Forms.Label();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlChucNang = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
@@ -84,14 +82,14 @@
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chkInProgress = new System.Windows.Forms.CheckBox();
             this.chkCompleted = new System.Windows.Forms.CheckBox();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            this.pnlGoals.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGoals)).BeginInit();
+            this.pnlTarget.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTarget)).BeginInit();
+            this.pnlSaved.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaved)).BeginInit();
+            this.pnlRemaining.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemaining)).BeginInit();
             this.pnlNewGoalBox.SuspendLayout();
             this.pnlChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSavings)).BeginInit();
@@ -108,43 +106,43 @@
             this.lblPageTitle.TabIndex = 2;
             this.lblPageTitle.Text = "Saving Goals";
             // 
-            // guna2Panel1
+            // pnlGoals
             // 
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel1.BorderRadius = 12;
-            this.guna2Panel1.BorderThickness = 1;
-            this.guna2Panel1.Controls.Add(this.lblTextGoals);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel1.Controls.Add(this.lblNumGoals);
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(234, 151);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(259, 133);
-            this.guna2Panel1.TabIndex = 3;
+            this.pnlGoals.BorderColor = System.Drawing.Color.Gray;
+            this.pnlGoals.BorderRadius = 12;
+            this.pnlGoals.BorderThickness = 1;
+            this.pnlGoals.Controls.Add(this.lblTotalGoals);
+            this.pnlGoals.Controls.Add(this.picGoals);
+            this.pnlGoals.Controls.Add(this.lblNumGoals);
+            this.pnlGoals.FillColor = System.Drawing.Color.White;
+            this.pnlGoals.Location = new System.Drawing.Point(234, 151);
+            this.pnlGoals.Name = "pnlGoals";
+            this.pnlGoals.Size = new System.Drawing.Size(259, 133);
+            this.pnlGoals.TabIndex = 3;
             // 
-            // lblTextGoals
+            // lblTotalGoals
             // 
-            this.lblTextGoals.AutoSize = true;
-            this.lblTextGoals.BackColor = System.Drawing.Color.White;
-            this.lblTextGoals.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTextGoals.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTextGoals.Location = new System.Drawing.Point(72, 17);
-            this.lblTextGoals.Name = "lblTextGoals";
-            this.lblTextGoals.Size = new System.Drawing.Size(117, 28);
-            this.lblTextGoals.TabIndex = 7;
-            this.lblTextGoals.Text = "Total Goals";
+            this.lblTotalGoals.AutoSize = true;
+            this.lblTotalGoals.BackColor = System.Drawing.Color.White;
+            this.lblTotalGoals.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTotalGoals.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTotalGoals.Location = new System.Drawing.Point(72, 17);
+            this.lblTotalGoals.Name = "lblTotalGoals";
+            this.lblTotalGoals.Size = new System.Drawing.Size(117, 28);
+            this.lblTotalGoals.TabIndex = 7;
+            this.lblTotalGoals.Text = "Total Goals";
             // 
-            // guna2PictureBox1
+            // picGoals
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(10, 47);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(57, 65);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 7;
-            this.guna2PictureBox1.TabStop = false;
+            this.picGoals.BackColor = System.Drawing.Color.White;
+            this.picGoals.Image = ((System.Drawing.Image)(resources.GetObject("picGoals.Image")));
+            this.picGoals.ImageRotate = 0F;
+            this.picGoals.Location = new System.Drawing.Point(10, 47);
+            this.picGoals.Name = "picGoals";
+            this.picGoals.Size = new System.Drawing.Size(57, 65);
+            this.picGoals.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGoals.TabIndex = 7;
+            this.picGoals.TabStop = false;
             // 
             // lblNumGoals
             // 
@@ -157,42 +155,42 @@
             this.lblNumGoals.TabIndex = 7;
             this.lblNumGoals.Text = "0 đ";
             // 
-            // guna2Panel2
+            // pnlTarget
             // 
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel2.BorderRadius = 12;
-            this.guna2Panel2.BorderThickness = 1;
-            this.guna2Panel2.Controls.Add(this.label4);
-            this.guna2Panel2.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel2.Controls.Add(this.lblTotalTargetAmount);
-            this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(511, 151);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(259, 133);
-            this.guna2Panel2.TabIndex = 4;
+            this.pnlTarget.BorderColor = System.Drawing.Color.Gray;
+            this.pnlTarget.BorderRadius = 12;
+            this.pnlTarget.BorderThickness = 1;
+            this.pnlTarget.Controls.Add(this.lblTotalTarget);
+            this.pnlTarget.Controls.Add(this.picTarget);
+            this.pnlTarget.Controls.Add(this.lblTotalTargetAmount);
+            this.pnlTarget.FillColor = System.Drawing.Color.White;
+            this.pnlTarget.Location = new System.Drawing.Point(511, 151);
+            this.pnlTarget.Name = "pnlTarget";
+            this.pnlTarget.Size = new System.Drawing.Size(259, 133);
+            this.pnlTarget.TabIndex = 4;
             // 
-            // label4
+            // lblTotalTarget
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(58, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 28);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Total Target";
+            this.lblTotalTarget.AutoSize = true;
+            this.lblTotalTarget.BackColor = System.Drawing.Color.White;
+            this.lblTotalTarget.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTarget.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTotalTarget.Location = new System.Drawing.Point(58, 17);
+            this.lblTotalTarget.Name = "lblTotalTarget";
+            this.lblTotalTarget.Size = new System.Drawing.Size(125, 28);
+            this.lblTotalTarget.TabIndex = 14;
+            this.lblTotalTarget.Text = "Total Target";
             // 
-            // guna2PictureBox2
+            // picTarget
             // 
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(19, 47);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(57, 65);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 8;
-            this.guna2PictureBox2.TabStop = false;
+            this.picTarget.Image = ((System.Drawing.Image)(resources.GetObject("picTarget.Image")));
+            this.picTarget.ImageRotate = 0F;
+            this.picTarget.Location = new System.Drawing.Point(19, 47);
+            this.picTarget.Name = "picTarget";
+            this.picTarget.Size = new System.Drawing.Size(57, 65);
+            this.picTarget.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTarget.TabIndex = 8;
+            this.picTarget.TabStop = false;
             // 
             // lblTotalTargetAmount
             // 
@@ -208,51 +206,50 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.BackColor = System.Drawing.Color.Black;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(73, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 28);
+            this.label3.Size = new System.Drawing.Size(0, 0);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Total Target";
             // 
-            // guna2Panel3
+            // pnlSaved
             // 
-            this.guna2Panel3.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel3.BorderRadius = 12;
-            this.guna2Panel3.BorderThickness = 1;
-            this.guna2Panel3.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel3.Controls.Add(this.label6);
-            this.guna2Panel3.Controls.Add(this.lblTotalSavedAmount);
-            this.guna2Panel3.FillColor = System.Drawing.Color.White;
-            this.guna2Panel3.Location = new System.Drawing.Point(792, 151);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(259, 133);
-            this.guna2Panel3.TabIndex = 5;
+            this.pnlSaved.BorderColor = System.Drawing.Color.Gray;
+            this.pnlSaved.BorderRadius = 12;
+            this.pnlSaved.BorderThickness = 1;
+            this.pnlSaved.Controls.Add(this.picSaved);
+            this.pnlSaved.Controls.Add(this.lblTotalSaved);
+            this.pnlSaved.Controls.Add(this.lblTotalSavedAmount);
+            this.pnlSaved.FillColor = System.Drawing.Color.White;
+            this.pnlSaved.Location = new System.Drawing.Point(792, 151);
+            this.pnlSaved.Name = "pnlSaved";
+            this.pnlSaved.Size = new System.Drawing.Size(259, 133);
+            this.pnlSaved.TabIndex = 5;
             // 
-            // guna2PictureBox3
+            // picSaved
             // 
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(8, 47);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(57, 65);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 7;
-            this.guna2PictureBox3.TabStop = false;
+            this.picSaved.Image = ((System.Drawing.Image)(resources.GetObject("picSaved.Image")));
+            this.picSaved.ImageRotate = 0F;
+            this.picSaved.Location = new System.Drawing.Point(8, 47);
+            this.picSaved.Name = "picSaved";
+            this.picSaved.Size = new System.Drawing.Size(57, 65);
+            this.picSaved.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSaved.TabIndex = 7;
+            this.picSaved.TabStop = false;
             // 
-            // label6
+            // lblTotalSaved
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(72, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 28);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Total Saved";
+            this.lblTotalSaved.AutoSize = true;
+            this.lblTotalSaved.BackColor = System.Drawing.Color.White;
+            this.lblTotalSaved.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalSaved.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTotalSaved.Location = new System.Drawing.Point(72, 17);
+            this.lblTotalSaved.Name = "lblTotalSaved";
+            this.lblTotalSaved.Size = new System.Drawing.Size(121, 28);
+            this.lblTotalSaved.TabIndex = 12;
+            this.lblTotalSaved.Text = "Total Saved";
             // 
             // lblTotalSavedAmount
             // 
@@ -266,30 +263,30 @@
             this.lblTotalSavedAmount.TabIndex = 13;
             this.lblTotalSavedAmount.Text = "0 đ";
             // 
-            // guna2Panel4
+            // pnlRemaining
             // 
-            this.guna2Panel4.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Panel4.BorderRadius = 12;
-            this.guna2Panel4.BorderThickness = 1;
-            this.guna2Panel4.Controls.Add(this.guna2PictureBox4);
-            this.guna2Panel4.Controls.Add(this.lblRemainingAmount);
-            this.guna2Panel4.Controls.Add(this.label9);
-            this.guna2Panel4.FillColor = System.Drawing.Color.White;
-            this.guna2Panel4.Location = new System.Drawing.Point(1076, 151);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(259, 133);
-            this.guna2Panel4.TabIndex = 6;
+            this.pnlRemaining.BorderColor = System.Drawing.Color.Gray;
+            this.pnlRemaining.BorderRadius = 12;
+            this.pnlRemaining.BorderThickness = 1;
+            this.pnlRemaining.Controls.Add(this.picRemaining);
+            this.pnlRemaining.Controls.Add(this.lblRemainingAmount);
+            this.pnlRemaining.Controls.Add(this.lblRemaining);
+            this.pnlRemaining.FillColor = System.Drawing.Color.White;
+            this.pnlRemaining.Location = new System.Drawing.Point(1076, 151);
+            this.pnlRemaining.Name = "pnlRemaining";
+            this.pnlRemaining.Size = new System.Drawing.Size(259, 133);
+            this.pnlRemaining.TabIndex = 6;
             // 
-            // guna2PictureBox4
+            // picRemaining
             // 
-            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(12, 47);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(57, 65);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 8;
-            this.guna2PictureBox4.TabStop = false;
+            this.picRemaining.Image = ((System.Drawing.Image)(resources.GetObject("picRemaining.Image")));
+            this.picRemaining.ImageRotate = 0F;
+            this.picRemaining.Location = new System.Drawing.Point(12, 47);
+            this.picRemaining.Name = "picRemaining";
+            this.picRemaining.Size = new System.Drawing.Size(57, 65);
+            this.picRemaining.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRemaining.TabIndex = 8;
+            this.picRemaining.TabStop = false;
             // 
             // lblRemainingAmount
             // 
@@ -302,17 +299,17 @@
             this.lblRemainingAmount.TabIndex = 16;
             this.lblRemainingAmount.Text = "0 đ";
             // 
-            // label9
+            // lblRemaining
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(76, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 28);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Remaining";
+            this.lblRemaining.AutoSize = true;
+            this.lblRemaining.BackColor = System.Drawing.Color.White;
+            this.lblRemaining.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemaining.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblRemaining.Location = new System.Drawing.Point(76, 17);
+            this.lblRemaining.Name = "lblRemaining";
+            this.lblRemaining.Size = new System.Drawing.Size(113, 28);
+            this.lblRemaining.TabIndex = 15;
+            this.lblRemaining.Text = "Remaining";
             // 
             // pnlNewGoalBox
             // 
@@ -496,24 +493,6 @@
             this.lblNewGoalHeader.TabIndex = 0;
             this.lblNewGoalHeader.Text = "NEW SAVINGS GOAL";
             // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(108, 18);
-            this.guna2HtmlLabel1.TabIndex = 8;
-            this.guna2HtmlLabel1.Text = "guna2HtmlLabel1";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(108, 18);
-            this.guna2HtmlLabel2.TabIndex = 9;
-            this.guna2HtmlLabel2.Text = "guna2HtmlLabel2";
-            // 
             // pnlChucNang
             // 
             this.pnlChucNang.BorderColor = System.Drawing.Color.Black;
@@ -622,16 +601,16 @@
             // 
             // dgvSavings
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
-            this.dgvSavings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSavings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(231)))), ((int)(((byte)(203)))));
+            this.dgvSavings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSavings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle51;
             this.dgvSavings.ColumnHeadersHeight = 22;
             this.dgvSavings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvSavings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -642,14 +621,14 @@
             this.colProgress,
             this.colTargetDate,
             this.colStatus});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSavings.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(220)))));
+            dataGridViewCellStyle56.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(201)))), ((int)(((byte)(138)))));
+            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSavings.DefaultCellStyle = dataGridViewCellStyle56;
             this.dgvSavings.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
             this.dgvSavings.Location = new System.Drawing.Point(234, 618);
             this.dgvSavings.Name = "dgvSavings";
@@ -687,8 +666,8 @@
             // colTargetAmount
             // 
             this.colTargetAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colTargetAmount.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colTargetAmount.DefaultCellStyle = dataGridViewCellStyle52;
             this.colTargetAmount.HeaderText = "TargetAmount";
             this.colTargetAmount.MinimumWidth = 6;
             this.colTargetAmount.Name = "colTargetAmount";
@@ -696,8 +675,8 @@
             // colSavedAmount
             // 
             this.colSavedAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colSavedAmount.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colSavedAmount.DefaultCellStyle = dataGridViewCellStyle53;
             this.colSavedAmount.HeaderText = "Saved Amount";
             this.colSavedAmount.MinimumWidth = 6;
             this.colSavedAmount.Name = "colSavedAmount";
@@ -705,8 +684,8 @@
             // colProgress
             // 
             this.colProgress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colProgress.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colProgress.DefaultCellStyle = dataGridViewCellStyle54;
             this.colProgress.HeaderText = "Progress";
             this.colProgress.MinimumWidth = 6;
             this.colProgress.Name = "colProgress";
@@ -714,8 +693,8 @@
             // colTargetDate
             // 
             this.colTargetDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colTargetDate.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colTargetDate.DefaultCellStyle = dataGridViewCellStyle55;
             this.colTargetDate.HeaderText = "Target Date";
             this.colTargetDate.MinimumWidth = 6;
             this.colTargetDate.Name = "colTargetDate";
@@ -765,29 +744,27 @@
             this.Controls.Add(this.dgvSavings);
             this.Controls.Add(this.lblLisHeader);
             this.Controls.Add(this.pnlChucNang);
-            this.Controls.Add(this.guna2HtmlLabel2);
-            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.pnlNewGoalBox);
-            this.Controls.Add(this.guna2Panel4);
-            this.Controls.Add(this.guna2Panel3);
-            this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.pnlRemaining);
+            this.Controls.Add(this.pnlSaved);
+            this.Controls.Add(this.pnlTarget);
+            this.Controls.Add(this.pnlGoals);
             this.Controls.Add(this.lblPageTitle);
             this.Name = "frmSavings";
             this.Text = "Savings";
             this.Load += new System.EventHandler(this.frmSavings_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            this.pnlGoals.ResumeLayout(false);
+            this.pnlGoals.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGoals)).EndInit();
+            this.pnlTarget.ResumeLayout(false);
+            this.pnlTarget.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTarget)).EndInit();
+            this.pnlSaved.ResumeLayout(false);
+            this.pnlSaved.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaved)).EndInit();
+            this.pnlRemaining.ResumeLayout(false);
+            this.pnlRemaining.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRemaining)).EndInit();
             this.pnlNewGoalBox.ResumeLayout(false);
             this.pnlNewGoalBox.PerformLayout();
             this.pnlChucNang.ResumeLayout(false);
@@ -800,32 +777,30 @@
         #endregion
 
         private System.Windows.Forms.Label lblPageTitle;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private System.Windows.Forms.Label lblTextGoals;
+        private Guna.UI2.WinForms.Guna2Panel pnlGoals;
+        private Guna.UI2.WinForms.Guna2Panel pnlTarget;
+        private Guna.UI2.WinForms.Guna2Panel pnlSaved;
+        private Guna.UI2.WinForms.Guna2Panel pnlRemaining;
+        private Guna.UI2.WinForms.Guna2PictureBox picGoals;
+        private Guna.UI2.WinForms.Guna2PictureBox picTarget;
+        private Guna.UI2.WinForms.Guna2PictureBox picSaved;
+        private Guna.UI2.WinForms.Guna2PictureBox picRemaining;
+        private System.Windows.Forms.Label lblTotalGoals;
         private System.Windows.Forms.Label lblNumGoals;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTotalTargetAmount;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTotalSaved;
         private System.Windows.Forms.Label lblTotalSavedAmount;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblRemaining;
         private System.Windows.Forms.Label lblRemainingAmount;
         private Guna.UI2.WinForms.Guna2Panel pnlNewGoalBox;
         private System.Windows.Forms.Label lblNewGoalHeader;
         private Guna.UI2.WinForms.Guna2TextBox txtGoalName;
         private System.Windows.Forms.Label lblGoalName;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTargetDate;
         private System.Windows.Forms.Label lblTargetDate;
         private Guna.UI2.WinForms.Guna2TextBox txtTargetAmount;
         private System.Windows.Forms.Label lblTargetAmount;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private System.Windows.Forms.Label lblNotes;
         private Guna.UI2.WinForms.Guna2TextBox txtInitialAmount;
         private System.Windows.Forms.Label lblInitiaAmount;
@@ -844,7 +819,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProgress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTargetDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTotalTarget;
         private System.Windows.Forms.CheckBox chkInProgress;
         private System.Windows.Forms.CheckBox chkCompleted;
     }
